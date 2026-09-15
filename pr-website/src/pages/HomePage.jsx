@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import logoImg from '../assets/logo.png';
+import instaHeroBg from '../assets/insta-hero-bg.jpg';
+import avatarRehan from '../assets/avatar_rehan_tariq.jpg';
+import avatarYasir from '../assets/avatar_yasir_shami.jpg';
+import avatarBaba from '../assets/avatar_baba_op.jpg';
 import '../styles/HomePage.css';
+import '../styles/InstagramWorkPage.css';
+
+const INSTAGRAM_URL = 'https://www.instagram.com/mateenautoofficial/';
 
 // ── Service & Transformation Images from assets
+import imgHeroStudio   from '../assets/hero_studio_mercedes.jpg';
 import imgBmwClean       from '../assets/bmw_after_seamless.jpg';
 import imgBmwDirty       from '../assets/bmw_before_seamless.jpg';
 import imgPPF            from '../assets/svc_ppf.jpg';
@@ -183,12 +192,26 @@ export default function HomePage() {
   const visibleServices = showAllServices ? ALL_SERVICES : ALL_SERVICES.slice(0, INITIAL_COUNT);
   const hiddenCount = ALL_SERVICES.length - INITIAL_COUNT;
 
+  // Hero image subtle scroll zoom (smoothly zooms in up to ~10% on scroll)
+  const [heroScrollZoom, setHeroScrollZoom] = useState(1);
+
+  useEffect(() => {
+    const handleHeroScroll = () => {
+      const scroll = window.scrollY;
+      const zoom = 1 + Math.min(0.10, Math.max(0, (scroll / 400) * 0.10));
+      setHeroScrollZoom(zoom);
+    };
+    window.addEventListener('scroll', handleHeroScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleHeroScroll);
+  }, []);
+
   const currentTransform = {
     id: 'bmw-studio',
     title: 'Studio Paint Restoration & 9H Ceramic Coating',
     car: 'BMW 5-Series M Sport — Deep Obsidian Gloss',
     badge: 'Flagship Studio Showcase',
-    img: imgBeforeAfter,
+    beforeImg: imgBmwDirty,
+    afterImg: imgBmwClean,
     highlights: [
       { icon: '🧼', title: 'Heavy Mud & Grime Decontamination', desc: 'Full iron fallout, road tar & deep road grime eliminated' },
       { icon: '✨', title: 'Multi-Stage Swirl Correction', desc: 'Spider-web scratches & paint haziness 100% corrected' },
@@ -214,96 +237,87 @@ export default function HomePage() {
     <div className="hp-root">
       <Navbar />
 
-      {/* ── 1. HERO SECTION ──────────────────────── */}
-      <section className="hp-hero-section">
-        <div className="hp-hero-bg-glow"></div>
-        <div className="hp-container">
-          <div className="hp-hero-grid">
+      {/* ── 1. CINEMATIC FULL-BLEED HERO SECTION (REFERENCE STYLE) ── */}
+      <section className="hp-hero-cinematic-section">
+        {/* Full-bleed Studio Mercedes Backdrop with Smooth Scroll Zoom & Seamless Gradient Blend */}
+        <div className="hp-hero-backdrop-media">
+          <img
+            src={imgHeroStudio}
+            alt="Mateen Auto Studio Detailing - Mercedes E-Class"
+            className="hp-hero-backdrop-img"
+            style={{
+              transform: `scale(${heroScrollZoom})`
+            }}
+          />
+          <div className="hp-hero-backdrop-overlay"></div>
+        </div>
 
-            {/* Left Content */}
-            <div className="hp-hero-left">
-              <div className="hp-hero-badge">
-                <span className="hp-badge-dot"></span>
-                PREMIUM CAR DETAILING STUDIO
-              </div>
-
-              <h1 className="hp-hero-title">
-                MORE THAN<br />
-                <span className="hp-grad-text">A CAR WASH</span>
-              </h1>
-
-              <p className="hp-hero-desc">
-                Professional detailing and protection services to keep your vehicle looking its best — inside and out.
-              </p>
-
-              <div className="hp-hero-actions">
-                <Link to="/contact" className="hp-btn-primary">
-                  <span>Book a Service</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </Link>
-                <Link to="/services" className="hp-btn-outline">
-                  Our Services
-                </Link>
-              </div>
-
-              {/* 3 Value Pillars */}
-              <div className="hp-hero-pillars">
-                <div className="hp-pillar-item">
-                  <div className="hp-pillar-icon">💎</div>
-                  <div className="hp-pillar-text">
-                    <strong>Premium</strong>
-                    <span>Products</span>
-                  </div>
-                </div>
-                <div className="hp-pillar-divider"></div>
-                <div className="hp-pillar-item">
-                  <div className="hp-pillar-icon">👥</div>
-                  <div className="hp-pillar-text">
-                    <strong>Expert</strong>
-                    <span>Team</span>
-                  </div>
-                </div>
-                <div className="hp-pillar-divider"></div>
-                <div className="hp-pillar-item">
-                  <div className="hp-pillar-icon">🛡️</div>
-                  <div className="hp-pillar-text">
-                    <strong>Long-Lasting</strong>
-                    <span>Protection</span>
-                  </div>
-                </div>
-              </div>
+        <div className="hp-container hp-hero-cinematic-content">
+          <div className="hp-hero-cinematic-left">
+            
+            {/* Top Location Pill Badge (Reference Match with Shield & Live Dot) */}
+            <div className="hp-hero-badge-cinematic">
+              <svg className="hp-badge-shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span className="hp-badge-dot-live"></span>
+              <span className="hp-badge-text-cinematic">
+                CHAUBURJI &amp; DHA PHASE 5, LAHORE, PAKISTAN
+              </span>
             </div>
 
-            {/* Right Studio Car Visual */}
-            <div className="hp-hero-right">
-              <div className="hp-hero-visual-card">
-                {/* Neon MATEEN AUTO Wall Sign */}
-                <div className="hp-neon-wall-sign">
-                  <div className="hp-neon-car-icon">🏎️</div>
-                  <div className="hp-neon-brand">MATEEN AUTO</div>
-                </div>
+            {/* Bold Impactful Headline */}
+            <h1 className="hp-hero-title-cinematic">
+              MORE THAN DETAILING.<br />
+              <span className="hp-grad-animated">SHOWROOM PERFECTION.</span>
+            </h1>
 
-                {/* Vertical Tagline Pill */}
-                <div className="hp-vertical-tagline">
-                  <span>DETAIL</span> • <span>PROTECT</span> • <span>ENHANCE</span> • <span>PRESERVE</span>
-                </div>
+            {/* Concise Elite Copy */}
+            <p className="hp-hero-desc-cinematic">
+              Lahore's flagship automotive studio. Ceramic matrix armour, graphene nano-shields, self-healing TPU PPF wraps, and concours-level mirror gloss for luxury vehicles.
+            </p>
 
-                {/* Hero Car Showcase Image */}
-                <div className="hp-hero-car-wrap">
-                  <img
-                    src={imgPPF}
-                    alt="Mateen Auto Studio Detailing"
-                    className="hp-hero-car-img"
-                  />
-                  <div className="hp-hero-car-overlay"></div>
-                </div>
+            {/* Action Buttons Row (WhatsApp, Build Package, Protection Quiz) */}
+            <div className="hp-hero-actions-cinematic">
+              <a
+                href="https://wa.me/923234500012?text=Hello%20Mateen%20Auto,%20I%20want%20to%20get%20an%20instant%20quote%20for%20detailing."
+                target="_blank"
+                rel="noreferrer"
+                className="hp-btn-cinematic-whatsapp"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.072-1.879-.443-1.488-.617-2.455-2.12-2.53-2.22-.075-.1-.611-.813-.611-1.55 0-.737.387-1.1.523-1.25.136-.15.297-.188.397-.188.1 0 .2.002.287.006.09.004.21-.034.328.25.122.294.417 1.018.454 1.093.037.075.062.163.012.262-.05.1-.075.163-.15.25-.075.088-.158.196-.226.264-.075.075-.153.156-.066.305.087.15.388.64.832 1.035.571.508 1.053.666 1.203.74.15.075.238.063.325-.038.088-.1.375-.438.475-.588.1-.15.2-.125.338-.075.137.05.875.412 1.025.487.15.075.25.112.288.175.038.063.038.363-.106.768z" />
+                </svg>
+                <span>INSTANT WHATSAPP QUOTE</span>
+              </a>
 
-                {/* Studio Ambient Neon Bars */}
-                <div className="hp-neon-bar top-neon"></div>
-                <div className="hp-neon-bar bottom-neon"></div>
-              </div>
+              <Link to="/contact" className="hp-btn-cinematic-book">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <line x1="4" y1="21" x2="4" y2="14"/>
+                  <line x1="4" y1="10" x2="4" y2="3"/>
+                  <line x1="12" y1="21" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12" y2="3"/>
+                  <line x1="20" y1="21" x2="20" y2="16"/>
+                  <line x1="20" y1="12" x2="20" y2="3"/>
+                  <line x1="1" y1="14" x2="7" y2="14"/>
+                  <line x1="9" y1="8" x2="15" y2="8"/>
+                  <line x1="17" y1="16" x2="23" y2="16"/>
+                </svg>
+                <span>BUILD YOUR PACKAGE</span>
+              </Link>
+
+              <Link to="/services" className="hp-btn-cinematic-quiz">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M12 2l2.4 5.3 5.6.8-4 4.1 1 5.8-5-2.8-5 2.8 1-5.8-4-4.1 5.6-.8z"/>
+                </svg>
+                <span>FIND YOUR PROTECTION QUIZ</span>
+              </Link>
+            </div>
+
+            {/* Scroll To Explore Micro Indicator */}
+            <div className="hp-hero-scroll-hint">
+              <span>SCROLL TO EXPLORE</span>
+              <div className="hp-scroll-hint-bar"></div>
             </div>
 
           </div>
@@ -631,14 +645,30 @@ export default function HomePage() {
                   onMouseMove={handleSliderMove}
                   onTouchMove={handleSliderMove}
                 >
-                  {/* Flagship BMW Studio Showcase */}
-                  <div className="hp-showcase-img-wrap">
-                    <img
-                      src={currentTransform.img}
-                      alt={currentTransform.car}
-                      className="hp-showcase-img"
-                    />
-                    {/* Interactive Divider Line tracking cursor */}
+                  {/* Dual-Layer Real Dynamic Before & After Slider */}
+                  <div className="hp-dual-img-wrap">
+                    {/* AFTER Image (Clean & Glossy BMW - Base Layer) */}
+                    <div className="hp-compare-after">
+                      <img
+                        src={currentTransform.afterImg}
+                        alt="After Detail - Showroom Gloss"
+                        className="hp-compare-img"
+                      />
+                    </div>
+
+                    {/* BEFORE Image (Dirty & Muddy BMW - Clipped dynamically by cursor) */}
+                    <div
+                      className="hp-compare-before"
+                      style={{ clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)` }}
+                    >
+                      <img
+                        src={currentTransform.beforeImg}
+                        alt="Before Detail - Heavy Grime"
+                        className="hp-compare-img"
+                      />
+                    </div>
+
+                    {/* Draggable Divider Handle Line */}
                     <div
                       className="hp-compare-handle"
                       style={{ left: `${sliderPos}%` }}
@@ -663,10 +693,7 @@ export default function HomePage() {
                     <span className="hp-tag-dot green"></span> AFTER
                   </span>
 
-                  {/* Studio Neon Logo Accent */}
-                  <div className="hp-compare-neon-badge">
-                    <span>MATEEN AUTO STUDIO</span>
-                  </div>
+
                 </div>
 
                 {/* Dynamic Status Pill underneath showing real-time cursor condition */}
@@ -796,7 +823,84 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 5. TESTIMONIALS (TRUSTED BY CAR OWNERS) ─ */}
+      {/* ── 5. INSTAGRAM SHOWCASE & WORK HIGHLIGHTS (UNDER SERVICES) ── */}
+      <section className="hp-insta-showcase-section">
+        <div
+          className="hp-insta-backdrop"
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(5, 1, 10, 0.85) 0%, rgba(5, 1, 10, 0.65) 45%, rgba(5, 1, 10, 0.92) 100%), url(${instaHeroBg})`
+          }}
+        >
+          <div className="hp-container">
+            <div className="iw-cinematic-container">
+
+              {/* Instagram Glyph Camera Icon */}
+              <div className="iw-insta-icon-wrap" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </div>
+
+              {/* Bold Title */}
+              <h2 className="iw-cinematic-title">
+                INSTAGRAM WORK &amp;<br />
+                TRANSFORMATIONS
+              </h2>
+
+              {/* Subtitle / Description */}
+              <p className="iw-cinematic-desc">
+                Watch daily video walkarounds, swirl removal reels, ceramic and graphene hydrophobic
+                water bead clips, and client handovers on <strong>@mateen.auto1</strong>.
+              </p>
+
+              {/* Dual Action Buttons */}
+              <div className="iw-cinematic-actions">
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="iw-btn-hero-insta"
+                >
+                  <span className="iw-btn-hero-icon-box iw-icon-insta-bg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  </span>
+                  <div className="iw-btn-hero-text">
+                    <span className="iw-btn-hero-sub">OFFICIAL REELS &amp; STORIES</span>
+                    <span className="iw-btn-hero-main">Follow @mateen.auto1 ↗</span>
+                  </div>
+                </a>
+
+                <Link
+                  to="/contact"
+                  className="iw-btn-hero-book"
+                >
+                  <span className="iw-btn-hero-icon-box iw-icon-book-bg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                  </span>
+                  <div className="iw-btn-hero-text">
+                    <span className="iw-btn-hero-sub">CHAUBURJI &amp; DHA PHASE 5</span>
+                    <span className="iw-btn-hero-main">Book Free Inspection →</span>
+                  </div>
+                </Link>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. TESTIMONIALS (TRUSTED BY CAR OWNERS) ─ */}
       <section className="hp-reviews-section">
         <div className="hp-container">
           <div className="hp-section-head-row">
@@ -821,7 +925,9 @@ export default function HomePage() {
               </p>
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
-                <div className="hp-author-avatar">RT</div>
+                <div className="hp-author-avatar">
+                  <img src={avatarRehan} alt="Rehan Tariq" className="hp-author-avatar-img" />
+                </div>
                 <div className="hp-author-info">
                   <div className="hp-author-name">Rehan Tariq</div>
                   <div className="hp-author-badge">Verified Client</div>
@@ -837,7 +943,9 @@ export default function HomePage() {
               </p>
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
-                <div className="hp-author-avatar hp-avatar-purple">YS</div>
+                <div className="hp-author-avatar">
+                  <img src={avatarYasir} alt="Yasir Shami" className="hp-author-avatar-img" />
+                </div>
                 <div className="hp-author-info">
                   <div className="hp-author-name">Yasir Shami</div>
                   <div className="hp-author-badge">Verified Client</div>
@@ -853,7 +961,9 @@ export default function HomePage() {
               </p>
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
-                <div className="hp-author-avatar hp-avatar-blue">BO</div>
+                <div className="hp-author-avatar">
+                  <img src={avatarBaba} alt="Baba OP (Asad)" className="hp-author-avatar-img" />
+                </div>
                 <div className="hp-author-info">
                   <div className="hp-author-name">Baba OP (Asad)</div>
                   <div className="hp-author-badge">Verified Client</div>

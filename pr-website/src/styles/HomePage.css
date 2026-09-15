@@ -23,302 +23,303 @@
   background-clip: text;
 }
 
-/* ── 1. HERO SECTION ──────────────────────────────── */
-.hp-hero-section {
+/* ── 1. CINEMATIC FULL-BLEED HERO SECTION (THEME COHESIVE) ───── */
+.hp-hero-cinematic-section {
   position: relative;
-  padding: 90px 0 100px;
-  background: radial-gradient(ellipse at 80% 20%, rgba(147, 51, 234, 0.22) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
-              linear-gradient(180deg, #070210 0%, #0d041c 50%, #06010d 100%);
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background-color: #05010a;
   overflow: hidden;
-  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.25);
 }
 
-.hp-hero-bg-glow {
+/* Studio Mercedes Backdrop Media — Prominent Left Car View + Zero Frame Melt */
+.hp-hero-backdrop-media {
   position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 70%);
-  filter: blur(80px);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 76%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hp-hero-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+  display: block;
+  transform-origin: center right;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 6%, rgba(0,0,0,0.7) 18%, black 36%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 6%, rgba(0,0,0,0.7) 18%, black 36%);
+}
+
+.hp-hero-backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    /* Soft horizontal studio fade — car body, headlights & studio lights stay prominent */
+    linear-gradient(90deg, #05010a 0%, rgba(5, 1, 10, 0.92) 8%, rgba(5, 1, 10, 0.42) 24%, transparent 54%),
+    /* Studio top & bottom vignette */
+    linear-gradient(180deg, rgba(5, 1, 10, 0.7) 0%, transparent 18%, transparent 82%, #05010a 100%),
+    /* Studio ceiling purple neon accent */
+    radial-gradient(circle at 65% 25%, rgba(168, 85, 247, 0.2) 0%, transparent 60%);
   pointer-events: none;
 }
 
-.hp-hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 48px;
-  align-items: center;
+/* Foreground Content (+15% Enlarged Luxury Card Presence) */
+.hp-hero-cinematic-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 52px 0 58px;
 }
 
-/* Left Content */
-.hp-hero-badge {
+.hp-hero-cinematic-left {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Top Location Pill Badge (Website Theme: Royal Purple Neon) */
+.hp-hero-badge-cinematic {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #d8b4fe;
-  padding: 8px 18px;
+  gap: 8px;
+  padding: 6px 15px;
   border-radius: 50px;
   background: rgba(168, 85, 247, 0.12);
-  border: 1px solid rgba(168, 85, 247, 0.35);
-  margin-bottom: 24px;
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.25), inset 0 0 10px rgba(168, 85, 247, 0.1);
+  margin-bottom: 16px;
 }
 
-.hp-badge-dot {
-  width: 6px;
-  height: 6px;
+.hp-badge-shield-icon {
+  width: 13px;
+  height: 13px;
+  color: #c084fc;
+  flex-shrink: 0;
+}
+
+.hp-badge-dot-live {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #c084fc;
   box-shadow: 0 0 10px #c084fc;
+  animation: hpLivePulse 1.8s infinite;
 }
 
-.hp-hero-title {
-  font-size: clamp(2.6rem, 5vw, 4.4rem);
+@keyframes hpLivePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+}
+
+.hp-badge-text-cinematic {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e9d5ff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Bold Typography (+15% Balanced Scale) */
+.hp-hero-title-cinematic {
+  font-size: clamp(2.15rem, 3.6vw, 3.2rem);
   font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-  margin: 0 0 20px;
+  line-height: 1.12;
+  letter-spacing: -0.7px;
+  margin: 0 0 14px 0;
   color: #ffffff;
   font-family: 'Space Grotesk', 'Inter', sans-serif;
   text-transform: uppercase;
 }
 
-.hp-hero-desc {
-  font-size: 15.5px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.72);
-  max-width: 520px;
-  margin: 0 0 34px;
+/* Dynamic Moving Color Animation */
+.hp-grad-animated {
+  background: linear-gradient(
+    90deg,
+    #c084fc 0%,
+    #f472b6 25%,
+    #38bdf8 50%,
+    #a855f7 75%,
+    #c084fc 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hpNeonGradientShift 4.5s linear infinite;
+  display: inline-block;
+  filter: drop-shadow(0 0 18px rgba(192, 132, 252, 0.45));
 }
 
-.hp-hero-actions {
+@keyframes hpNeonGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Concise Studio Description */
+.hp-hero-desc-cinematic {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 530px;
+  margin: 0 0 22px 0;
+}
+
+/* Action Buttons Row (+15% Scale, Brand Theme Cohesive) */
+.hp-hero-actions-cinematic {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 44px;
+  gap: 12px;
   flex-wrap: wrap;
+  margin-bottom: 22px;
 }
 
-/* Buttons */
-.hp-btn-primary {
+/* 1. WhatsApp Button (Rich Emerald Glowing) */
+.hp-btn-cinematic-whatsapp {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 30px;
-  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  gap: 8px;
+  padding: 11px 20px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: #ffffff;
-  font-size: 13.5px;
-  font-weight: 800;
-  text-decoration: none;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.5), 0 0 20px rgba(99, 102, 241, 0.3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  letter-spacing: 0.3px;
-}
-
-.hp-btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(168, 85, 247, 0.7), 0 0 30px rgba(99, 102, 241, 0.5);
-  color: #ffffff;
-}
-
-.hp-btn-outline {
-  display: inline-flex;
-  align-items: center;
-  padding: 14px 28px;
-  background: rgba(255, 255, 255, 0.04);
-  color: #ffffff;
-  font-size: 13.5px;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: all 0.3s ease;
-}
-
-.hp-btn-outline:hover {
-  background: rgba(168, 85, 247, 0.15);
-  border-color: rgba(168, 85, 247, 0.6);
-  transform: translateY(-2px);
-  color: #fdf4ff;
-}
-
-/* 3 Value Pillars */
-.hp-hero-pillars {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 18px 24px;
-  background: rgba(18, 7, 36, 0.7);
-  border: 1px solid rgba(168, 85, 247, 0.25);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  max-width: 500px;
-}
-
-.hp-pillar-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.hp-pillar-icon {
-  font-size: 20px;
-  flex-shrink: 0;
-}
-
-.hp-pillar-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-}
-
-.hp-pillar-text strong {
   font-size: 12px;
   font-weight: 800;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45), 0 0 12px rgba(168, 85, 247, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hp-btn-cinematic-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.7);
   color: #ffffff;
 }
 
-.hp-pillar-text span {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.6);
+/* 2. Build Package Button (Signature Mateen Auto Royal Purple Gradient) */
+.hp-btn-cinematic-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 50%, #9333ea 100%);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 22px rgba(168, 85, 247, 0.55), 0 0 16px rgba(124, 58, 237, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hp-pillar-divider {
-  width: 1px;
-  height: 28px;
-  background: rgba(255, 255, 255, 0.12);
+.hp-btn-cinematic-book:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(168, 85, 247, 0.78), 0 0 24px rgba(124, 58, 237, 0.5);
+  color: #ffffff;
 }
 
-/* Right Studio Visual Card */
-.hp-hero-right {
+/* 3. Protection Quiz / Packages Button (Electric Cyan Glass Theme) */
+.hp-btn-cinematic-quiz {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: rgba(56, 189, 248, 0.08);
+  color: #e0f2fe;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  border-radius: 9px;
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(56, 189, 248, 0.18);
+  transition: all 0.25s ease;
+}
+
+.hp-btn-cinematic-quiz:hover {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.85);
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.45);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Scroll To Explore Micro Hint (Theme Neon Gradient Accent) */
+.hp-hero-scroll-hint {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.hp-hero-scroll-hint span {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.hp-scroll-hint-bar {
+  width: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, #a855f7, #38bdf8, transparent);
+  border-radius: 2px;
+}
+
+/* ── 2. CARS & BRANDS WE SERVICE (PERFECTLY CENTERED CARD) ── */
+.hp-brands-section {
+  padding: 38px 0;
+  background: #05010a;
   position: relative;
-}
-
-.hp-hero-visual-card {
-  position: relative;
-  background: linear-gradient(135deg, rgba(24, 8, 48, 0.8) 0%, rgba(10, 3, 20, 0.95) 100%);
-  border: 1px solid rgba(168, 85, 247, 0.35);
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.25);
-  overflow: hidden;
-}
-
-.hp-neon-wall-sign {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 10px 20px;
-  margin-bottom: 16px;
-  background: rgba(147, 51, 234, 0.15);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-}
-
-.hp-neon-car-icon {
-  font-size: 20px;
-}
-
-.hp-neon-brand {
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color: #fdf4ff;
-  text-shadow: 0 0 14px rgba(192, 132, 252, 0.9), 0 0 24px rgba(168, 85, 247, 0.7);
-  font-family: 'Space Grotesk', sans-serif;
-}
-
-.hp-vertical-tagline {
-  position: absolute;
-  top: 30px;
-  right: 28px;
-  z-index: 5;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.75);
-  background: rgba(0, 0, 0, 0.6);
-  padding: 6px 12px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-}
-
-.hp-vertical-tagline span {
-  color: #c084fc;
-}
-
-.hp-hero-car-wrap {
-  position: relative;
-  width: 100%;
-  height: 320px;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-.hp-hero-car-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hp-hero-car-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(9, 2, 18, 0.7) 100%);
-}
-
-.hp-neon-bar {
-  position: absolute;
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, #c084fc, #60a5fa);
-  border-radius: 3px;
-  box-shadow: 0 0 15px #c084fc;
-}
-
-.top-neon {
-  top: 14px;
-  left: 24px;
-}
-
-.bottom-neon {
-  bottom: 14px;
-  right: 24px;
-}
-
-/* ── 2. CARS & BRANDS WE SERVICE (COMPACT CENTERED BOX) ── */
-.hp-brands-section {
-  padding: 20px 0 34px;
-  background: #05010a;
-  position: relative;
 }
 
 .hp-brands-box {
-  max-width: 840px;
+  max-width: 880px;
   margin: 0 auto;
-  background: linear-gradient(135deg, rgba(26, 10, 52, 0.82) 0%, rgba(12, 4, 26, 0.92) 100%);
-  border: 1px solid rgba(168, 85, 247, 0.32);
+  background: linear-gradient(135deg, rgba(26, 10, 52, 0.85) 0%, rgba(12, 4, 26, 0.94) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.35);
   border-radius: 20px;
-  padding: 22px 24px 20px;
+  padding: 22px 28px 20px;
   box-shadow: 
     0 20px 50px rgba(0, 0, 0, 0.9),
-    0 0 35px rgba(168, 85, 247, 0.16),
+    0 0 35px rgba(168, 85, 247, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 /* Subtle top glow highlight on box */
@@ -734,7 +735,7 @@
 
 /* ── 4. BEFORE & AFTER TRANSFORMATION ──────────────── */
 .hp-transform-section {
-  padding: 90px 0 100px;
+  padding: 50px 0 60px;
   background: radial-gradient(ellipse at 80% 50%, rgba(147, 51, 234, 0.16) 0%, transparent 60%),
               #05010a;
   border-bottom: 1px solid rgba(168, 85, 247, 0.2);
@@ -1028,21 +1029,30 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 18px #c084fc;
 }
 
-.hp-compare-neon-badge {
+.hp-compare-logo-badge {
   position: absolute;
-  bottom: 18px;
-  right: 18px;
-  background: rgba(18, 5, 34, 0.85);
-  border: 1px solid rgba(168, 85, 247, 0.45);
+  bottom: 16px;
+  right: 16px;
+  background: rgba(12, 3, 24, 0.88);
+  border: 1.5px solid rgba(168, 85, 247, 0.45);
   padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  color: #f0abfc;
-  text-shadow: 0 0 8px rgba(192, 132, 252, 0.7);
-  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), 0 0 20px rgba(168, 85, 247, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hp-compare-logo-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
 }
 
 /* Real-Time Live Status Bar */
@@ -1155,25 +1165,25 @@
 }
 
 .hp-author-avatar {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #a855f7, #6366f1);
-  color: #ffffff;
+  overflow: hidden;
+  border: 2px solid rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.35);
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13.5px;
-  font-weight: 800;
-  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+  background: #15082a;
 }
 
-.hp-avatar-purple {
-  background: linear-gradient(135deg, #ec4899, #8b5cf6);
-}
-
-.hp-avatar-blue {
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+.hp-author-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .hp-author-name {
@@ -1303,9 +1313,15 @@
 }
 
 @media (max-width: 992px) {
-  .hp-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .hp-hero-backdrop-media {
+    width: 100%;
+    opacity: 0.38;
+  }
+  .hp-hero-backdrop-overlay {
+    background: linear-gradient(180deg, rgba(5, 1, 10, 0.85) 0%, rgba(5, 1, 10, 0.98) 100%);
+  }
+  .hp-hero-cinematic-left {
+    max-width: 100%;
   }
   .hp-transform-layout {
     grid-template-columns: 1fr;
@@ -1324,8 +1340,21 @@
 }
 
 @media (max-width: 680px) {
-  .hp-hero-section {
-    padding: 60px 0 80px;
+  .hp-hero-cinematic-section {
+    min-height: auto;
+    padding: 28px 0 34px;
+  }
+  .hp-hero-actions-cinematic {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 8px;
+  }
+  .hp-btn-cinematic-whatsapp,
+  .hp-btn-cinematic-book,
+  .hp-btn-cinematic-quiz {
+    width: 100%;
+    justify-content: center;
   }
   .hp-services-grid-rich {
     grid-template-columns: 1fr;
@@ -1334,8 +1363,39 @@
   .hp-compare-box {
     height: 280px;
   }
-  .hp-hero-car-wrap {
-    height: 240px;
-  }
 }
 
+/* ── INSTAGRAM SHOWCASE ON HOMEPAGE ────────────────── */
+.hp-insta-showcase-section {
+  position: relative;
+  background-color: #05010a;
+  border-top: 1px solid rgba(168, 85, 247, 0.15);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+  overflow: hidden;
+}
+
+.hp-insta-backdrop {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 60px 0 65px;
+  position: relative;
+}
+
+.hp-insta-backdrop::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.22) 0%, rgba(0, 168, 255, 0.14) 45%, transparent 75%);
+  filter: blur(75px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hp-insta-backdrop .iw-cinematic-container {
+  margin: 0 auto;
+}
