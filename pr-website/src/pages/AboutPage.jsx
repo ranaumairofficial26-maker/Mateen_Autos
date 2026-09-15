@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import founderImg from '../assets/founder.jpg';
+import founderImg from '../assets/mateen-auto-nadeem-CEO.jpg.jpeg';
 import journeyCarImg from '../assets/journey-car.jpg';
 import logoImg from '../assets/logo.png';
 import Navbar from '../components/Navbar';
@@ -16,10 +16,10 @@ const navLinks = [
 ];
 
 const stats = [
-  { number: '37+',     from: 0,    to: 37,   suffix: '+', label: 'Years of\nExcellence' },
-  { number: '1000+',   from: 1000, to: 1999, suffix: '+', label: 'Happy\nClients' },
-  { number: 'PREMIUM', from: null, to: null, suffix: '',  label: 'Detailing\nServices' },
-  { number: '100%',    from: 100,  to: 99,   suffix: '%', label: 'Satisfaction\nFocused' },
+  { number: '37+',   from: 0,   to: 37,   suffix: '+', label: 'Years of\nExperience' },
+  { number: '1000+', from: 900, to: 1999, suffix: '+', label: 'Happy\nClients' },
+  { number: 'GLOBAL', from: null, to: null, suffix: '', label: 'International\nExperience' },
+  { number: '100%',  from: 100, to: 99,   suffix: '%', label: 'Satisfaction\nFocused' },
 ];
 
 /* ── ANIMATED STAT COMPONENT ────────────── */
@@ -72,28 +72,28 @@ function AnimatedStat({ stat }) {
 /* ── JOURNEY ─────────────────────────────── */
 const journey = [
   {
-    icon: '🎨',
-    year: '1987',
-    event: 'Denting & Painting Mastery',
-    desc: 'Started with passionate, high-precision traditional car denting and 2K oven paint refinishing in Lahore.',
+    icon: '🔧',
+    year: '1989',
+    event: 'Automotive Career Begins',
+    desc: 'Mr. Nadeem entered the automotive repair field, mastering denting, painting and scratch filling with hands-on precision.',
   },
   {
-    icon: '💉',
-    year: '2000',
-    event: 'First in Pakistan: Injection Filling',
-    desc: 'Pioneered signature hydraulic injection filling in Pakistan for flawless, factory-finish dent restoration.',
+    icon: '✈️',
+    year: '2000s',
+    event: 'International Experience — USA & Dubai',
+    desc: 'Gained professional exposure in the USA and Dubai, earning certificates associated with MG and Audi brand standards.',
   },
   {
-    icon: '🚗',
-    year: '2017',
-    event: 'Complete Auto Care Facility',
-    desc: 'Evolved into a comprehensive full-service car care workshop covering complete vehicle bodywork and care.',
+    icon: '🏢',
+    year: '2008',
+    event: 'Mateen Auto Established in Lahore',
+    desc: 'Founded Mateen Auto in Lahore, building a strong reputation through skilled workmanship, quality service and customer trust.',
   },
   {
     icon: '🛡️',
     year: '2026',
-    event: 'Premium PPF & Surface Armour',
-    desc: 'Launched high-grade Paint Protection Film (PPF), graphene ceramic shields & ultimate surface protection.',
+    event: 'Premium PPF & Complete Car Care',
+    desc: 'Expanded into high-grade PPF, graphene ceramic coating, detailing, wheel balancing & alignment — complete car care under one roof.',
   },
 ];
 
@@ -183,11 +183,11 @@ export default function AboutPage() {
 
             {/* LEFT: Text */}
             <div className="au-hero-left au-reveal-left">
-              <div className="au-section-label">About Nadeem</div>
+              <div className="au-section-label">About Mateen Auto</div>
 
               <h1 className="au-main-heading">
-                37 Years of Perfecting
-                <span className="blue">Every Panel.</span>
+                Automotive Excellence
+                <span className="blue">Since 1989.</span>
               </h1>
 
               {/* Tagline overlay */}
@@ -195,25 +195,25 @@ export default function AboutPage() {
                 display: 'inline-block',
                 marginBottom: '20px',
                 padding: '12px 16px',
-                border: '1px solid rgba(217, 70, 239, 0.3)',
+                border: '1px solid rgba(0, 168, 255, 0.3)',
                 borderRadius: '6px',
-                background: 'rgba(217, 70, 239, 0.08)',
+                background: 'rgba(0, 168, 255, 0.06)',
               }}>
                 <div style={{ fontSize: '11px', letterSpacing: '3px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
-                  FIRST IN PAKISTAN.
+                  EXPERIENCE SINCE 1989 ·
                 </div>
-                <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#f0abfc', fontWeight: 700, textTransform: 'uppercase' }}>
-                  STILL THE STANDARD.
+                <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#00a8ff', fontWeight: 700, textTransform: 'uppercase' }}>
+                  SERVING LAHORE SINCE 2008.
                 </div>
               </div>
 
               <p className="au-body-text">
-                With over 37 years of hands-on experience, Nadeem Denting &amp; Painting has been
-                Lahore's trusted name in professional car denting, painting and injection filling —
-                proudly the first workshop in Pakistan to introduce injection filling for flawless,
-                factory-finish dent repair. From minor scratches to major panel damage, our expert
-                craftsmanship restores every vehicle to its original shine, combining decades of
-                precision with genuine care for every car that comes through our doors.
+                <strong>Mateen Auto</strong> is a trusted automotive body repair and car care company based in Lahore, Pakistan.
+                Founded by <strong>Mr. Nadeem</strong>, our professional journey began in <strong>1989</strong> and we have been
+                serving Lahore since <strong>2008</strong>. With hands-on international experience from the <strong>USA and Dubai</strong> —
+                including professional certifications with <strong>MG and Audi</strong> — we combine decades of craftsmanship
+                with modern techniques in Denting, Painting, Scratch Filling, PPF, Coating, Detailing,
+                Accident Repair, and Complete Car Care Solutions.
               </p>
 
               {/* Stats - hover to animate */}
@@ -271,6 +271,128 @@ export default function AboutPage() {
             </p>
             <div className="au-quote-author">— NADEEM</div>
             <div className="au-quote-role">Founder, Mateen Auto</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUR MISSION SECTION ───────────────── */}
+      <section className="au-mission-section">
+        <div className="container">
+          <div className="au-journey-header au-reveal">
+            <div className="au-section-label" style={{ justifyContent: 'center', fontSize: '22px', letterSpacing: '4px' }}>
+              Our Mission
+            </div>
+            <h2 className="au-journey-title">Excellence in Every Detail</h2>
+            <p className="au-journey-subtitle">A commitment built over 37 years of professional experience across Pakistan, USA & Dubai.</p>
+          </div>
+
+          <div className="au-mission-inner">
+            <div className="au-mission-points au-reveal">
+
+              {/* Point 1 */}
+              <div className="au-mpoint">
+                <div className="au-mpoint-badge">
+                  <span className="au-mpoint-icon">🎯</span>
+                </div>
+                <div className="au-mpoint-body">
+                  <div className="au-mpoint-title">Our <span className="au-mpoint-grad">Purpose</span></div>
+                  <p className="au-mpoint-text">
+                    At Mateen Auto, our mission is to provide{' '}
+                    <span className="au-mhi-blue">reliable, professional, and high-quality</span>{' '}
+                    automotive body repair and car care services — while delivering the{' '}
+                    <span className="au-mhi-blue">highest level of customer satisfaction</span>{' '}
+                    on every single job.
+                  </p>
+                </div>
+              </div>
+
+              {/* Point 2 */}
+              <div className="au-mpoint">
+                <div className="au-mpoint-badge au-mpoint-badge--purple">
+                  <span className="au-mpoint-icon">🌍</span>
+                </div>
+                <div className="au-mpoint-body">
+                  <div className="au-mpoint-title">Our <span className="au-mpoint-grad--purple">Legacy</span></div>
+                  <p className="au-mpoint-text">
+                    With experience dating back to{' '}
+                    <span className="au-mhi-purple">1989</span>{' '}
+                    and a strong presence in Lahore since{' '}
+                    <span className="au-mhi-purple">2008</span>,
+                    we are committed to combining{' '}
+                    <span className="au-mhi-purple">traditional craftsmanship</span>{' '}
+                    with modern techniques and international experience from the{' '}
+                    <span className="au-mhi-purple">USA and Dubai</span>.
+                  </p>
+                </div>
+              </div>
+
+              {/* Point 3 */}
+              <div className="au-mpoint">
+                <div className="au-mpoint-badge au-mpoint-badge--teal">
+                  <span className="au-mpoint-icon">🔩</span>
+                </div>
+                <div className="au-mpoint-body">
+                  <div className="au-mpoint-title">Our <span className="au-mpoint-grad--teal">Goal</span></div>
+                  <p className="au-mpoint-text">
+                    Our goal is to make{' '}
+                    <span className="au-mhi-teal">Scratch Filling, Dry Denting, Denting &amp; Painting,
+                    Accident Repair, PPF, Coating, Detailing</span>{' '}
+                    and <span className="au-mhi-teal">Complete Car Care</span>{' '}
+                    more professional, precise, and accessible for every customer in Lahore and beyond.
+                  </p>
+                </div>
+              </div>
+
+              {/* Point 4 */}
+              <div className="au-mpoint">
+                <div className="au-mpoint-badge au-mpoint-badge--gold">
+                  <span className="au-mpoint-icon">⭐</span>
+                </div>
+                <div className="au-mpoint-body">
+                  <div className="au-mpoint-title">Our <span className="au-mpoint-grad--gold">Promise</span></div>
+                  <p className="au-mpoint-text">
+                    We believe every vehicle deserves{' '}
+                    <span className="au-mhi-gold">expert care, attention to detail, and a quality finish</span>.
+                    That is why we continuously focus on{' '}
+                    <span className="au-mhi-gold">quality workmanship, honest service,
+                    professional standards,</span>{' '}
+                    and lasting <span className="au-mhi-gold">customer trust</span>.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div className="au-mission-cards">
+              <div className="au-mission-card au-reveal-scale au-delay-1">
+                <div className="au-mission-card-icon">🔧</div>
+                <div className="au-mission-card-title">Quality Workmanship</div>
+                <div className="au-mission-card-text">Expert care and precision on every vehicle — from minor scratches to full accident repair.</div>
+              </div>
+              <div className="au-mission-card au-reveal-scale au-delay-2">
+                <div className="au-mission-card-icon">🤝</div>
+                <div className="au-mission-card-title">Honest Service</div>
+                <div className="au-mission-card-text">Transparent, professional standards built on customer trust since 1989.</div>
+              </div>
+              <div className="au-mission-card au-reveal-scale au-delay-3">
+                <div className="au-mission-card-icon">🌍</div>
+                <div className="au-mission-card-title">International Standards</div>
+                <div className="au-mission-card-text">Techniques refined through professional experience in Pakistan, USA & Dubai.</div>
+              </div>
+              <div className="au-mission-card au-reveal-scale au-delay-4">
+                <div className="au-mission-card-icon">🛡️</div>
+                <div className="au-mission-card-title">Complete Car Care</div>
+                <div className="au-mission-card-text">PPF, Coating, Detailing, Wheel Balancing & Alignment — everything under one roof.</div>
+              </div>
+            </div>
+
+            <div className="au-mission-tagline-box au-reveal">
+              <div className="au-mission-quote">
+                &ldquo;To protect your car, restore its beauty, and deliver workmanship you can trust.&rdquo;
+              </div>
+              <div className="au-mission-quote-sub">Mateen Auto — Experience Since 1989. Excellence in Every Detail.</div>
+            </div>
           </div>
         </div>
       </section>

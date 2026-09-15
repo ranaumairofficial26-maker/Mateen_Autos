@@ -5,8 +5,8 @@ import '../styles/AboutPage.css';
 
 const navLinks = [
   { label: 'HOME', href: '/' },
-  { label: 'SERVICES', href: '#services' },
-  { label: 'INSTAGRAM WORK', href: '/' },
+  { label: 'SERVICES', href: '/services' },
+  { label: 'INSTAGRAM WORK', href: '/instagram-work' },
   { label: 'ABOUT US', href: '/about' },
 ];
 
@@ -14,7 +14,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('INSTAGRAM WORK');
+  const [activeTab, setActiveTab] = useState('HOME');
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -24,10 +24,14 @@ export default function Navbar() {
   useEffect(() => {
     if (location.pathname === '/about') {
       setActiveTab('ABOUT US');
+    } else if (location.pathname === '/services') {
+      setActiveTab('SERVICES');
+    } else if (location.pathname === '/instagram-work') {
+      setActiveTab('INSTAGRAM WORK');
     } else if (location.pathname === '/contact') {
       setActiveTab('CONTACT US');
     } else {
-      setActiveTab('INSTAGRAM WORK');
+      setActiveTab('HOME');
     }
   }, [location.pathname]);
 
@@ -35,27 +39,8 @@ export default function Navbar() {
     e.preventDefault();
     setMenuOpen(false);
     setActiveTab(link.label);
-
-    if (link.href === '#services') {
-      if (location.pathname !== '/') {
-        navigate('/');
-        setTimeout(() => {
-          document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-        }, 150);
-      } else {
-        document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else if (link.href === '/') {
-      if (location.pathname === '/') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        navigate('/');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    } else {
-      navigate(link.href);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    navigate(link.href);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const isPurple = true;
@@ -103,7 +88,7 @@ export default function Navbar() {
           <div className="au-navbar-inner">
 
             {/* Logo */}
-            <a className="au-logo" href="/" onClick={(e) => handleNav(e, { label: 'INSTAGRAM WORK', href: '/' })}>
+            <a className="au-logo" href="/" onClick={(e) => handleNav(e, { label: 'HOME', href: '/' })}>
               <div className="au-logo-img-wrap">
                 <img src={logoImg} alt="Mateen Auto Logo" />
               </div>

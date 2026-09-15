@@ -1,22 +1,46 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import InstagramWorkPage from './pages/InstagramWorkPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
 import WhatsAppButton from './components/WhatsAppButton';
 import CarCursorTrail from './components/CarCursorTrail';
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const InstagramWorkPage = lazy(() => import('./pages/InstagramWorkPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+
+// Lightweight fallback loader
+function PageLoader() {
+  return (
+    <div style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: '#05010a',
+      color: '#c084fc',
+      fontSize: '14px',
+      fontFamily: 'sans-serif'
+    }}>
+      Loading...
+    </div>
+  );
+}
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<InstagramWorkPage />} />
-        <Route path="/instagram-work" element={<InstagramWorkPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        {/* Fallback route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/instagram-work" element={<InstagramWorkPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          {/* Fallback route */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Suspense>
       <WhatsAppButton />
       <CarCursorTrail />
     </BrowserRouter>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logoImg from '../assets/logo.png';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -9,8 +9,7 @@ import '../styles/ContactPage.css';
 /* ── NAV LINKS ────────────────────────────── */
 const navLinks = [
   { label: 'HOME', href: '/' },
-  { label: 'SERVICES', href: '/#services' },
-  { label: 'INSTAGRAM WORK', href: '/#portfolio' },
+  { label: 'SERVICES', href: '/services' },
   { label: 'ABOUT US', href: '/about' },
 ];
 
@@ -24,20 +23,22 @@ const branches = [
     address: 'Near Chauburji Chowk, Multan Road / Bahawalpur Road, Lahore',
     phone: '+92 323 4500012',
     hours: 'Mon – Sat: 10:00 AM – 8:00 PM',
-    mapEmbed: 'https://maps.google.com/maps?q=Mateen%20Auto%20Chauburji%20Lahore&t=&z=16&ie=UTF8&iwloc=&output=embed',
-    directLink: 'https://maps.google.com/?q=Mateen+Auto+Chauburji+Lahore',
+    mapUrl: 'https://maps.google.com/maps?q=Mateen%20Auto%20Workshop%20Chauburji%20Lahore&t=&z=16&ie=UTF8&iwloc=&output=embed',
+    directionUrl: 'https://maps.app.goo.gl/Zq3M319j6U6f7XyT6',
+    specialties: ['Injection Dent Filling', 'PDR Paintless Repair', '2K Oven Paint', 'Chassis Alignment'],
   },
   {
     id: 'dha',
-    name: 'Mateen Autos (DHA Branch)',
-    subtitle: 'Car Care, PPF & Detailing Center',
-    tag: 'DHA BRANCH',
-    address: 'Mateen Autos Dha branch, F9RG+Q73, Link 2 Super Town, Super Town, Lahore, Pakistan',
-    phone: '+92 310 4253333',
+    name: 'Mateen Auto (DHA Branch)',
+    subtitle: 'Luxury Detailing & Paint Protection Studio',
+    tag: 'DHA STUDIO',
+    address: 'Link 2 Super Town, Super Town, Lahore, Punjab 54810',
+    phone: '+92 323 4500012',
     hours: 'Mon – Sat: 10:00 AM – 8:00 PM',
-    mapEmbed: 'https://maps.google.com/maps?q=Mateen%20Autos%20Dha%20branch%2C%20F9RG%2BQ73%2C%20Link%202%20Super%20Town%2C%20Super%20Town%2C%20Lahore&t=&z=16&ie=UTF8&iwloc=&output=embed',
-    directLink: 'https://maps.google.com/?q=Mateen+Autos+Dha+branch,+F9RG%2BQ73,+Link+2+Super+Town,+Super+Town,+Lahore',
-  },
+    mapUrl: 'https://maps.google.com/maps?q=Link%202%20Super%20Town%20Lahore&t=&z=16&ie=UTF8&iwloc=&output=embed',
+    directionUrl: 'https://maps.google.com/?q=Link+2+Super+Town+Lahore',
+    specialties: ['Self-Healing PPF Wrapping', '9H Ceramic Coating', 'Interior Steam Spa', 'Multi-Stage Detailing'],
+  }
 ];
 
 /* ── FAQS ─────────────────────────────────── */
@@ -76,6 +77,7 @@ const workshopServices = [
 
 export default function ContactPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [selectedBranchMap, setSelectedBranchMap] = useState(branches[0]);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -87,6 +89,21 @@ export default function ContactPage() {
     carModel: '',
     message: '',
   });
+
+  // Check URL query parameters for pre-selected service
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam) {
+      // Find matching service or set directly
+      const match = workshopServices.find(s => s.name.toLowerCase().includes(serviceParam.toLowerCase()) || serviceParam.toLowerCase().includes(s.name.toLowerCase()));
+      if (match) {
+        setFormData(prev => ({ ...prev, service: match.name }));
+      } else {
+        setFormData(prev => ({ ...prev, service: serviceParam }));
+      }
+    }
+  }, [location.search]);
 
   // Scroll reveal setup
   useEffect(() => {

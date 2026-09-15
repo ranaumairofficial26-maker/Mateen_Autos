@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import instaHeroBg from '../assets/insta-hero-bg.jpg';
 import '../styles/InstagramWorkPage.css';
 
-const INSTAGRAM_URL = 'https://www.instagram.com/mateen.auto1?stkn=emkwZDd1OHpna3Ew';
+const INSTAGRAM_URL = 'https://www.instagram.com/mateenautoofficial/';
 
 export default function InstagramWorkPage() {
   useEffect(() => {
@@ -83,10 +83,127 @@ export default function InstagramWorkPage() {
         </div>
       </section>
 
+      {/* ── FEATURED REELS SECTION ──────────────── */}
+      <section className="iw-reels-section">
+        <div className="iw-reels-container">
+
+          {/* Section Header */}
+          <div className="iw-reels-header">
+            <div className="iw-reels-label">
+              <span className="iw-label-dot"></span>
+              <span className="iw-label-text">Featured Posts</span>
+              <span className="iw-label-dot"></span>
+            </div>
+            <h2 className="iw-reels-title">
+              Our Work —{' '}
+              <span className="iw-title-grad">Direct from Instagram</span>
+            </h2>
+            <p className="iw-reels-sub">
+              Real results, real clients. Watch our latest reels and transformations — embedded live from our Instagram.
+            </p>
+          </div>
+
+          {/* 3 Embed Cards */}
+          <div className="iw-reels-grid">
+
+            {/* Card 1 — Rehan Tariq */}
+            <div className="iw-reel-card">
+              <div className="iw-reel-embed-wrap">
+                <iframe
+                  src="https://www.instagram.com/p/DaVS8scPXcN/embed/"
+                  className="iw-reel-iframe"
+                  allowFullScreen
+                  scrolling="no"
+                  frameBorder="0"
+                  loading="lazy"
+                  title="Instagram Reel — Rehan Tariq"
+                />
+              </div>
+              <div className="iw-reel-footer">
+                <div className="iw-reel-num">01</div>
+                <div className="iw-reel-info">
+                  <span className="iw-reel-meta-type">🎬 Reel</span>
+                  <span className="iw-reel-meta-name">Rehan Tariq</span>
+                </div>
+                <a href="https://www.instagram.com/p/DaVS8scPXcN/" target="_blank" rel="noreferrer" className="iw-reel-link">
+                  Open Post ↗
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2 — Rehan Tariq */}
+            <div className="iw-reel-card">
+              <div className="iw-reel-embed-wrap">
+                <iframe
+                  src="https://www.instagram.com/p/DaQM31LPUAY/embed/"
+                  className="iw-reel-iframe"
+                  allowFullScreen
+                  scrolling="no"
+                  frameBorder="0"
+                  loading="lazy"
+                  title="Instagram Reel — Rehan Tariq 2"
+                />
+              </div>
+              <div className="iw-reel-footer">
+                <div className="iw-reel-num">02</div>
+                <div className="iw-reel-info">
+                  <span className="iw-reel-meta-type">🎬 Reel</span>
+                  <span className="iw-reel-meta-name">Rehan Tariq</span>
+                </div>
+                <a href="https://www.instagram.com/p/DaQM31LPUAY/" target="_blank" rel="noreferrer" className="iw-reel-link">
+                  Open Post ↗
+                </a>
+              </div>
+            </div>
+
+            {/* Card 3 — Before & After */}
+            <div className="iw-reel-card iw-reel-card--special">
+              <div className="iw-reel-embed-wrap">
+                <iframe
+                  src="https://www.instagram.com/p/DZ9o1YWP7_f/embed/"
+                  className="iw-reel-iframe"
+                  allowFullScreen
+                  scrolling="no"
+                  frameBorder="0"
+                  loading="lazy"
+                  title="Instagram Before & After"
+                />
+              </div>
+              <div className="iw-reel-footer iw-reel-footer--special">
+                <div className="iw-reel-num iw-reel-num--purple">03</div>
+                <div className="iw-reel-info">
+                  <span className="iw-reel-meta-type">✨ Transformation</span>
+                  <span className="iw-reel-meta-name iw-meta-purple">Before &amp; After</span>
+                </div>
+                <a href="https://www.instagram.com/p/DZ9o1YWP7_f/" target="_blank" rel="noreferrer" className="iw-reel-link iw-reel-link--purple">
+                  Open Post ↗
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Follow CTA */}
+          <div className="iw-reels-cta">
+            <div className="iw-reels-cta-text">Want to see more of our work?</div>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="iw-reels-follow-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+              Follow @mateenautoofficial on Instagram
+            </a>
+          </div>
+
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
 }
+
 
 
 

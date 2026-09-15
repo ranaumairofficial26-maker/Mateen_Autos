@@ -86,7 +86,9 @@ export default function Footer() {
           <div className="au-footer-col au-reveal au-delay-2">
             <h4 className="au-footer-heading">Pages</h4>
             <ul className="au-footer-links">
-              <li><a href="/" onClick={(e) => handleNav(e, '/')}>Instagram Work</a></li>
+              <li><a href="/" onClick={(e) => handleNav(e, '/')}>Home</a></li>
+              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Services</a></li>
+              <li><a href="/instagram-work" onClick={(e) => handleNav(e, '/instagram-work')}>Instagram Work</a></li>
               <li><a href="/about" onClick={(e) => handleNav(e, '/about')}>About Us</a></li>
               <li><a href="/contact" onClick={(e) => handleNav(e, '/contact')}>Contact Us</a></li>
             </ul>
@@ -96,28 +98,41 @@ export default function Footer() {
           <div className="au-footer-col au-reveal au-delay-3">
             <h4 className="au-footer-heading">Our Services</h4>
             <ul className="au-footer-links">
-              <li><a href="/" onClick={(e) => handleNav(e, '/')}>Injection Filling (First in PK)</a></li>
-              <li><a href="/" onClick={(e) => handleNav(e, '/')}>Paintless Dent Repair (PDR)</a></li>
-              <li><a href="/" onClick={(e) => handleNav(e, '/')}>Paint Protection Film (PPF)</a></li>
-              <li><a href="/" onClick={(e) => handleNav(e, '/')}>Ceramic &amp; Graphene Coating</a></li>
-              <li><a href="/" onClick={(e) => handleNav(e, '/')}>Oven-Baked Body Paint</a></li>
+              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>PPF (Paint Protection Film)</a></li>
+              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Car Accident Repair</a></li>
+              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Denting &amp; Painting (2K)</a></li>
+              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Dry Denting (PDR)</a></li>
+              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>9H Ceramic &amp; Graphene</a></li>
             </ul>
           </div>
 
           {/* Col 4: Branches */}
           <div className="au-footer-col au-reveal au-delay-4">
             <h4 className="au-footer-heading">Our Branches</h4>
-            <div className="au-footer-branch-item">
-              <div className="au-footer-branch-badge">Main Branch</div>
+            <a
+              href="https://maps.app.goo.gl/Zq3M319j6U6f7XyT6"
+              target="_blank"
+              rel="noreferrer"
+              className="au-footer-branch-item"
+              title="Open Chauburji Branch on Google Maps ↗"
+            >
+              <div className="au-footer-branch-badge">Main Branch • Get Directions ↗</div>
               <div className="au-footer-branch-name">Chauburji, Lahore</div>
               <div className="au-footer-branch-text">Near Chauburji Chowk, Multan Road</div>
-            </div>
+            </a>
 
-            <div className="au-footer-branch-item" style={{ marginTop: '14px' }}>
-              <div className="au-footer-branch-badge">DHA Branch</div>
+            <a
+              href="https://maps.google.com/?q=Link+2+Super+Town+Lahore"
+              target="_blank"
+              rel="noreferrer"
+              className="au-footer-branch-item"
+              style={{ marginTop: '12px' }}
+              title="Open DHA Branch on Google Maps ↗"
+            >
+              <div className="au-footer-branch-badge">DHA Studio • Get Directions ↗</div>
               <div className="au-footer-branch-name">DHA Branch, Lahore</div>
               <div className="au-footer-branch-text">Link 2 Super Town, Super Town, Lahore</div>
-            </div>
+            </a>
 
             <div className="au-footer-timing">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={brandColor} strokeWidth="2">

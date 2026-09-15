@@ -40,8 +40,8 @@ export default function CarCursorTrail() {
       const target = e.target;
       if (
         target &&
-        (target.closest('a, button, input, select, textarea, [role="button"], .btn, .au-branch-card, .cp-branch-box, .iw-story-item, .au-timeline-item, .au-founder-wrap') ||
-          window.getComputedStyle(target).cursor === 'pointer')
+        target.closest &&
+        target.closest('a, button, input, select, textarea, [role="button"], .btn, .au-branch-card, .cp-branch-box, .iw-story-item, .au-timeline-item, .au-founder-wrap, .iw-reel-card, .sp-card, [style*="cursor: pointer"], [style*="cursor:pointer"]')
       ) {
         setIsHovered(true);
       } else {
