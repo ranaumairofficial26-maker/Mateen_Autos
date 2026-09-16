@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import founderImg from '../assets/mateen-auto-nadeem-CEO.jpg.jpeg';
+import founderImg from '../assets/mateen-auto-nadeem-CEO.jpg';
 import journeyCarImg from '../assets/journey-car.jpg';
 import logoImg from '../assets/logo.png';
 import Navbar from '../components/Navbar';
@@ -16,10 +16,10 @@ const navLinks = [
 ];
 
 const stats = [
-  { number: '37+',   from: 0,   to: 37,   suffix: '+', label: 'Years of\nExperience' },
-  { number: '1000+', from: 900, to: 1999, suffix: '+', label: 'Happy\nClients' },
-  { number: 'GLOBAL', from: null, to: null, suffix: '', label: 'International\nExperience' },
-  { number: '100%',  from: 100, to: 99,   suffix: '%', label: 'Satisfaction\nFocused' },
+  { number: '37+',     from: 0,    to: 37,    suffix: '+', label: 'Years of\nExperience' },
+  { number: '10,000+', from: 8500, to: 10000, suffix: '+', label: 'Happy\nClients', formatComma: true },
+  { number: 'GLOBAL',  from: null, to: null,  suffix: '',  label: 'International\nExperience' },
+  { number: '100%',    from: 100,  to: 99,    suffix: '%', label: 'Satisfaction\nFocused' },
 ];
 
 /* ── ANIMATED STAT COMPONENT ────────────── */
@@ -40,9 +40,10 @@ function AnimatedStat({ stat }) {
       const progress = Math.min(elapsed / duration, 1);
       const ease = 1 - Math.pow(1 - progress, 4); // easeOutQuart
       const current = Math.round(from + ease * diff);
-      setDisplay(current + stat.suffix);
+      const valStr = stat.formatComma ? current.toLocaleString() : current;
+      setDisplay(valStr + stat.suffix);
       if (progress < 1) rafRef.current = requestAnimationFrame(count);
-      else setDisplay(to + stat.suffix);
+      else setDisplay((stat.formatComma ? to.toLocaleString() : to) + stat.suffix);
     };
     rafRef.current = requestAnimationFrame(count);
   }, [stat]);
@@ -74,20 +75,20 @@ const journey = [
   {
     icon: '🔧',
     year: '1989',
-    event: 'Automotive Career Begins',
-    desc: 'Mr. Nadeem entered the automotive repair field, mastering denting, painting and scratch filling with hands-on precision.',
+    event: 'Craftsmanship Career Begins',
+    desc: 'Muhammad Nadeem entered the automotive repair industry, mastering traditional denting, painting, and precision scratch filling.',
   },
   {
     icon: '✈️',
     year: '2000s',
-    event: 'International Experience — USA & Dubai',
-    desc: 'Gained professional exposure in the USA and Dubai, earning certificates associated with MG and Audi brand standards.',
+    event: 'International Experience — Dubai',
+    desc: 'Gained elite professional experience in Dubai, mastering international automotive standards with certifications associated with BMW, MG and Audi.',
   },
   {
     icon: '🏢',
     year: '2008',
     event: 'Mateen Auto Established in Lahore',
-    desc: 'Founded Mateen Auto in Lahore, building a strong reputation through skilled workmanship, quality service and customer trust.',
+    desc: 'Founded Mateen Auto in Lahore, building a strong reputation through skilled workmanship, quality service, and lasting customer trust.',
   },
   {
     icon: '🛡️',
@@ -209,9 +210,9 @@ export default function AboutPage() {
 
               <p className="au-body-text">
                 <strong>Mateen Auto</strong> is a trusted automotive body repair and car care company based in Lahore, Pakistan.
-                Founded by <strong>Mr. Nadeem</strong>, our professional journey began in <strong>1989</strong> and we have been
-                serving Lahore since <strong>2008</strong>. With hands-on international experience from the <strong>USA and Dubai</strong> —
-                including professional certifications with <strong>MG and Audi</strong> — we combine decades of craftsmanship
+                Founded by <strong>Muhammad Nadeem</strong>, our professional journey began in <strong>1989</strong> and we have been
+                proudly serving Lahore since <strong>2008</strong>. With hands-on international experience from <strong>Dubai</strong> —
+                including professional certifications associated with <strong>BMW, Audi, and MG</strong> — we combine decades of craftsmanship
                 with modern techniques in Denting, Painting, Scratch Filling, PPF, Coating, Detailing,
                 Accident Repair, and Complete Car Care Solutions.
               </p>
@@ -249,13 +250,13 @@ export default function AboutPage() {
                 {/* Founder image - user's actual photo */}
                 <img
                   src={founderImg}
-                  alt="Nadeem – Founder & CEO"
+                  alt="Muhammad Nadeem – Founder & CEO, Mateen Auto"
                   className="au-founder-img"
                 />
 
                 {/* Signature */}
                 <div className="au-founder-caption">
-                  <div className="au-founder-sig">Nadeem</div>
+                  <div className="au-founder-sig">Muhammad Nadeem</div>
                   <div className="au-founder-title">Founder & CEO</div>
                   <div className="au-founder-company">Mateen Auto</div>
                 </div>
@@ -269,8 +270,8 @@ export default function AboutPage() {
             <p className="au-quote-text">
               "It's not just about cars, it's about the people who love them."
             </p>
-            <div className="au-quote-author">— NADEEM</div>
-            <div className="au-quote-role">Founder, Mateen Auto</div>
+            <div className="au-quote-author">— MUHAMMAD NADEEM</div>
+            <div className="au-quote-role">Founder & CEO, Mateen Auto</div>
           </div>
         </div>
       </section>
@@ -279,24 +280,40 @@ export default function AboutPage() {
       <section className="au-mission-section">
         <div className="container">
           <div className="au-journey-header au-reveal">
-            <div className="au-section-label" style={{ justifyContent: 'center', fontSize: '22px', letterSpacing: '4px' }}>
-              Our Mission
+            <div className="au-mission-pill-badge">
+              <span className="au-mission-pill-dot"></span>
+              <span>CORE VALUES &amp; COMMITMENT</span>
             </div>
-            <h2 className="au-journey-title">Excellence in Every Detail</h2>
-            <p className="au-journey-subtitle">A commitment built over 37 years of professional experience across Pakistan, USA & Dubai.</p>
+            <h2 className="au-mission-main-title">
+              <span className="au-mission-pre-title">OUR MISSION</span>
+              <span className="au-mission-title-grad">EXCELLENCE IN EVERY DETAIL</span>
+            </h2>
+            <p className="au-mission-main-subtitle">
+              A commitment built over 37 years of professional craftsmanship across Pakistan &amp; Dubai.
+            </p>
           </div>
 
           <div className="au-mission-inner">
-            <div className="au-mission-points au-reveal">
+            {/* 4 Premium Animated Feature Boxes (2x2 Luxury Grid) */}
+            <div className="au-mission-grid-boxes au-reveal">
 
-              {/* Point 1 */}
-              <div className="au-mpoint">
-                <div className="au-mpoint-badge">
-                  <span className="au-mpoint-icon">🎯</span>
+              {/* Box 1: Our Purpose */}
+              <div className="au-mbox au-mbox--cyan">
+                <div className="au-mbox-ambient-glow au-mglow--cyan"></div>
+                <div className="au-mbox-header">
+                  <div className="au-mbox-icon-wrap au-mbox-icon--cyan">
+                    <span className="au-mbox-icon">🎯</span>
+                  </div>
+                  <div className="au-mbox-meta">
+                    <span className="au-mbox-num">01</span>
+                    <span className="au-mbox-tag au-mtag--cyan">PURPOSE</span>
+                  </div>
                 </div>
-                <div className="au-mpoint-body">
-                  <div className="au-mpoint-title">Our <span className="au-mpoint-grad">Purpose</span></div>
-                  <p className="au-mpoint-text">
+                <div className="au-mbox-content">
+                  <h3 className="au-mbox-title">
+                    OUR <span className="au-mgrad-cyan">PURPOSE</span>
+                  </h3>
+                  <p className="au-mbox-text">
                     At Mateen Auto, our mission is to provide{' '}
                     <span className="au-mhi-blue">reliable, professional, and high-quality</span>{' '}
                     automotive body repair and car care services — while delivering the{' '}
@@ -304,36 +321,56 @@ export default function AboutPage() {
                     on every single job.
                   </p>
                 </div>
+                <div className="au-mbox-footer-bar au-mbar--cyan"></div>
               </div>
 
-              {/* Point 2 */}
-              <div className="au-mpoint">
-                <div className="au-mpoint-badge au-mpoint-badge--purple">
-                  <span className="au-mpoint-icon">🌍</span>
+              {/* Box 2: Our Legacy */}
+              <div className="au-mbox au-mbox--purple">
+                <div className="au-mbox-ambient-glow au-mglow--purple"></div>
+                <div className="au-mbox-header">
+                  <div className="au-mbox-icon-wrap au-mbox-icon--purple">
+                    <span className="au-mbox-icon">🌍</span>
+                  </div>
+                  <div className="au-mbox-meta">
+                    <span className="au-mbox-num">02</span>
+                    <span className="au-mbox-tag au-mtag--purple">LEGACY</span>
+                  </div>
                 </div>
-                <div className="au-mpoint-body">
-                  <div className="au-mpoint-title">Our <span className="au-mpoint-grad--purple">Legacy</span></div>
-                  <p className="au-mpoint-text">
+                <div className="au-mbox-content">
+                  <h3 className="au-mbox-title">
+                    OUR <span className="au-mgrad-purple">LEGACY</span>
+                  </h3>
+                  <p className="au-mbox-text">
                     With experience dating back to{' '}
                     <span className="au-mhi-purple">1989</span>{' '}
                     and a strong presence in Lahore since{' '}
                     <span className="au-mhi-purple">2008</span>,
                     we are committed to combining{' '}
                     <span className="au-mhi-purple">traditional craftsmanship</span>{' '}
-                    with modern techniques and international experience from the{' '}
-                    <span className="au-mhi-purple">USA and Dubai</span>.
+                    with modern techniques and international experience from{' '}
+                    <span className="au-mhi-purple">Dubai</span>.
                   </p>
                 </div>
+                <div className="au-mbox-footer-bar au-mbar--purple"></div>
               </div>
 
-              {/* Point 3 */}
-              <div className="au-mpoint">
-                <div className="au-mpoint-badge au-mpoint-badge--teal">
-                  <span className="au-mpoint-icon">🔩</span>
+              {/* Box 3: Our Goal */}
+              <div className="au-mbox au-mbox--teal">
+                <div className="au-mbox-ambient-glow au-mglow--teal"></div>
+                <div className="au-mbox-header">
+                  <div className="au-mbox-icon-wrap au-mbox-icon--teal">
+                    <span className="au-mbox-icon">🔩</span>
+                  </div>
+                  <div className="au-mbox-meta">
+                    <span className="au-mbox-num">03</span>
+                    <span className="au-mbox-tag au-mtag--teal">GOAL</span>
+                  </div>
                 </div>
-                <div className="au-mpoint-body">
-                  <div className="au-mpoint-title">Our <span className="au-mpoint-grad--teal">Goal</span></div>
-                  <p className="au-mpoint-text">
+                <div className="au-mbox-content">
+                  <h3 className="au-mbox-title">
+                    OUR <span className="au-mgrad-teal">GOAL</span>
+                  </h3>
+                  <p className="au-mbox-text">
                     Our goal is to make{' '}
                     <span className="au-mhi-teal">Scratch Filling, Dry Denting, Denting &amp; Painting,
                     Accident Repair, PPF, Coating, Detailing</span>{' '}
@@ -341,16 +378,26 @@ export default function AboutPage() {
                     more professional, precise, and accessible for every customer in Lahore and beyond.
                   </p>
                 </div>
+                <div className="au-mbox-footer-bar au-mbar--teal"></div>
               </div>
 
-              {/* Point 4 */}
-              <div className="au-mpoint">
-                <div className="au-mpoint-badge au-mpoint-badge--gold">
-                  <span className="au-mpoint-icon">⭐</span>
+              {/* Box 4: Our Promise */}
+              <div className="au-mbox au-mbox--gold">
+                <div className="au-mbox-ambient-glow au-mglow--gold"></div>
+                <div className="au-mbox-header">
+                  <div className="au-mbox-icon-wrap au-mbox-icon--gold">
+                    <span className="au-mbox-icon">⭐</span>
+                  </div>
+                  <div className="au-mbox-meta">
+                    <span className="au-mbox-num">04</span>
+                    <span className="au-mbox-tag au-mtag--gold">PROMISE</span>
+                  </div>
                 </div>
-                <div className="au-mpoint-body">
-                  <div className="au-mpoint-title">Our <span className="au-mpoint-grad--gold">Promise</span></div>
-                  <p className="au-mpoint-text">
+                <div className="au-mbox-content">
+                  <h3 className="au-mbox-title">
+                    OUR <span className="au-mgrad-gold">PROMISE</span>
+                  </h3>
+                  <p className="au-mbox-text">
                     We believe every vehicle deserves{' '}
                     <span className="au-mhi-gold">expert care, attention to detail, and a quality finish</span>.
                     That is why we continuously focus on{' '}
@@ -359,6 +406,7 @@ export default function AboutPage() {
                     and lasting <span className="au-mhi-gold">customer trust</span>.
                   </p>
                 </div>
+                <div className="au-mbox-footer-bar au-mbar--gold"></div>
               </div>
 
             </div>
@@ -378,7 +426,7 @@ export default function AboutPage() {
               <div className="au-mission-card au-reveal-scale au-delay-3">
                 <div className="au-mission-card-icon">🌍</div>
                 <div className="au-mission-card-title">International Standards</div>
-                <div className="au-mission-card-text">Techniques refined through professional experience in Pakistan, USA & Dubai.</div>
+                <div className="au-mission-card-text">Techniques refined through decades of craftsmanship and international experience in Dubai.</div>
               </div>
               <div className="au-mission-card au-reveal-scale au-delay-4">
                 <div className="au-mission-card-icon">🛡️</div>

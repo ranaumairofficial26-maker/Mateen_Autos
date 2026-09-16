@@ -347,7 +347,7 @@ export default function ServicesPage() {
             </div>
             <h2 className="sp-pillars-title">UNCOMPROMISING PRECISION STANDARDS</h2>
             <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '13.5px', margin: 0 }}>
-              Combining experience since 1989 with international expertise from USA & Dubai, and professional certifications with MG & Audi.
+              Combining experience since 1989 with international expertise from Dubai, and professional brand certifications with BMW, MG & Audi.
             </p>
           </div>
 
@@ -355,12 +355,12 @@ export default function ServicesPage() {
             <div className="sp-pillar-box">
               <div className="sp-pillar-icon">🏆</div>
               <h4 className="sp-pillar-name">Experience Since 1989</h4>
-              <p className="sp-pillar-desc">Over 37 years of hands-on automotive repair expertise under master craftsman Mr. Nadeem.</p>
+              <p className="sp-pillar-desc">Over 37 years of hands-on automotive repair expertise under master craftsman Muhammad Nadeem.</p>
             </div>
             <div className="sp-pillar-box">
               <div className="sp-pillar-icon">🌍</div>
               <h4 className="sp-pillar-name">International Experience</h4>
-              <p className="sp-pillar-desc">Professional experience in USA & Dubai with certificates associated with MG and Audi.</p>
+              <p className="sp-pillar-desc">Professional experience in Dubai with certificates associated with BMW, MG and Audi.</p>
             </div>
             <div className="sp-pillar-box">
               <div className="sp-pillar-icon">✨</div>

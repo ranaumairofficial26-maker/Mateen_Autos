@@ -678,10 +678,10 @@
 
 .au-founder-wrap {
   position: relative;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(217, 70, 239, 0.35);
-  max-width: 82%;
+  border: 1.5px solid rgba(217, 70, 239, 0.35);
+  max-width: 440px;
   width: 100%;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(217, 70, 239, 0.2);
   background: linear-gradient(135deg, rgba(16, 2, 28, 0.8) 0%, rgba(6, 16, 38, 0.8) 100%);
@@ -690,7 +690,7 @@
 }
 
 .au-founder-wrap:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-6px) scale(1.015);
   border-color: rgba(217, 70, 239, 0.7);
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 65px rgba(217, 70, 239, 0.35);
 }
@@ -701,8 +701,10 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    transparent 35%,
-    rgba(8, 1, 14, 0.75) 100%
+    rgba(8, 1, 14, 0.15) 0%,
+    transparent 25%,
+    transparent 70%,
+    rgba(8, 1, 14, 0.8) 100%
   );
   z-index: 1;
   pointer-events: none;
@@ -710,7 +712,7 @@
 }
 
 .au-founder-wrap:hover::before {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* Glow border */
@@ -718,7 +720,7 @@
   content: '';
   position: absolute;
   inset: -1px;
-  border-radius: 17px;
+  border-radius: 19px;
   background: linear-gradient(135deg, rgba(217, 70, 239, 0.5), transparent 50%, rgba(0, 168, 255, 0.3));
   z-index: -1;
   transition: opacity 0.5s ease;
@@ -730,16 +732,16 @@
 
 .au-founder-img {
   width: 100%;
-  aspect-ratio: 4/4.6;
+  aspect-ratio: 3 / 4.2;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 22%;
   display: block;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
 }
 
 .au-founder-wrap:hover .au-founder-img {
-  transform: scale(1.12);
-  filter: contrast(1.05) brightness(1.06);
+  transform: scale(1.035);
+  filter: contrast(1.04) brightness(1.04);
 }
 
 /* Brand overlay on image */
@@ -775,26 +777,42 @@
 /* Signature & role on image */
 .au-founder-caption {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 16px;
   z-index: 2;
   text-align: right;
+  background: rgba(12, 3, 24, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(217, 70, 239, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  transition: all 0.35s ease;
+}
+
+.au-founder-wrap:hover .au-founder-caption {
+  border-color: rgba(217, 70, 239, 0.65);
+  background: rgba(12, 3, 24, 0.9);
 }
 
 .au-founder-sig {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.8rem;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1;
-  margin-bottom: 6px;
+  font-family: 'Space Grotesk', 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #f0abfc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  margin-bottom: 3px;
+  letter-spacing: -0.3px;
 }
 
 .au-founder-title {
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .au-founder-company {
@@ -2028,190 +2046,367 @@
 }
 
 /* =========================================
-   MISSION STYLED POINTS
+   EXPANDED 2X2 LUXURY MISSION BOXES GRID
    ========================================= */
 
-.au-mission-points {
+/* Top Pill Badge */
+.au-mission-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 50px;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.42);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.25), inset 0 0 10px rgba(168, 85, 247, 0.12);
+  margin: 0 auto 16px;
+}
+
+.au-mission-pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c084fc;
+  box-shadow: 0 0 10px #c084fc;
+  animation: hpLivePulse 1.8s infinite;
+}
+
+.au-mission-pill-badge span:last-child {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #e9d5ff;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+}
+
+/* Main Heading — Centered Stacked Layout (Colon Removed) */
+.au-mission-main-title {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  background: rgba(18, 8, 36, 0.7);
-  border: 1px solid rgba(168, 85, 247, 0.22);
-  border-radius: 20px;
-  overflow: hidden;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-}
-
-/* Each point row */
-.au-mpoint {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 28px 36px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  transition: background 0.25s ease;
-  position: relative;
-}
-
-.au-mpoint:last-child {
-  border-bottom: none;
-}
-
-.au-mpoint:hover {
-  background: rgba(255,255,255,0.025);
-}
-
-/* Glow line on left on hover */
-.au-mpoint::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  border-radius: 3px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.au-mpoint:nth-child(1)::before { background: linear-gradient(180deg, #00a8ff, #0066cc); }
-.au-mpoint:nth-child(2)::before { background: linear-gradient(180deg, #7b2fff, #5b1fd6); }
-.au-mpoint:nth-child(3)::before { background: linear-gradient(180deg, #00d4aa, #00a882); }
-.au-mpoint:nth-child(4)::before { background: linear-gradient(180deg, #f59e0b, #d97706); }
-
-.au-mpoint:hover::before {
-  opacity: 1;
-}
-
-/* Icon badge */
-.au-mpoint-badge {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  background: rgba(0,168,255,0.12);
-  border: 1px solid rgba(0,168,255,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.au-mpoint-badge--purple {
-  background: rgba(123,47,255,0.12);
-  border-color: rgba(123,47,255,0.25);
-}
-
-.au-mpoint-badge--teal {
-  background: rgba(0,212,170,0.12);
-  border-color: rgba(0,212,170,0.25);
-}
-
-.au-mpoint-badge--gold {
-  background: rgba(245,158,11,0.12);
-  border-color: rgba(245,158,11,0.25);
-}
-
-.au-mpoint:hover .au-mpoint-badge {
-  transform: scale(1.08);
-  box-shadow: 0 8px 24px rgba(0,168,255,0.2);
-}
-.au-mpoint:hover .au-mpoint-badge--purple { box-shadow: 0 8px 24px rgba(123,47,255,0.2); }
-.au-mpoint:hover .au-mpoint-badge--teal   { box-shadow: 0 8px 24px rgba(0,212,170,0.2); }
-.au-mpoint:hover .au-mpoint-badge--gold   { box-shadow: 0 8px 24px rgba(245,158,11,0.2); }
-
-.au-mpoint-icon {
-  font-size: 24px;
-  line-height: 1;
-}
-
-/* Body text area */
-.au-mpoint-body {
-  flex: 1;
-  padding-top: 2px;
-}
-
-/* Title */
-.au-mpoint-title {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 0 10px;
+  font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 8px;
+}
+
+.au-mission-pre-title {
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+/* Shimmer Dynamic Gradient */
+.au-mission-title-grad {
+  font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  background: linear-gradient(
+    90deg,
+    #c084fc 0%,
+    #f472b6 25%,
+    #38bdf8 50%,
+    #a855f7 75%,
+    #c084fc 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hpNeonGradientShift 4.5s linear infinite;
+  display: inline-block;
+  filter: drop-shadow(0 0 16px rgba(192, 132, 252, 0.45));
+}
+
+.au-mission-main-subtitle {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
   font-family: 'Inter', sans-serif;
 }
 
-/* Gradient keyword in title */
-.au-mpoint-grad {
-  background: linear-gradient(90deg, #00a8ff, #4dd2ff);
+/* ── 2x2 Feature Boxes Grid (30% Compact & Sleek Scale) ── */
+.au-mission-grid-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 980px;
+  margin: 32px auto 36px;
+  width: 100%;
+}
+
+/* Base Box Style (-30% Compact Padding & Size) */
+.au-mbox {
+  position: relative;
+  border-radius: 16px;
+  padding: 24px 24px 20px;
+  background: linear-gradient(145deg, rgba(22, 9, 44, 0.88) 0%, rgba(10, 4, 22, 0.96) 100%);
+  border: 1.5px solid rgba(168, 85, 247, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover Elevation */
+.au-mbox:hover {
+  transform: translateY(-6px) scale(1.012);
+}
+
+/* Ambient Radial Glow behind each box */
+.au-mbox-ambient-glow {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  opacity: 0.2;
+  transition: opacity 0.35s ease;
+}
+
+.au-mbox:hover .au-mbox-ambient-glow {
+  opacity: 0.45;
+}
+
+.au-mglow--cyan {
+  background: radial-gradient(circle, #00a8ff 0%, transparent 70%);
+}
+
+.au-mglow--purple {
+  background: radial-gradient(circle, #a855f7 0%, transparent 70%);
+}
+
+.au-mglow--teal {
+  background: radial-gradient(circle, #10b981 0%, transparent 70%);
+}
+
+.au-mglow--gold {
+  background: radial-gradient(circle, #f59e0b 0%, transparent 70%);
+}
+
+/* Border Glow on Hover */
+.au-mbox--cyan:hover {
+  border-color: rgba(56, 189, 248, 0.65);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+.au-mbox--purple:hover {
+  border-color: rgba(192, 132, 252, 0.7);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(168, 85, 247, 0.3);
+}
+
+.au-mbox--teal:hover {
+  border-color: rgba(52, 211, 153, 0.65);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(16, 185, 129, 0.25);
+}
+
+.au-mbox--gold:hover {
+  border-color: rgba(251, 191, 36, 0.65);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+/* Header Row */
+.au-mbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+/* Icon Wrap (Reduced by 30%: 42px x 42px) */
+.au-mbox-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.au-mbox:hover .au-mbox-icon-wrap {
+  transform: scale(1.12) rotate(4deg);
+}
+
+.au-mbox-icon--cyan {
+  background: rgba(0, 168, 255, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 168, 255, 0.25);
+}
+
+.au-mbox-icon--purple {
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.25);
+}
+
+.au-mbox-icon--teal {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+.au-mbox-icon--gold {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+}
+
+/* Meta: Number & Tag */
+.au-mbox-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.15;
+}
+
+.au-mbox-num {
+  font-size: 13px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.au-mbox-tag {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+
+.au-mtag--cyan   { color: #38bdf8; }
+.au-mtag--purple { color: #c084fc; }
+.au-mtag--teal   { color: #34d399; }
+.au-mtag--gold   { color: #fbbf24; }
+
+/* Title (Reduced to 15.5px) */
+.au-mbox-title {
+  font-size: 15.5px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 8px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.au-mgrad-cyan {
+  background: linear-gradient(90deg, #38bdf8, #00a8ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.au-mpoint-grad--purple {
-  background: linear-gradient(90deg, #a855f7, #c084fc);
+.au-mgrad-purple {
+  background: linear-gradient(90deg, #c084fc, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.au-mpoint-grad--teal {
-  background: linear-gradient(90deg, #00d4aa, #34d399);
+.au-mgrad-teal {
+  background: linear-gradient(90deg, #34d399, #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.au-mpoint-grad--gold {
-  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+.au-mgrad-gold {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Paragraph text */
-.au-mpoint-text {
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.68);
+/* Content Text (Reduced to 13.2px with 1.65 line height) */
+.au-mbox-text {
+  font-size: 13.2px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
   font-family: 'Inter', sans-serif;
 }
 
-/* Inline highlighted keywords */
+/* Highlighted Keywords */
 .au-mhi-blue {
-  color: #4dd2ff;
-  font-weight: 600;
+  color: #38bdf8;
+  font-weight: 700;
 }
 
 .au-mhi-purple {
   color: #c084fc;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .au-mhi-teal {
   color: #34d399;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .au-mhi-gold {
   color: #fbbf24;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .au-mpoint {
-    padding: 22px 20px;
+/* Expanding Footer Neon Bar */
+.au-mbox-footer-bar {
+  margin-top: 18px;
+  height: 2.5px;
+  border-radius: 2px;
+  width: 32px;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.au-mbox:hover .au-mbox-footer-bar {
+  width: 70px;
+}
+
+.au-mbar--cyan {
+  background: linear-gradient(90deg, #38bdf8, transparent);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+.au-mbar--purple {
+  background: linear-gradient(90deg, #c084fc, transparent);
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.5);
+}
+
+.au-mbar--teal {
+  background: linear-gradient(90deg, #34d399, transparent);
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.5);
+}
+
+.au-mbar--gold {
+  background: linear-gradient(90deg, #fbbf24, transparent);
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+}
+
+/* Responsive Grid for Tablets and Mobile */
+@media (max-width: 860px) {
+  .au-mission-grid-boxes {
+    grid-template-columns: 1fr;
     gap: 16px;
   }
-  .au-mpoint-badge {
-    width: 44px;
-    height: 44px;
+  .au-mbox {
+    padding: 20px 20px 16px;
   }
-  .au-mpoint-icon { font-size: 20px; }
-  .au-mpoint-text { font-size: 14px; }
 }
 
