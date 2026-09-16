@@ -5,9 +5,9 @@ import '../styles/AboutPage.css';
 
 const navLinks = [
   { label: 'HOME', href: '/' },
-  { label: 'SERVICES', href: '/services' },
-  { label: 'INSTAGRAM WORK', href: '/instagram-work' },
   { label: 'ABOUT US', href: '/about' },
+  { label: 'SERVICES', href: '/services' },
+  { label: 'SOCIAL LINKS', href: '/instagram-work' },
 ];
 
 export default function Navbar() {
@@ -24,12 +24,12 @@ export default function Navbar() {
   useEffect(() => {
     if (location.pathname === '/about') {
       setActiveTab('ABOUT US');
-    } else if (location.pathname === '/services') {
+    } else if (location.pathname.startsWith('/services')) {
       setActiveTab('SERVICES');
-    } else if (location.pathname === '/instagram-work') {
-      setActiveTab('INSTAGRAM WORK');
+    } else if (location.pathname === '/instagram-work' || location.pathname === '/social-links') {
+      setActiveTab('SOCIAL LINKS');
     } else if (location.pathname === '/contact') {
-      setActiveTab('CONTACT US');
+      setActiveTab('CONNECT WITH US');
     } else {
       setActiveTab('HOME');
     }
@@ -114,14 +114,14 @@ export default function Navbar() {
               ))}
             </ul>
 
-            {/* Contact Button */}
+            {/* Connect With Us Button at Right End */}
             <a
               href="/contact"
               className={`au-contact-btn ${location.pathname === '/contact' ? 'active' : ''}`}
-              onClick={(e) => handleNav(e, { label: 'CONTACT US', href: '/contact' })}
+              onClick={(e) => handleNav(e, { label: 'CONNECT WITH US', href: '/contact' })}
               id="au-contact-btn"
             >
-              <span>CONTACT US</span>
+              <span>CONNECT WITH US</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -156,11 +156,33 @@ export default function Navbar() {
         ))}
         <a
           href="/contact"
-          className={activeTab === 'CONTACT US' ? 'active' : ''}
-          onClick={(e) => handleNav(e, { label: 'CONTACT US', href: '/contact' })}
+          className={activeTab === 'CONNECT WITH US' ? 'active' : ''}
+          onClick={(e) => handleNav(e, { label: 'CONNECT WITH US', href: '/contact' })}
           style={{ color: isPurple ? '#d946ef' : '#00a8ff', marginTop: '10px' }}
         >
-          CONTACT US →
+          CONNECT WITH US →
+        </a>
+        <a
+          href="https://wa.me/923234500012?text=Hello%20Mateen%20Auto,%20I%20want%20to%20get%20a%20quote."
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            marginTop: '16px',
+            padding: '12px 28px',
+            borderRadius: '8px',
+            background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+            color: '#fff',
+            fontSize: '1.05rem',
+            fontWeight: 700,
+            letterSpacing: '1px',
+            boxShadow: '0 4px 20px rgba(37, 211, 102, 0.4)',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          💬 WHATSAPP QUOTE
         </a>
       </div>
     </>

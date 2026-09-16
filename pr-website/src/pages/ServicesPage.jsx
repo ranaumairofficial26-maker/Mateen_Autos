@@ -1,35 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/ServicesPage.css';
 
 // ── Service Images
-import imgPPF            from '../assets/svc_ppf.jpg';
-import imgAccident       from '../assets/svc_accident.jpg';
-import imgDenting        from '../assets/svc_denting_painting.jpg';
 import imgScratch        from '../assets/svc_scratch.jpg';
 import imgDryDenting     from '../assets/svc_dry_denting.jpg';
+import imgAccident       from '../assets/svc_accident.jpg';
+import imgPPF            from '../assets/svc_ppf.jpg';
+import imgDenting        from '../assets/svc_denting_painting.jpg';
 import imgCoating        from '../assets/svc_coating.jpg';
 import imgDetailing      from '../assets/svc_detailing.jpg';
 import imgPolish         from '../assets/svc_compound_polish.jpg';
-import imgBalancing      from '../assets/svc_wheel_balancing.jpg';
-import imgAlignment      from '../assets/svc_wheel_alignment.jpg';
+import imgWheelCare      from '../assets/svc_wheel_alignment.jpg';
 
 const ALL_SERVICES = [
   {
-    id: 'ppf',
-    name: 'PPF — Paint Protection Film',
-    tag: 'Self-Healing Shield',
-    icon: '🛡️',
-    category: 'Protection',
-    img: imgPPF,
-    desc: 'A premium ultra-clear TPU film applied over your car\'s paint to act as an invisible armour. It absorbs stone chips, deep scratches, bird droppings, UV rays, and acid rain — keeping your original paint factory-fresh.',
+    id: 'scratch-repair',
+    name: 'Scratch Filling & Repair',
+    tag: 'Signature Specialty',
+    icon: '✨',
+    category: 'Body & Paint',
+    img: imgScratch,
+    desc: 'One of Mateen Auto\'s signature specialties. We repair surface scratches, key marks, and paint damage with precision micro-feathering and scratch-filling techniques — preserving your original factory paint without repainting the entire panel.',
     features: [
-      'Shields paint from chips, scratches & UV damage',
-      'Self-healing surface — minor marks disappear with heat',
-      'Available in gloss or matte finish',
-      '5 to 10-year protection warranty',
+      'Surface scratches & key marks repaired',
+      'Micro clear-coat leveling for invisible blending',
+      'Original factory paint preserved',
+      'Cost-effective — no full panel repaint needed',
+    ],
+  },
+  {
+    id: 'dry-denting',
+    name: 'Dry Denting (Paintless PDR)',
+    tag: 'Paintless PDR',
+    icon: '🔨',
+    category: 'Body & Paint',
+    img: imgDryDenting,
+    desc: 'A non-invasive technique where dents are pushed out from behind the panel using specialized rods and precision tools — without any painting or fillers. Your original factory paint stays 100% intact.',
+    features: [
+      'No painting or body filler required',
+      '100% original factory paint preserved',
+      'Repairs door dings, hail damage & minor dents',
+      'Fast turnaround — often same day',
     ],
   },
   {
@@ -48,6 +62,21 @@ const ALL_SERVICES = [
     ],
   },
   {
+    id: 'ppf',
+    name: 'PPF — Paint Protection Film',
+    tag: 'Self-Healing Shield',
+    icon: '🛡️',
+    category: 'Protection',
+    img: imgPPF,
+    desc: 'A premium ultra-clear TPU film applied over your car\'s paint to act as an invisible armour. It absorbs stone chips, deep scratches, bird droppings, UV rays, and acid rain — keeping your original paint factory-fresh.',
+    features: [
+      'Shields paint from chips, scratches & UV damage',
+      'Self-healing surface — minor marks disappear with heat',
+      'Available in gloss or matte finish',
+      '5 to 10-year protection warranty',
+    ],
+  },
+  {
     id: 'denting-painting',
     name: 'Denting & Painting',
     tag: '2K Oven-Baked Finish',
@@ -60,36 +89,6 @@ const ALL_SERVICES = [
       'PPG 2K polyurethane oven-baked paint',
       'Dust-free climate-controlled spray booth',
       'Computerized digital color matching',
-    ],
-  },
-  {
-    id: 'scratch-repair',
-    name: 'Scratch Filling & Repair',
-    tag: 'Signature Specialty',
-    icon: '✨',
-    category: 'Body & Paint',
-    img: imgScratch,
-    desc: 'One of Mateen Auto\'s signature specialties. We repair surface scratches, key marks, and paint damage with precision micro-feathering and scratch-filling techniques — without repainting the entire panel.',
-    features: [
-      'Surface scratches & key marks repaired',
-      'Micro clear-coat leveling for invisible blending',
-      'Original factory paint preserved',
-      'Cost-effective — no full panel repaint needed',
-    ],
-  },
-  {
-    id: 'dry-denting',
-    name: 'Dry Denting (Paintless PDR)',
-    tag: 'Paintless PDR',
-    icon: '🔨',
-    category: 'Body & Paint',
-    img: imgDryDenting,
-    desc: 'A non-invasive technique where dents are pushed out from behind the panel using specialized rods and tools — without any painting or fillers. Your original factory paint stays 100% intact.',
-    features: [
-      'No painting or body filler required',
-      '100% original factory paint preserved',
-      'Repairs door dings, hail damage & minor dents',
-      'Fast turnaround — often same day',
     ],
   },
   {
@@ -138,33 +137,18 @@ const ALL_SERVICES = [
     ],
   },
   {
-    id: 'wheel-balancing',
-    name: 'Wheel Balancing',
-    tag: 'Smooth Vibration-Free Ride',
+    id: 'wheel-balancing-alignment',
+    name: 'Wheel Balancing & 3D Alignment',
+    tag: 'Laser Precision & Dynamic Balancing',
     icon: '⚖️',
     category: 'Wheels & Geometry',
-    img: imgBalancing,
-    desc: 'Computerized high-speed dynamic balancing that detects weight imbalances in your wheels and tires. Eliminates steering wobble, highway vibrations, and uneven tire wear — giving you a silky smooth ride.',
+    img: imgWheelCare,
+    desc: 'Comprehensive computerized wheel care under one roof. Dynamic high-speed spin balancing eliminates steering wobble and vibrations, while 3D laser alignment precisely calibrates camber, caster, and toe angles for razor-sharp steering and extended tire lifespan.',
     features: [
-      'Dynamic high-speed spin test on machine',
-      'Laser-precision counterweight placement',
-      'Eliminates steering wheel shake & vibration',
-      'Extends tire lifespan significantly',
-    ],
-  },
-  {
-    id: 'wheel-alignment',
-    name: 'Wheel Alignment',
-    tag: 'Laser Precision Calibration',
-    icon: '🎯',
-    category: 'Wheels & Geometry',
-    img: imgAlignment,
-    desc: 'Computerized 3D laser alignment measures your wheels\' camber, caster, and toe angles against factory specifications. Corrects pulling, uneven tire wear, and wandering — restoring razor-sharp steering control.',
-    features: [
-      'Measures camber, caster & toe to factory specs',
-      '3D laser camera for sub-millimeter accuracy',
-      'Corrects car pulling to one side',
-      'Prevents uneven & premature tire wear',
+      'Dynamic high-speed spin wheel balancing',
+      'Computerized 3D laser sensor alignment',
+      'Eliminates steering wheel wobble & drifting',
+      'Extends tyre tread lifespan & saves fuel',
     ],
   },
 ];
@@ -258,17 +242,19 @@ export default function ServicesPage() {
                   className={`sp-card-new${isCenterLast ? ' sp-card-center-last' : ''}`}
                 >
                   {/* Service Image */}
-                  <div className="sp-card-img-wrap">
+                  <Link to={`/services/${svc.id}`} className="sp-card-img-wrap" title={`View ${svc.name} details`}>
                     <img src={svc.img} alt={svc.name} className="sp-card-img" loading="lazy" />
                     <div className="sp-card-img-overlay"></div>
                     <span className="sp-card-img-tag">{svc.tag}</span>
-                  </div>
+                  </Link>
 
                   {/* Card Body */}
                   <div className="sp-card-body">
                     <div className="sp-card-name-row">
                       <span className="sp-card-icon">{svc.icon}</span>
-                      <h3 className="sp-card-name">{svc.name}</h3>
+                      <Link to={`/services/${svc.id}`} className="sp-card-name-link" title={`View ${svc.name} details`}>
+                        <h3 className="sp-card-name">{svc.name}</h3>
+                      </Link>
                     </div>
 
                     <p className="sp-card-desc-new">{svc.desc}</p>
@@ -287,12 +273,15 @@ export default function ServicesPage() {
 
                     {/* Actions */}
                     <div className="sp-card-actions-new">
+                      <Link to={`/services/${svc.id}`} className="sp-btn-details-new">
+                        <span>Details ↗</span>
+                      </Link>
                       <button
                         type="button"
                         className="sp-btn-book-new"
                         onClick={() => handleBook(svc.name)}
                       >
-                        Book This Service →
+                        Book Now
                       </button>
                     </div>
                   </div>

@@ -7,14 +7,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/AboutPage.css';
 
-/* ── NAV LINKS ────────────────────────────── */
-const navLinks = [
-  { label: 'HOME', href: '/' },
-  { label: 'SERVICES', href: '/#services' },
-  { label: 'INSTAGRAM WORK', href: '/#portfolio' },
-  { label: 'ABOUT US', href: '/about', active: true },
-];
-
+/* ── STATS DATA ──────────────────────────── */
 const stats = [
   { number: '37+',     from: 0,    to: 37,    suffix: '+', label: 'Years of\nExperience' },
   { number: '10,000+', from: 8500, to: 10000, suffix: '+', label: 'Happy\nClients', formatComma: true },

@@ -6,13 +6,6 @@ import Footer from '../components/Footer';
 import '../styles/AboutPage.css';
 import '../styles/ContactPage.css';
 
-/* ── NAV LINKS ────────────────────────────── */
-const navLinks = [
-  { label: 'HOME', href: '/' },
-  { label: 'SERVICES', href: '/services' },
-  { label: 'ABOUT US', href: '/about' },
-];
-
 /* ── BRANCHES DATA ────────────────────────── */
 const branches = [
   {

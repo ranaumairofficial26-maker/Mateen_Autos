@@ -745,32 +745,69 @@
   margin-top: 2px;
 }
 
+/* ── Card Name Link */
+.sp-card-name-link {
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.sp-card-name-link:hover .sp-card-name {
+  color: #c084fc;
+}
+
 /* ── Card Actions */
 .sp-card-actions-new {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 8px;
   align-items: center;
   margin-top: auto;
   padding-top: 14px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
+.sp-btn-details-new {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9px;
+  color: #c084fc;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-btn-details-new:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgba(192, 132, 252, 0.55);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 .sp-btn-book-new {
   width: 100%;
-  padding: 11px 16px;
+  padding: 10px 14px;
   background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
   color: #fff;
   border: 1px solid rgba(192, 132, 252, 0.45);
   border-radius: 9px;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   transition: all 0.25s ease;
   box-shadow: 0 4px 14px rgba(168, 85, 247, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .sp-btn-book-new:hover {

@@ -12,67 +12,50 @@ import '../styles/InstagramWorkPage.css';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/mateenautoofficial/';
 
+// ── Hero Authentic Slider Images
+import heroSlider1 from '../assets/hero_slider_1.jpg';
+import heroSlider2 from '../assets/hero_slider_2.jpg';
+import heroSlider3 from '../assets/hero_slider_3.jpg';
+
+const HERO_SLIDES = [
+  {
+    id: 1,
+    img: heroSlider1,
+    title: 'Diagnostic Scratch Depth Audit',
+    tag: 'SIGNATURE CRAFTSMANSHIP',
+    caption: 'Master Muhammad Nadeem analyzing clear-coat scratch profile & paint depth.',
+  },
+  {
+    id: 2,
+    img: heroSlider2,
+    title: 'Micro-Injection Resin Filling',
+    tag: 'ORIGINAL FACTORY PAINT PRESERVED',
+    caption: 'Precision clearcoat infusion via micro-syringe — zero full-panel repainting.',
+  },
+  {
+    id: 3,
+    img: heroSlider3,
+    title: 'Sub-Millimeter Edge Leveling',
+    tag: '37+ YEARS MASTER MASTERY',
+    caption: 'Feather-edge microscopic alignment preserving 100% genuine OEM paint gauge readings.',
+  },
+];
+
 // ── Service & Transformation Images from assets
 import imgHeroStudio   from '../assets/hero_studio_mercedes.jpg';
 import imgBmwClean       from '../assets/bmw_after_seamless.jpg';
 import imgBmwDirty       from '../assets/bmw_before_seamless.jpg';
-import imgPPF            from '../assets/svc_ppf.jpg';
-import imgAccident       from '../assets/svc_accident.jpg';
-import imgDenting        from '../assets/svc_denting_painting.jpg';
 import imgScratch        from '../assets/svc_scratch.jpg';
 import imgDryDenting     from '../assets/svc_dry_denting.jpg';
+import imgAccident       from '../assets/svc_accident.jpg';
+import imgPPF            from '../assets/svc_ppf.jpg';
+import imgDenting        from '../assets/svc_denting_painting.jpg';
 import imgCoating        from '../assets/svc_coating.jpg';
 import imgDetailing      from '../assets/svc_detailing.jpg';
 import imgPolish         from '../assets/svc_compound_polish.jpg';
-import imgBalancing      from '../assets/svc_wheel_balancing.jpg';
-import imgAlignment      from '../assets/svc_wheel_alignment.jpg';
+import imgWheelCare      from '../assets/svc_wheel_alignment.jpg';
 
 const ALL_SERVICES = [
-  {
-    id: 'ppf',
-    name: 'PPF — Paint Protection Film',
-    tag: 'Self-Healing Shield',
-    icon: '🛡️',
-    category: 'Protection',
-    img: imgPPF,
-    desc: 'A premium ultra-clear TPU film applied over your car\'s paint to act as an invisible armour against stone chips, deep scratches, UV rays, and acid rain.',
-    features: [
-      'Shields paint from chips, scratches & UV damage',
-      'Self-healing surface — minor marks disappear with heat',
-      'Available in gloss or matte finish',
-      '5 to 10-year protection warranty',
-    ],
-  },
-  {
-    id: 'accident-repair',
-    name: 'Car Accident Repair',
-    tag: 'Full Body Rebuild',
-    icon: '🚗',
-    category: 'Body & Paint',
-    img: imgAccident,
-    desc: 'Complete restoration of collision-damaged vehicles — from crumpled panels and broken bumpers to frame misalignment and structural chassis repair.',
-    features: [
-      'Full body panel straightening & replacement',
-      'Computerized frame & chassis alignment',
-      'Factory-grade structural safety restoration',
-      'Multi-stage quality inspection before delivery',
-    ],
-  },
-  {
-    id: 'denting-painting',
-    name: 'Denting & Painting',
-    tag: '2K Oven-Baked Finish',
-    icon: '🎨',
-    category: 'Body & Paint',
-    img: imgDenting,
-    desc: 'Professional dent repair combined with high-grade 2K polyurethane oven-baked painting in a climate-controlled spray booth with digital color matching.',
-    features: [
-      'Precise dent removal before painting',
-      'PPG 2K polyurethane oven-baked paint',
-      'Dust-free climate-controlled spray booth',
-      'Computerized digital color matching',
-    ],
-  },
   {
     id: 'scratch-repair',
     name: 'Scratch Filling & Repair',
@@ -80,7 +63,7 @@ const ALL_SERVICES = [
     icon: '✨',
     category: 'Body & Paint',
     img: imgScratch,
-    desc: 'One of Mateen Auto\'s signature specialties. We repair surface scratches and key marks with precision scratch-filling without repainting the entire panel.',
+    desc: 'One of Mateen Auto\'s signature specialties. We repair surface scratches, key marks, and paint damage with precision micro-feathering and scratch-filling techniques — without repainting the entire panel.',
     features: [
       'Surface scratches & key marks repaired',
       'Micro clear-coat leveling for invisible blending',
@@ -101,6 +84,51 @@ const ALL_SERVICES = [
       '100% original factory paint preserved',
       'Repairs door dings, hail damage & minor dents',
       'Fast turnaround — often same day',
+    ],
+  },
+  {
+    id: 'accident-repair',
+    name: 'Car Accident Repair',
+    tag: 'Full Body Rebuild',
+    icon: '🚗',
+    category: 'Body & Paint',
+    img: imgAccident,
+    desc: 'Complete restoration of collision-damaged vehicles — from crumpled panels and broken bumpers to frame misalignment and structural chassis repair.',
+    features: [
+      'Full body panel straightening & replacement',
+      'Computerized frame & chassis alignment',
+      'Factory-grade structural safety restoration',
+      'Multi-stage quality inspection before delivery',
+    ],
+  },
+  {
+    id: 'ppf',
+    name: 'PPF — Paint Protection Film',
+    tag: 'Self-Healing Shield',
+    icon: '🛡️',
+    category: 'Protection',
+    img: imgPPF,
+    desc: 'A premium ultra-clear TPU film applied over your car\'s paint to act as an invisible armour against stone chips, deep scratches, UV rays, and acid rain.',
+    features: [
+      'Shields paint from chips, scratches & UV damage',
+      'Self-healing surface — minor marks disappear with heat',
+      'Available in gloss or matte finish',
+      '5 to 10-year protection warranty',
+    ],
+  },
+  {
+    id: 'denting-painting',
+    name: 'Denting & Painting',
+    tag: '2K Oven-Baked Finish',
+    icon: '🎨',
+    category: 'Body & Paint',
+    img: imgDenting,
+    desc: 'Professional dent repair combined with high-grade 2K polyurethane oven-baked painting in a climate-controlled spray booth with digital color matching.',
+    features: [
+      'Precise dent removal before painting',
+      'PPG 2K polyurethane oven-baked paint',
+      'Dust-free climate-controlled spray booth',
+      'Computerized digital color matching',
     ],
   },
   {
@@ -149,33 +177,18 @@ const ALL_SERVICES = [
     ],
   },
   {
-    id: 'wheel-balancing',
-    name: 'Wheel Balancing',
-    tag: 'High-Speed Stability',
+    id: 'wheel-balancing-alignment',
+    name: 'Wheel Balancing & 3D Alignment',
+    tag: 'High-Speed Stability & Laser Accuracy',
     icon: '⚙️',
-    category: 'Mechanical & Care',
-    img: imgBalancing,
-    desc: 'Computerized dynamic wheel balancing to eliminate steering vibrations at high speeds, prevent uneven tire wear, and ensure maximum road safety.',
+    category: 'Wheels & Geometry',
+    img: imgWheelCare,
+    desc: 'Complete computerized wheel care. Dynamic spin wheel balancing eliminates vibrations and steering shake, while 3D laser alignment ensures laser-straight tracking and prolonged tire life.',
     features: [
-      'Precision computerized balance calibration',
-      'Eliminates high-speed steering wheel shake',
-      'Extends tyre tread lifespan significantly',
-      'Protects suspension and wheel bearings',
-    ],
-  },
-  {
-    id: 'wheel-alignment',
-    name: '3D Wheel Alignment',
-    tag: 'Laser Precision',
-    icon: '🎯',
-    category: 'Mechanical & Care',
-    img: imgAlignment,
-    desc: 'Computerized 3D laser wheel alignment for exact camber, caster, and toe settings according to manufacturer specifications for laser-straight driving.',
-    features: [
-      'Computerized 3D laser sensor technology',
-      'Eliminates vehicle pulling to left or right',
-      'Improves fuel efficiency & handling',
-      'Full digital before & after report provided',
+      'Dynamic high-speed computerized wheel balancing',
+      'Computerized 3D laser wheel alignment',
+      'Eliminates steering wheel vibrations & vehicle pull',
+      'Extends tyre tread lifespan & saves fuel',
     ],
   },
 ];
@@ -205,18 +218,30 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', handleHeroScroll);
   }, []);
 
+  // Top Hero Right Image Slider state
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+  const [isHeroAutoPlaying, setIsHeroAutoPlaying] = useState(true);
+
+  useEffect(() => {
+    if (!isHeroAutoPlaying) return;
+    const interval = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isHeroAutoPlaying]);
+
   const currentTransform = {
     id: 'bmw-studio',
     title: 'Studio Paint Restoration & 9H Ceramic Coating',
-    car: 'BMW 5-Series M Sport — Deep Obsidian Gloss',
+    car: 'BMW 5-Series M Sport — Obsidian Black Deep Gloss',
     badge: 'Flagship Studio Showcase',
     beforeImg: imgBmwDirty,
     afterImg: imgBmwClean,
     highlights: [
-      { icon: '🧼', title: 'Heavy Mud & Grime Decontamination', desc: 'Full iron fallout, road tar & deep road grime eliminated' },
-      { icon: '✨', title: 'Multi-Stage Swirl Correction', desc: 'Spider-web scratches & paint haziness 100% corrected' },
-      { icon: '💎', title: '9H Nano Ceramic Glass Shield', desc: 'Ultra-hydrophobic permanent wet-look mirror gloss' },
-      { icon: '🛡️', title: '100% Factory Paint Preserved', desc: 'Original clear coat protected against UV & acid rain' }
+      { icon: '✨', title: 'Swirl, Scratch & Dust Removal', desc: 'Eliminating clearcoat swirls, spider-web marks & paint haziness' },
+      { icon: '🔨', title: 'Dent & Minor Ding Smoothing', desc: 'Precision paintless dent removal & surface leveling' },
+      { icon: '💎', title: '9H Nano Ceramic Glass Shield', desc: 'Ultra-hydrophobic permanent wet-look mirror gloss reflection' },
+      { icon: '🛡️', title: '100% Original Factory Paint Preserved', desc: 'OEM paint gauge protected with zero full-panel repainting' }
     ]
   };
 
@@ -237,19 +262,25 @@ export default function HomePage() {
     <div className="hp-root">
       <Navbar />
 
-      {/* ── 1. CINEMATIC FULL-BLEED HERO SECTION (REFERENCE STYLE) ── */}
+      {/* ── 1. CINEMATIC FULL-BLEED HERO SECTION (DYNAMIC AUTHENTIC SLIDER) ── */}
       <section className="hp-hero-cinematic-section">
-        {/* Full-bleed Studio Mercedes Backdrop with Smooth Scroll Zoom & Seamless Gradient Blend */}
-        <div className="hp-hero-backdrop-media">
-          <img
-            src={imgHeroStudio}
-            alt="Mateen Auto Studio Detailing - Mercedes E-Class"
-            className="hp-hero-backdrop-img"
-            style={{
-              transform: `scale(${heroScrollZoom})`
-            }}
-          />
-          <div className="hp-hero-backdrop-overlay"></div>
+        
+        {/* Full-bleed Dynamic Authentic Background Slider (Autoplays every 3.5s) */}
+        <div className="hp-hero-bg-slider">
+          {HERO_SLIDES.map((slide, idx) => (
+            <div
+              key={slide.id}
+              className={`hp-hero-bg-slide ${idx === currentHeroSlide ? 'is-active' : ''}`}
+            >
+              <img
+                src={slide.img}
+                alt={slide.title}
+                className="hp-hero-bg-slide-img"
+              />
+            </div>
+          ))}
+          <div className="hp-hero-bg-overlay"></div>
+          <div className="hp-hero-bg-vignette"></div>
         </div>
 
         <div className="hp-container hp-hero-cinematic-content">
@@ -317,19 +348,53 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Scroll To Explore Micro Indicator */}
-            <div className="hp-hero-scroll-hint">
-              <span>SCROLL TO EXPLORE</span>
-              <div className="hp-scroll-hint-bar"></div>
+            {/* Live Slider Indicator Bar (Shows Active Master Nadeem Stage + Slider Dots) */}
+            <div className="hp-hero-live-slider-bar">
+              <div className="hp-hero-live-pill">
+                <span className="hp-hero-live-dot"></span>
+                <span className="hp-hero-live-label">LIVE MASTER AT WORK:</span>
+                <strong className="hp-hero-live-title">{HERO_SLIDES[currentHeroSlide].title}</strong>
+              </div>
+
+              {/* Slider Controls (Prev, Dots, Next) */}
+              <div className="hp-hero-live-controls">
+                <button
+                  type="button"
+                  className="hp-hero-ctrl-btn"
+                  onClick={() => setCurrentHeroSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
+                  aria-label="Previous Slide"
+                >
+                  ‹
+                </button>
+                <div className="hp-hero-ctrl-dots">
+                  {HERO_SLIDES.map((_, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      className={`hp-hero-ctrl-dot ${idx === currentHeroSlide ? 'active' : ''}`}
+                      onClick={() => setCurrentHeroSlide(idx)}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  className="hp-hero-ctrl-btn"
+                  onClick={() => setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length)}
+                  aria-label="Next Slide"
+                >
+                  ›
+                </button>
+              </div>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* ── 2. CARS & BRANDS WE SERVICE (COMPACT SLIDER BOX) ── */}
+      {/* ── 2. CARS & BRANDS WE SERVICE (SEAMLESS BACKGROUND TICKER) ── */}
       <section className="hp-brands-section">
-        <div className="hp-container">
+        <div className="hp-container hp-brands-container">
           <div className="hp-brands-box">
             <div className="hp-brands-box-header">
               <span className="hp-brands-box-dot"></span>
@@ -695,18 +760,18 @@ export default function HomePage() {
                   <span className="hp-compare-tag hp-tag-after">
                     <span className="hp-tag-dot green"></span> AFTER
                   </span>
-
-
                 </div>
 
                 {/* Dynamic Status Pill underneath showing real-time cursor condition */}
                 <div className="hp-compare-live-status">
-                  <div className={`hp-status-indicator ${sliderPos < 50 ? 'is-before' : 'is-after'}`}>
+                  <div className={`hp-status-indicator ${sliderPos > 50 ? 'is-before' : sliderPos < 50 ? 'is-after' : 'is-split'}`}>
                     <span className="hp-status-dot"></span>
                     <span className="hp-status-text">
-                      {sliderPos < 50
-                        ? `Viewing BEFORE State (${sliderPos}%) — Heavy Road Mud, Dried Grime & Unwashed Finish`
-                        : `Viewing AFTER State (${sliderPos}%) — 9H Ceramic Mirror Gloss & Showroom Finish`}
+                      {sliderPos > 50
+                        ? `Viewing BEFORE State (${sliderPos}%) — Road Dust, Swirl Marks & Minor Dents`
+                        : sliderPos < 50
+                        ? `Viewing AFTER State (${100 - sliderPos}%) — 9H Ceramic Mirror Gloss & Showroom Finish`
+                        : `Viewing Split Comparison (50/50) — Drag Left for Showroom After / Right for Unpolished Before`}
                     </span>
                   </div>
                 </div>
@@ -744,17 +809,19 @@ export default function HomePage() {
                   className={`hp-svc-card-rich${isCenterLast ? ' hp-card-center-last' : ''}`}
                 >
                   {/* Service Image */}
-                  <div className="hp-card-img-wrap">
+                  <Link to={`/services/${svc.id}`} className="hp-card-img-wrap" title={`View ${svc.name} details`}>
                     <img src={svc.img} alt={svc.name} className="hp-card-img" loading="lazy" />
                     <div className="hp-card-img-overlay"></div>
                     <span className="hp-card-img-tag">{svc.tag}</span>
-                  </div>
+                  </Link>
 
                   {/* Card Body */}
                   <div className="hp-card-body">
                     <div className="hp-card-name-row">
                       <span className="hp-card-icon">{svc.icon}</span>
-                      <h3 className="hp-card-name">{svc.name}</h3>
+                      <Link to={`/services/${svc.id}`} className="hp-card-name-link" title={`View ${svc.name} details`}>
+                        <h3 className="hp-card-name">{svc.name}</h3>
+                      </Link>
                     </div>
 
                     <p className="hp-card-desc-rich">{svc.desc}</p>
@@ -773,12 +840,15 @@ export default function HomePage() {
 
                     {/* Action Button */}
                     <div className="hp-card-actions-rich">
+                      <Link to={`/services/${svc.id}`} className="hp-btn-details-service">
+                        <span>Details ↗</span>
+                      </Link>
                       <button
                         type="button"
                         className="hp-btn-book-service"
                         onClick={() => handleBook(svc.name)}
                       >
-                        Book This Service →
+                        Book Now
                       </button>
                     </div>
                   </div>
@@ -970,6 +1040,202 @@ export default function HomePage() {
                 <div className="hp-author-info">
                   <div className="hp-author-name">Baba OP (Asad)</div>
                   <div className="hp-author-badge">Verified Client</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6.1 CLIENT REVIEWS (INSTAGRAM VIDEO REELS) ──────── */}
+      <section className="hp-client-reels-section">
+        <div className="hp-container">
+          <div className="hp-section-head-row">
+            <div>
+              <div className="hp-section-tag">— INSTAGRAM VIDEO PROOF</div>
+              <h2 className="hp-section-title">
+                Client <span className="hp-grad-text">Reviews</span>
+              </h2>
+            </div>
+            <a
+              href="https://www.instagram.com/mateenautoofficial/"
+              target="_blank"
+              rel="noreferrer"
+              className="hp-view-all-link"
+            >
+              Watch All Reels on Instagram ↗
+            </a>
+          </div>
+
+          <div className="hp-client-reels-grid">
+            {/* Reel 1 - Rehan Tariq */}
+            <div className="hp-creel-card">
+              <div className="hp-creel-media-wrap">
+                <img src={avatarRehan} alt="Rehan Tariq Client Review" className="hp-creel-thumb" />
+                <div className="hp-creel-overlay"></div>
+                <span className="hp-creel-badge">🎬 01 · REEL</span>
+                <a
+                  href="https://www.instagram.com/p/DaVS8scPXcN/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hp-creel-play-btn"
+                  title="Watch Rehan Tariq's Review Reel on Instagram"
+                  aria-label="Play Rehan Tariq Review Reel"
+                >
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </a>
+              </div>
+
+              <div className="hp-creel-body">
+                <div className="hp-creel-header">
+                  <div className="hp-creel-avatar-mini">
+                    <img src={avatarRehan} alt="Rehan Tariq" />
+                  </div>
+                  <div className="hp-creel-author">
+                    <h4 className="hp-creel-name">
+                      Rehan Tariq
+                      <span className="hp-creel-check" title="Verified Customer">✔</span>
+                    </h4>
+                    <span className="hp-creel-role">Ceramic Coating &amp; Paint Correction</span>
+                  </div>
+                </div>
+
+                <p className="hp-creel-quote">
+                  “Amazing service! Got ceramic coating and paint correction done. My car looks absolutely brand new with incredible deep gloss.”
+                </p>
+
+                <div className="hp-creel-footer">
+                  <a
+                    href="https://www.instagram.com/p/DaVS8scPXcN/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hp-creel-btn-insta"
+                  >
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    <span>Watch Reel ↗</span>
+                  </a>
+                  <span className="hp-creel-stars">★★★★★</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Reel 2 - Yasir Shami */}
+            <div className="hp-creel-card">
+              <div className="hp-creel-media-wrap">
+                <img src={avatarYasir} alt="Yasir Shami Client Review" className="hp-creel-thumb" />
+                <div className="hp-creel-overlay"></div>
+                <span className="hp-creel-badge">🎬 02 · REEL</span>
+                <a
+                  href="https://www.instagram.com/p/DaQM31LPUAY/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hp-creel-play-btn"
+                  title="Watch Yasir Shami's Review Reel on Instagram"
+                  aria-label="Play Yasir Shami Review Reel"
+                >
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </a>
+              </div>
+
+              <div className="hp-creel-body">
+                <div className="hp-creel-header">
+                  <div className="hp-creel-avatar-mini">
+                    <img src={avatarYasir} alt="Yasir Shami" />
+                  </div>
+                  <div className="hp-creel-author">
+                    <h4 className="hp-creel-name">
+                      Yasir Shami
+                      <span className="hp-creel-check" title="Verified Customer">✔</span>
+                    </h4>
+                    <span className="hp-creel-role">Master Dry Denting &amp; Paint Repair</span>
+                  </div>
+                </div>
+
+                <p className="hp-creel-quote">
+                  “Professional team, outstanding craftsmanship, and genuine attention to detail. True masters of car restoration in Lahore.”
+                </p>
+
+                <div className="hp-creel-footer">
+                  <a
+                    href="https://www.instagram.com/p/DaQM31LPUAY/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hp-creel-btn-insta"
+                  >
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    <span>Watch Reel ↗</span>
+                  </a>
+                  <span className="hp-creel-stars">★★★★★</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Reel 3 - Baba OP (Asad) */}
+            <div className="hp-creel-card">
+              <div className="hp-creel-media-wrap">
+                <img src={avatarBaba} alt="Baba OP (Asad) Client Review" className="hp-creel-thumb" />
+                <div className="hp-creel-overlay"></div>
+                <span className="hp-creel-badge">🎬 03 · REEL</span>
+                <a
+                  href="https://www.instagram.com/p/DZ9o1YWP7_f/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hp-creel-play-btn"
+                  title="Watch Baba OP's Review Reel on Instagram"
+                  aria-label="Play Baba OP Review Reel"
+                >
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </a>
+              </div>
+
+              <div className="hp-creel-body">
+                <div className="hp-creel-header">
+                  <div className="hp-creel-avatar-mini">
+                    <img src={avatarBaba} alt="Baba OP (Asad)" />
+                  </div>
+                  <div className="hp-creel-author">
+                    <h4 className="hp-creel-name">
+                      Baba OP (Asad)
+                      <span className="hp-creel-check" title="Verified Customer">✔</span>
+                    </h4>
+                    <span className="hp-creel-role">Full Detailing &amp; PPF Protection</span>
+                  </div>
+                </div>
+
+                <p className="hp-creel-quote">
+                  “Best car detailing and paint restoration service in town. Got full denting, scratch repair and 3M polish — 100% factory finish.”
+                </p>
+
+                <div className="hp-creel-footer">
+                  <a
+                    href="https://www.instagram.com/p/DZ9o1YWP7_f/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hp-creel-btn-insta"
+                  >
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    <span>Watch Reel ↗</span>
+                  </a>
+                  <span className="hp-creel-stars">★★★★★</span>
                 </div>
               </div>
             </div>

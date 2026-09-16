@@ -87,10 +87,10 @@ export default function Footer() {
             <h4 className="au-footer-heading">Pages</h4>
             <ul className="au-footer-links">
               <li><a href="/" onClick={(e) => handleNav(e, '/')}>Home</a></li>
-              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Services</a></li>
-              <li><a href="/instagram-work" onClick={(e) => handleNav(e, '/instagram-work')}>Instagram Work</a></li>
               <li><a href="/about" onClick={(e) => handleNav(e, '/about')}>About Us</a></li>
-              <li><a href="/contact" onClick={(e) => handleNav(e, '/contact')}>Contact Us</a></li>
+              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Services</a></li>
+              <li><a href="/instagram-work" onClick={(e) => handleNav(e, '/instagram-work')}>Social Links</a></li>
+              <li><a href="/contact" onClick={(e) => handleNav(e, '/contact')}>Connect With Us</a></li>
             </ul>
           </div>
 
@@ -98,11 +98,11 @@ export default function Footer() {
           <div className="au-footer-col au-reveal au-delay-3">
             <h4 className="au-footer-heading">Our Services</h4>
             <ul className="au-footer-links">
-              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>PPF (Paint Protection Film)</a></li>
-              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Car Accident Repair</a></li>
-              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Denting &amp; Painting (2K)</a></li>
-              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Dry Denting (PDR)</a></li>
-              <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>9H Ceramic &amp; Graphene</a></li>
+              <li><a href="/services/scratch-repair" onClick={(e) => handleNav(e, '/services/scratch-repair')}>Scratch Filling &amp; Repair</a></li>
+              <li><a href="/services/dry-denting" onClick={(e) => handleNav(e, '/services/dry-denting')}>Dry Denting (PDR)</a></li>
+              <li><a href="/services/accident-repair" onClick={(e) => handleNav(e, '/services/accident-repair')}>Car Accident Repair</a></li>
+              <li><a href="/services/ppf" onClick={(e) => handleNav(e, '/services/ppf')}>PPF (Paint Protection Film)</a></li>
+              <li><a href="/services/denting-painting" onClick={(e) => handleNav(e, '/services/denting-painting')}>Denting &amp; Painting (2K)</a></li>
             </ul>
           </div>
 
