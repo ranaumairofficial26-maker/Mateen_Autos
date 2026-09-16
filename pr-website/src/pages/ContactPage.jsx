@@ -29,9 +29,9 @@ const branches = [
   },
   {
     id: 'dha',
-    name: 'Mateen Auto (DHA Branch)',
+    name: 'Mateen Auto (DHA Phase 1 Branch)',
     subtitle: 'Luxury Detailing & Paint Protection Studio',
-    tag: 'DHA STUDIO',
+    tag: 'DHA PHASE 1 STUDIO',
     address: 'Link 2 Super Town, Super Town, Lahore, Punjab 54810',
     phone: '+92 323 4500012',
     hours: 'Mon – Sat: 10:00 AM – 8:00 PM',
@@ -236,7 +236,7 @@ export default function ContactPage() {
                       className="cp-select"
                     >
                       <option value="Chauburji (Main Branch)">Mateen Auto — Chauburji (Main Branch)</option>
-                      <option value="DHA Branch">Mateen Autos — DHA Branch (Link 2 Super Town)</option>
+                      <option value="DHA Phase 1 Branch">Mateen Autos — DHA Phase 1 Branch (Link 2 Super Town)</option>
                     </select>
                   </div>
 
@@ -337,8 +337,8 @@ export default function ContactPage() {
 
               {/* Branch 2 */}
               <div className="cp-branch-box">
-                <span className="cp-branch-tag-pill">DHA BRANCH</span>
-                <h3 className="cp-branch-heading">Mateen Autos (DHA Branch)</h3>
+                <span className="cp-branch-tag-pill">DHA PHASE 1 BRANCH</span>
+                <h3 className="cp-branch-heading">Mateen Autos (DHA Phase 1 Branch)</h3>
                 <div className="cp-branch-sub">Car Care, PPF &amp; Detailing Center</div>
 
                 <div className="cp-branch-item">

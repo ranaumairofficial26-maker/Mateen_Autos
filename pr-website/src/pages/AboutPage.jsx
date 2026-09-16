@@ -113,10 +113,10 @@ const branches = [
   },
   {
     id: 'dha',
-    name: 'Mateen Autos (DHA Branch)',
+    name: 'Mateen Autos (DHA Phase 1 Branch)',
     subtitle: 'Car Care, PPF & Detailing Center',
-    tag: 'DHA BRANCH',
-    address: 'Mateen Autos Dha branch, F9RG+Q73, Link 2 Super Town, Super Town, Lahore, Pakistan',
+    tag: 'DHA PHASE 1 BRANCH',
+    address: 'Mateen Autos DHA Phase 1 Branch, Link 2 Super Town, Lahore, Pakistan',
     phone: '+92 310 4253333',
     hours: 'Mon – Sat: 10:00 AM – 8:00 PM',
     services: 'Paint Protection Film (PPF), Ceramic Coating, Paint Correction, Interior Spa',

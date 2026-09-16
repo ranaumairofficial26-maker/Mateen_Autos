@@ -255,19 +255,22 @@ export default function HomePage() {
         <div className="hp-container hp-hero-cinematic-content">
           <div className="hp-hero-cinematic-left">
             
-            {/* Top Location Pill Badge (Reference Match with Shield & Live Dot) */}
+            {/* Top Location Pill Badge (with Official Mateen Auto Logo & Live Dot) */}
             <div className="hp-hero-badge-cinematic">
-              <svg className="hp-badge-shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
+              <img src={logoImg} alt="Mateen Auto Logo" className="hp-badge-logo-img" />
+              <span className="hp-badge-brand-title">MATEEN AUTO</span>
               <span className="hp-badge-dot-live"></span>
               <span className="hp-badge-text-cinematic">
-                CHAUBURJI &amp; DHA PHASE 5, LAHORE, PAKISTAN
+                CHAUBURJI &amp; DHA PHASE 1, LAHORE, PAKISTAN
               </span>
             </div>
 
-            {/* Bold Impactful Headline */}
+            {/* Bold Impactful Headline with Mateen Auto Official Brand Logo */}
             <h1 className="hp-hero-title-cinematic">
+              <span className="hp-hero-title-brand-row">
+                <img src={logoImg} alt="Mateen Auto Logo" className="hp-hero-title-logo-icon" />
+                <span className="hp-hero-brand-name-glow">MATEEN AUTO</span>
+              </span>
               MORE THAN DETAILING.<br />
               <span className="hp-grad-animated">SHOWROOM PERFECTION.</span>
             </h1>
@@ -889,7 +892,7 @@ export default function HomePage() {
                     </svg>
                   </span>
                   <div className="iw-btn-hero-text">
-                    <span className="iw-btn-hero-sub">CHAUBURJI &amp; DHA PHASE 5</span>
+                    <span className="iw-btn-hero-sub">CHAUBURJI &amp; DHA PHASE 1</span>
                     <span className="iw-btn-hero-main">Book Free Inspection →</span>
                   </div>
                 </Link>

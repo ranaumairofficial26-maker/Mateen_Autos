@@ -74,7 +74,7 @@ export default function InstagramWorkPage() {
                 </svg>
               </span>
               <div className="iw-btn-hero-text">
-                <span className="iw-btn-hero-sub">CHAUBURJI &amp; DHA PHASE 5</span>
+                <span className="iw-btn-hero-sub">CHAUBURJI &amp; DHA PHASE 1</span>
                 <span className="iw-btn-hero-main">Book Free Inspection →</span>
               </div>
             </a>
