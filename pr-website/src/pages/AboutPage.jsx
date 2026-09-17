@@ -245,6 +245,8 @@ export default function AboutPage() {
                   src={founderImg}
                   alt="Muhammad Nadeem – Founder & CEO, Mateen Auto"
                   className="au-founder-img"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Signature */}

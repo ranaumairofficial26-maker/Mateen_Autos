@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'ABOUT US', href: '/about' },
   { label: 'SERVICES', href: '/services' },
   { label: 'SOCIAL LINKS', href: '/instagram-work' },
+  { label: 'BLOGS', href: '/blogs' },
 ];
 
 export default function Navbar() {
@@ -26,6 +27,8 @@ export default function Navbar() {
       setActiveTab('ABOUT US');
     } else if (location.pathname.startsWith('/services')) {
       setActiveTab('SERVICES');
+    } else if (location.pathname === '/blogs' || location.pathname.startsWith('/blog')) {
+      setActiveTab('BLOGS');
     } else if (location.pathname === '/instagram-work' || location.pathname === '/social-links') {
       setActiveTab('SOCIAL LINKS');
     } else if (location.pathname === '/contact') {

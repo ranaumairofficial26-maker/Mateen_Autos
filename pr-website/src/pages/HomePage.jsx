@@ -205,19 +205,6 @@ export default function HomePage() {
   const visibleServices = showAllServices ? ALL_SERVICES : ALL_SERVICES.slice(0, INITIAL_COUNT);
   const hiddenCount = ALL_SERVICES.length - INITIAL_COUNT;
 
-  // Hero image subtle scroll zoom (smoothly zooms in up to ~10% on scroll)
-  const [heroScrollZoom, setHeroScrollZoom] = useState(1);
-
-  useEffect(() => {
-    const handleHeroScroll = () => {
-      const scroll = window.scrollY;
-      const zoom = 1 + Math.min(0.10, Math.max(0, (scroll / 400) * 0.10));
-      setHeroScrollZoom(zoom);
-    };
-    window.addEventListener('scroll', handleHeroScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleHeroScroll);
-  }, []);
-
   // Top Hero Right Image Slider state
   const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
   const [isHeroAutoPlaying, setIsHeroAutoPlaying] = useState(true);
@@ -308,7 +295,7 @@ export default function HomePage() {
 
             {/* Concise Elite Copy */}
             <p className="hp-hero-desc-cinematic">
-              Lahore's flagship automotive studio. Ceramic matrix armour, graphene nano-shields, self-healing TPU PPF wraps, and concours-level mirror gloss for luxury vehicles.
+              Pakistan's pioneer in signature micro-scratch repair, 100% factory paint preservation, paintless dry denting, and 9H ceramic matrix armor under 37+ years of master craftsmanship.
             </p>
 
             {/* Action Buttons Row (WhatsApp, Build Package, Protection Quiz) */}
@@ -999,7 +986,7 @@ export default function HomePage() {
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
                 <div className="hp-author-avatar">
-                  <img src={avatarRehan} alt="Rehan Tariq" className="hp-author-avatar-img" />
+                  <img src={avatarRehan} alt="Rehan Tariq" className="hp-author-avatar-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="hp-author-info">
                   <div className="hp-author-name">Rehan Tariq</div>
@@ -1017,7 +1004,7 @@ export default function HomePage() {
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
                 <div className="hp-author-avatar">
-                  <img src={avatarYasir} alt="Yasir Shami" className="hp-author-avatar-img" />
+                  <img src={avatarYasir} alt="Yasir Shami" className="hp-author-avatar-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="hp-author-info">
                   <div className="hp-author-name">Yasir Shami</div>
@@ -1035,7 +1022,7 @@ export default function HomePage() {
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
                 <div className="hp-author-avatar">
-                  <img src={avatarBaba} alt="Baba OP (Asad)" className="hp-author-avatar-img" />
+                  <img src={avatarBaba} alt="Baba OP (Asad)" className="hp-author-avatar-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="hp-author-info">
                   <div className="hp-author-name">Baba OP (Asad)</div>
@@ -1053,7 +1040,7 @@ export default function HomePage() {
         <div className="hp-container">
           <div className="hp-section-head-row">
             <div>
-              <div className="hp-section-tag">— INSTAGRAM VIDEO PROOF</div>
+              <div className="hp-section-tag">— CLIENT VIDEO PROOF</div>
               <h2 className="hp-section-title">
                 Client <span className="hp-grad-text">Reviews</span>
               </h2>
@@ -1072,7 +1059,7 @@ export default function HomePage() {
             {/* Reel 1 - Rehan Tariq */}
             <div className="hp-creel-card">
               <div className="hp-creel-media-wrap">
-                <img src={avatarRehan} alt="Rehan Tariq Client Review" className="hp-creel-thumb" />
+                <img src={avatarRehan} alt="Rehan Tariq Client Review" className="hp-creel-thumb" loading="lazy" decoding="async" />
                 <div className="hp-creel-overlay"></div>
                 <span className="hp-creel-badge">🎬 01 · REEL</span>
                 <a
@@ -1092,7 +1079,7 @@ export default function HomePage() {
               <div className="hp-creel-body">
                 <div className="hp-creel-header">
                   <div className="hp-creel-avatar-mini">
-                    <img src={avatarRehan} alt="Rehan Tariq" />
+                    <img src={avatarRehan} alt="Rehan Tariq" loading="lazy" decoding="async" />
                   </div>
                   <div className="hp-creel-author">
                     <h4 className="hp-creel-name">
@@ -1129,16 +1116,16 @@ export default function HomePage() {
             {/* Reel 2 - Yasir Shami */}
             <div className="hp-creel-card">
               <div className="hp-creel-media-wrap">
-                <img src={avatarYasir} alt="Yasir Shami Client Review" className="hp-creel-thumb" />
+                <img src={avatarYasir} alt="Yasir Shami Client Review" className="hp-creel-thumb" loading="lazy" decoding="async" />
                 <div className="hp-creel-overlay"></div>
-                <span className="hp-creel-badge">🎬 02 · REEL</span>
+                <span className="hp-creel-badge">🎬 02 · YOUTUBE REVIEW</span>
                 <a
-                  href="https://www.instagram.com/p/DaQM31LPUAY/"
+                  href="https://www.youtube.com/watch?v=GfktMOC1iJg"
                   target="_blank"
                   rel="noreferrer"
                   className="hp-creel-play-btn"
-                  title="Watch Yasir Shami's Review Reel on Instagram"
-                  aria-label="Play Yasir Shami Review Reel"
+                  title="Watch Yasir Shami's Review on YouTube"
+                  aria-label="Play Yasir Shami Review Video"
                 >
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                     <polygon points="5 3 19 12 5 21 5 3" />
@@ -1149,7 +1136,7 @@ export default function HomePage() {
               <div className="hp-creel-body">
                 <div className="hp-creel-header">
                   <div className="hp-creel-avatar-mini">
-                    <img src={avatarYasir} alt="Yasir Shami" />
+                    <img src={avatarYasir} alt="Yasir Shami" loading="lazy" decoding="async" />
                   </div>
                   <div className="hp-creel-author">
                     <h4 className="hp-creel-name">
@@ -1166,17 +1153,15 @@ export default function HomePage() {
 
                 <div className="hp-creel-footer">
                   <a
-                    href="https://www.instagram.com/p/DaQM31LPUAY/"
+                    href="https://www.youtube.com/watch?v=GfktMOC1iJg"
                     target="_blank"
                     rel="noreferrer"
-                    className="hp-creel-btn-insta"
+                    className="hp-creel-btn-yt"
                   >
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                     </svg>
-                    <span>Watch Reel ↗</span>
+                    <span>Watch Video ↗</span>
                   </a>
                   <span className="hp-creel-stars">★★★★★</span>
                 </div>
@@ -1186,16 +1171,16 @@ export default function HomePage() {
             {/* Reel 3 - Baba OP (Asad) */}
             <div className="hp-creel-card">
               <div className="hp-creel-media-wrap">
-                <img src={avatarBaba} alt="Baba OP (Asad) Client Review" className="hp-creel-thumb" />
+                <img src={avatarBaba} alt="Baba OP (Asad) Client Review" className="hp-creel-thumb" loading="lazy" decoding="async" />
                 <div className="hp-creel-overlay"></div>
-                <span className="hp-creel-badge">🎬 03 · REEL</span>
+                <span className="hp-creel-badge">🎬 03 · YOUTUBE REVIEW</span>
                 <a
-                  href="https://www.instagram.com/p/DZ9o1YWP7_f/"
+                  href="https://www.youtube.com/watch?v=5dUJ0rgPwMQ&t=26s"
                   target="_blank"
                   rel="noreferrer"
                   className="hp-creel-play-btn"
-                  title="Watch Baba OP's Review Reel on Instagram"
-                  aria-label="Play Baba OP Review Reel"
+                  title="Watch Baba OP's Review on YouTube"
+                  aria-label="Play Baba OP Review Video"
                 >
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                     <polygon points="5 3 19 12 5 21 5 3" />
@@ -1206,7 +1191,7 @@ export default function HomePage() {
               <div className="hp-creel-body">
                 <div className="hp-creel-header">
                   <div className="hp-creel-avatar-mini">
-                    <img src={avatarBaba} alt="Baba OP (Asad)" />
+                    <img src={avatarBaba} alt="Baba OP (Asad)" loading="lazy" decoding="async" />
                   </div>
                   <div className="hp-creel-author">
                     <h4 className="hp-creel-name">
@@ -1223,17 +1208,15 @@ export default function HomePage() {
 
                 <div className="hp-creel-footer">
                   <a
-                    href="https://www.instagram.com/p/DZ9o1YWP7_f/"
+                    href="https://www.youtube.com/watch?v=5dUJ0rgPwMQ&t=26s"
                     target="_blank"
                     rel="noreferrer"
-                    className="hp-creel-btn-insta"
+                    className="hp-creel-btn-yt"
                   >
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                     </svg>
-                    <span>Watch Reel ↗</span>
+                    <span>Watch Video ↗</span>
                   </a>
                   <span className="hp-creel-stars">★★★★★</span>
                 </div>

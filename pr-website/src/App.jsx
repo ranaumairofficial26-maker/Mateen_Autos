@@ -1,12 +1,12 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import WhatsAppButton from './components/WhatsAppButton';
-import CarCursorTrail from './components/CarCursorTrail';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
 const InstagramWorkPage = lazy(() => import('./pages/InstagramWorkPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 
@@ -36,6 +36,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
+          <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/blog" element={<BlogPage />} />
           <Route path="/instagram-work" element={<InstagramWorkPage />} />
           <Route path="/social-links" element={<InstagramWorkPage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -45,7 +47,6 @@ export default function App() {
         </Routes>
       </Suspense>
       <WhatsAppButton />
-      <CarCursorTrail />
     </BrowserRouter>
   );
 }

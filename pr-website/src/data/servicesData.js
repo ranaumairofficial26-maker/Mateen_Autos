@@ -18,7 +18,7 @@ export const SERVICES_DATA = [
     category: 'Body & Paint',
     img: imgScratch,
     rating: '5.0 (4,200+ Cars Restored)',
-    turnaround: '2 to 4 Hours',
+    turnaround: '2 to 3 Days',
     warranty: 'Permanent Repair Guarantee',
     branches: 'Chauburji & DHA Phase 1, Lahore',
     pricingNote: 'Free On-Site & WhatsApp Photo Damage Evaluation',
@@ -43,8 +43,8 @@ export const SERVICES_DATA = [
       },
       {
         icon: '⚡',
-        title: 'Same-Day Rapid Turnaround',
-        desc: 'Most scratch filling jobs are completed within 2 to 4 hours, allowing you to get your car back without leaving it at a workshop for days.'
+        title: '2 to 3 Days Precision Quality',
+        desc: 'Every scratch is carefully layered, infrared-cured, and optical block sanded within 2 to 3 days for a seamless factory-level finish.'
       },
       {
         icon: '💎',
@@ -103,7 +103,7 @@ export const SERVICES_DATA = [
       },
       {
         q: 'How long does the scratch repair take at Mateen Auto?',
-        a: 'Most scratch filling jobs take between 2 to 4 hours depending on the length and number of panels. You can comfortably relax in our air-conditioned lounge or pick your vehicle up the same day.'
+        a: 'Most scratch filling and micro-leveling jobs take 2 to 3 days depending on the depth and number of damaged panels.'
       }
     ],
 
@@ -119,7 +119,7 @@ export const SERVICES_DATA = [
     category: 'Body & Paint',
     img: imgDryDenting,
     rating: '5.0 (5,000+ Dents Removed)',
-    turnaround: '1 to 3 Hours',
+    turnaround: '1 to 3 Days',
     warranty: '100% Original Factory Metal & Paint',
     branches: 'Chauburji & DHA Phase 1, Lahore',
     pricingNote: 'Send photos on WhatsApp for an immediate free estimate',
@@ -144,8 +144,8 @@ export const SERVICES_DATA = [
       },
       {
         icon: '⏱️',
-        title: 'Fast Turnaround in 1–3 Hours',
-        desc: 'Unlike conventional denting and painting which takes 3–5 days, dry denting is typically completed while you wait.'
+        title: 'Fast Turnaround in 1 to 3 Days',
+        desc: 'Depending on the depth, location, and number of dents, dry denting is meticulously completed within 1 to 3 days with zero paint disturbance.'
       },
       {
         icon: '💵',
@@ -220,7 +220,7 @@ export const SERVICES_DATA = [
     category: 'Body & Paint',
     img: imgAccident,
     rating: '4.9 (1,800+ Vehicles Restored)',
-    turnaround: '3 to 14 Days (Based on severity)',
+    turnaround: '12 to 15 Days',
     warranty: 'Structural Integrity & Alignment Guarantee',
     branches: 'Chauburji Master Facility & DHA Center',
     pricingNote: 'Detailed insurance & private itemized repair estimates',
@@ -305,7 +305,7 @@ export const SERVICES_DATA = [
       },
       {
         q: 'How long does a full accident repair take?',
-        a: 'Minor collision repairs take 3 to 5 days, while heavy unibody frame realignment and complete rebuilds typically take 7 to 14 days to ensure zero compromises on safety and finish.'
+        a: 'Accident repairs, including unibody frame laser realignment, panel replacement, and 2K heated oven painting, typically take 12 to 15 days to ensure uncompromised structural safety and a flawless factory finish.'
       }
     ],
 
@@ -321,7 +321,7 @@ export const SERVICES_DATA = [
     category: 'Protection',
     img: imgPPF,
     rating: '5.0 (1,200+ Vehicles Protected)',
-    turnaround: '1 to 3 Days',
+    turnaround: '1 to 2 Days',
     warranty: '5 to 10-Year Nationwide Warranty',
     branches: 'Climate-Controlled Cleanrooms at DHA & Chauburji',
     pricingNote: 'Custom packages: Front Bumper, Full Front, or Complete Body',
@@ -422,7 +422,7 @@ export const SERVICES_DATA = [
     category: 'Body & Paint',
     img: imgDenting,
     rating: '4.9 (6,000+ Panels Painted)',
-    turnaround: '1 to 3 Days',
+    turnaround: '2 to 3 Days',
     warranty: '3-Year Paint Shine & Adhesion Warranty',
     branches: 'Chauburji & DHA Phase 1 Centers',
     pricingNote: 'Per-panel and full-body respray packages available',
@@ -523,7 +523,7 @@ export const SERVICES_DATA = [
     category: 'Protection',
     img: imgCoating,
     rating: '5.0 (2,500+ Cars Coated)',
-    turnaround: '1 to 2 Days',
+    turnaround: '2 to 3 Days',
     warranty: '3 to 5-Year Protection Warranty',
     branches: 'Dedicated Coating Studios at DHA & Chauburji',
     pricingNote: 'Includes full multi-stage paint correction before coating',
@@ -624,7 +624,7 @@ export const SERVICES_DATA = [
     category: 'Detailing',
     img: imgDetailing,
     rating: '5.0 (3,800+ Detailings Completed)',
-    turnaround: '4 to 8 Hours',
+    turnaround: '2 to 3 Days',
     warranty: '100% Satisfaction & Odor-Free Guarantee',
     branches: 'Chauburji & DHA Phase 1 Centers',
     pricingNote: 'Sedan, SUV, and Luxury Crossover packages available',
@@ -725,7 +725,7 @@ export const SERVICES_DATA = [
     category: 'Detailing',
     img: imgPolish,
     rating: '4.9 (4,500+ Cars Corrected)',
-    turnaround: '3 to 6 Hours',
+    turnaround: '2 to 3 Days',
     warranty: 'Optical Swirl-Free Guarantee',
     branches: 'Chauburji & DHA Phase 1 Centers',
     pricingNote: 'Multi-stage paint correction customized to paint thickness',
@@ -806,7 +806,7 @@ export const SERVICES_DATA = [
       },
       {
         q: 'How long does a full compound and polish take?',
-        a: 'A proper multi-stage paint correction takes between 3 to 6 hours depending on paint hardness and the severity of existing swirls.'
+        a: 'A proper multi-stage paint correction and sealant application takes 2 to 3 days depending on paint hardness and the severity of existing swirls.'
       },
       {
         q: 'Should I get ceramic coating after paint correction?',
@@ -826,7 +826,7 @@ export const SERVICES_DATA = [
     category: 'Wheels & Geometry',
     img: imgWheelCare,
     rating: '5.0 (7,000+ Vehicles Serviced)',
-    turnaround: '30 to 60 Minutes',
+    turnaround: '2 to 3 Days',
     warranty: 'Steering Drift & Vibration-Free Guarantee',
     branches: 'Chauburji & DHA Phase 1 Centers',
     pricingNote: 'Computerized diagnostic alignment report provided with every job',

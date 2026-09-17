@@ -35,10 +35,13 @@
   --container-width: 1280px;
   --container-padding: 0 40px;
 
-  /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.35s ease;
-  --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Transitions & Easing Curves */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --ease-in-out-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.25s var(--ease-luxury);
+  --transition-normal: 0.4s var(--ease-luxury);
+  --transition-slow: 0.8s var(--ease-luxury);
 
   /* Shadows */
   --shadow-gold: 0 0 40px rgba(201, 168, 76, 0.3);
@@ -66,6 +69,15 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hardware-accelerated smooth layer promotion */
+.btn, .glass-card, .au-reveal, .hp-card, .sp-card, .blog-card, a, button {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* =========================================
