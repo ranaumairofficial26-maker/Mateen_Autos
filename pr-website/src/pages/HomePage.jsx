@@ -273,30 +273,19 @@ export default function HomePage() {
         <div className="hp-container hp-hero-cinematic-content">
           <div className="hp-hero-cinematic-left">
             
-            {/* Top Location Pill Badge (with Official Mateen Auto Logo & Live Dot) */}
+            {/* Top Location Pill Badge */}
             <div className="hp-hero-badge-cinematic">
-              <img src={logoImg} alt="Mateen Auto Logo" className="hp-badge-logo-img" />
-              <span className="hp-badge-brand-title">MATEEN AUTO</span>
               <span className="hp-badge-dot-live"></span>
               <span className="hp-badge-text-cinematic">
                 CHAUBURJI &amp; DHA PHASE 1, LAHORE, PAKISTAN
               </span>
             </div>
 
-            {/* Bold Impactful Headline with Mateen Auto Official Brand Logo */}
+            {/* Bold Impactful Headline */}
             <h1 className="hp-hero-title-cinematic">
-              <span className="hp-hero-title-brand-row">
-                <img src={logoImg} alt="Mateen Auto Logo" className="hp-hero-title-logo-icon" />
-                <span className="hp-hero-brand-name-glow">MATEEN AUTO</span>
-              </span>
               MORE THAN DETAILING.<br />
               <span className="hp-grad-animated">SHOWROOM PERFECTION.</span>
             </h1>
-
-            {/* Concise Elite Copy */}
-            <p className="hp-hero-desc-cinematic">
-              Pakistan's pioneer in signature micro-scratch repair, 100% factory paint preservation, paintless dry denting, and 9H ceramic matrix armor under 37+ years of master craftsmanship.
-            </p>
 
             {/* Action Buttons Row (WhatsApp, Build Package, Protection Quiz) */}
             <div className="hp-hero-actions-cinematic">
