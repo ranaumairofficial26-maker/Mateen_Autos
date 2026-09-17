@@ -147,46 +147,57 @@ export default function Navbar() {
 
       {/* ── MOBILE MENU DRAWER ────────────────── */}
       <div className={`au-mobile-drawer ${menuOpen ? 'open' : ''}`}>
-        {navLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            className={activeTab === link.label ? 'active' : ''}
-            onClick={(e) => handleNav(e, link)}
+        <div className="au-mob-drawer-header">
+          <div className="au-mob-brand-badge">
+            <span className="au-mob-dot"></span>
+            MATEEN AUTO NAVIGATION
+          </div>
+          <button
+            type="button"
+            className="au-mob-close-btn"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close navigation menu"
           >
-            {link.label}
+            ✕
+          </button>
+        </div>
+
+        <div className="au-mob-drawer-links">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className={`au-mob-link-item ${activeTab === link.label ? 'active' : ''}`}
+              onClick={(e) => handleNav(e, link)}
+            >
+              <span>{link.label}</span>
+              <span className="au-mob-link-arrow">→</span>
+            </a>
+          ))}
+
+          <a
+            href="/contact"
+            className={`au-mob-link-item au-mob-contact-link ${activeTab === 'CONNECT WITH US' ? 'active' : ''}`}
+            onClick={(e) => handleNav(e, { label: 'CONNECT WITH US', href: '/contact' })}
+          >
+            <span>CONNECT WITH US</span>
+            <span className="au-mob-link-arrow">↗</span>
           </a>
-        ))}
-        <a
-          href="/contact"
-          className={activeTab === 'CONNECT WITH US' ? 'active' : ''}
-          onClick={(e) => handleNav(e, { label: 'CONNECT WITH US', href: '/contact' })}
-          style={{ color: isPurple ? '#d946ef' : '#00a8ff', marginTop: '10px' }}
-        >
-          CONNECT WITH US →
-        </a>
-        <a
-          href="https://wa.me/923234500012?text=Hello%20Mateen%20Auto,%20I%20want%20to%20get%20a%20quote."
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            marginTop: '16px',
-            padding: '12px 28px',
-            borderRadius: '8px',
-            background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
-            color: '#fff',
-            fontSize: '1.05rem',
-            fontWeight: 700,
-            letterSpacing: '1px',
-            boxShadow: '0 4px 20px rgba(37, 211, 102, 0.4)',
-            textDecoration: 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-          }}
-        >
-          💬 WHATSAPP QUOTE
-        </a>
+        </div>
+
+        <div className="au-mob-drawer-footer">
+          <a
+            href="https://wa.me/923234500012?text=Hello%20Mateen%20Auto,%20I%20want%20to%20get%20a%20quote."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="au-mob-wa-btn"
+          >
+            💬 WHATSAPP QUOTE
+          </a>
+          <div className="au-mob-phone-text">
+            📞 +92 323 4500012 • Chauburji, Lahore
+          </div>
+        </div>
       </div>
     </>
   );

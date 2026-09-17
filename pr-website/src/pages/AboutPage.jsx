@@ -185,18 +185,11 @@ export default function AboutPage() {
               </h1>
 
               {/* Tagline overlay */}
-              <div style={{
-                display: 'inline-block',
-                marginBottom: '20px',
-                padding: '12px 16px',
-                border: '1px solid rgba(0, 168, 255, 0.3)',
-                borderRadius: '6px',
-                background: 'rgba(0, 168, 255, 0.06)',
-              }}>
-                <div style={{ fontSize: '11px', letterSpacing: '3px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
+              <div className="au-tagline-badge-wrap">
+                <div className="au-tagline-sub-text">
                   EXPERIENCE SINCE 1989 ·
                 </div>
-                <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#00a8ff', fontWeight: 700, textTransform: 'uppercase' }}>
+                <div className="au-tagline-main-text">
                   SERVING LAHORE SINCE 2008.
                 </div>
               </div>
@@ -213,7 +206,7 @@ export default function AboutPage() {
               {/* Stats - hover to animate */}
               <div className="au-stats">
                 {stats.map((stat, i) => (
-                  <div key={stat.label} style={{ display: 'flex', alignItems: 'stretch', gap: '16px' }}>
+                  <div key={stat.label} className="au-stat-item-wrap">
                     <AnimatedStat stat={stat} />
                     {i < stats.length - 1 && <div className="au-stat-divider"></div>}
                   </div>
@@ -224,18 +217,7 @@ export default function AboutPage() {
             {/* RIGHT: Founder image */}
             <div className="au-hero-right au-reveal-right">
               {/* Decorative vertical text */}
-              <div style={{
-                position: 'absolute',
-                right: '-10px',
-                top: '50%',
-                transform: 'translateY(-50%) rotate(90deg)',
-                fontSize: '8px',
-                letterSpacing: '5px',
-                textTransform: 'uppercase',
-                color: 'rgba(0,168,255,0.35)',
-                whiteSpace: 'nowrap',
-                zIndex: 5,
-              }}>
+              <div className="au-deco-text">
                 DETAILS&nbsp;&nbsp;CREATE&nbsp;&nbsp;A&nbsp;&nbsp;HIGHER&nbsp;&nbsp;STANDARD
               </div>
 
