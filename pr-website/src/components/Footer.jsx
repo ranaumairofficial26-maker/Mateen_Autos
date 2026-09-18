@@ -148,6 +148,7 @@ export default function Footer() {
               <li><a href="/services" onClick={(e) => handleNav(e, '/services')}>Services</a></li>
               <li><a href="/instagram-work" onClick={(e) => handleNav(e, '/instagram-work')}>Social Links</a></li>
               <li><a href="/blogs" onClick={(e) => handleNav(e, '/blogs')}>Blogs &amp; Insights</a></li>
+              <li><a href="/faq" onClick={(e) => handleNav(e, '/faq')}>Frequently Asked Questions (FAQ)</a></li>
               <li><a href="/contact" onClick={(e) => handleNav(e, '/contact')}>Connect With Us</a></li>
             </ul>
           </div>
@@ -161,6 +162,10 @@ export default function Footer() {
               <li><a href="/services/accident-repair" onClick={(e) => handleNav(e, '/services/accident-repair')}>Car Accident Repair</a></li>
               <li><a href="/services/ppf" onClick={(e) => handleNav(e, '/services/ppf')}>PPF (Paint Protection Film)</a></li>
               <li><a href="/services/denting-painting" onClick={(e) => handleNav(e, '/services/denting-painting')}>Denting &amp; Painting (2K)</a></li>
+              <li><a href="/services/car-coating" onClick={(e) => handleNav(e, '/services/car-coating')}>Ceramic &amp; Graphene Coating</a></li>
+              <li><a href="/services/car-detailing" onClick={(e) => handleNav(e, '/services/car-detailing')}>Car Detailing &amp; Interior Spa</a></li>
+              <li><a href="/services/compound-polish" onClick={(e) => handleNav(e, '/services/compound-polish')}>3M Compound &amp; Paint Polish</a></li>
+              <li><a href="/services/wheel-balancing-alignment" onClick={(e) => handleNav(e, '/services/wheel-balancing-alignment')}>Wheel Balancing &amp; Alignment</a></li>
             </ul>
           </div>
 

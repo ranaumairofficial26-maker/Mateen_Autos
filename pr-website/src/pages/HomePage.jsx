@@ -1216,6 +1216,70 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── 6.2 FREQUENTLY ASKED QUESTIONS PREVIEW (FAQ) ─ */}
+      <section className="hp-faq-preview-section" style={{ padding: '20px 0 50px 0' }}>
+        <div className="hp-container">
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(26, 13, 44, 0.7), rgba(12, 6, 22, 0.8))',
+            border: '1px solid rgba(217, 70, 239, 0.25)',
+            borderRadius: '20px',
+            padding: '36px 32px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '24px',
+            backdropFilter: 'blur(12px)',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)'
+          }}>
+            <div style={{ maxWidth: '600px' }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                color: '#e879f9',
+                fontSize: '0.74rem',
+                fontWeight: '700',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                marginBottom: '10px'
+              }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e', display: 'inline-block' }}></span>
+                CLIENT ADVISORY &amp; ANSWERS
+              </div>
+              <h3 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.7rem)', fontWeight: '800', color: '#ffffff', margin: '0 0 10px 0' }}>
+                Have Questions About Pricing, Branches, or Scratch Filling?
+              </h3>
+              <p style={{ color: '#cbd5e1', fontSize: '0.92rem', margin: 0, lineHeight: 1.6 }}>
+                Explore answers regarding Mateen Auto’s workmanship guarantee, scratch filling technique, branch consistency, and pricing transparency.
+              </p>
+            </div>
+            <Link
+              to="/faq"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'linear-gradient(135deg, #d946ef, #9333ea)',
+                color: '#ffffff',
+                fontWeight: '700',
+                fontSize: '0.92rem',
+                padding: '13px 26px',
+                borderRadius: '12px',
+                textDecoration: 'none',
+                boxShadow: '0 4px 20px rgba(217, 70, 239, 0.35)',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              <span>Explore All FAQs (9 Q&amp;As)</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── 7. BOTTOM CTA (READY TO GIVE YOUR CAR CARE?) ── */}
       <section className="hp-cta-section">
         <div className="hp-container">

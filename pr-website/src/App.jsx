@@ -9,6 +9,7 @@ const InstagramWorkPage = lazy(() => import('./pages/InstagramWorkPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
+const FAQPage = lazy(() => import('./pages/FAQPage'));
 
 // Lightweight fallback loader
 function PageLoader() {
@@ -41,6 +42,8 @@ export default function App() {
           <Route path="/instagram-work" element={<InstagramWorkPage />} />
           <Route path="/social-links" element={<InstagramWorkPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/faqs" element={<FAQPage />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* Fallback route */}
           <Route path="*" element={<Navigate to="/" replace />} />

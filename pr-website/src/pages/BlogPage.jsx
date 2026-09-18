@@ -9,131 +9,265 @@ import dryDentingImg from '../assets/svc_dry_denting.jpg';
 import paintingImg from '../assets/svc_denting_painting.jpg';
 import ppfImg from '../assets/svc_ppf.jpg';
 import scratchImg from '../assets/svc_scratch.jpg';
+import coatingImg from '../assets/svc_coating.jpg';
+import accidentImg from '../assets/svc_accident.jpg';
 
 const BLOG_POSTS = [
   {
-    id: 'dry-denting-vs-traditional-denting',
-    title: 'Dry Denting (PDR) vs Traditional Painting: How to Save 100% Factory Car Value',
-    category: 'Denting & Bodywork',
+    id: 'car-denting-painting-lahore-guide',
+    title: 'Car Denting & Painting in Lahore – A Complete Guide to Professional Car Body Repair',
+    category: 'Denting & Painting',
     categorySlug: 'denting',
-    badge: 'MUST READ FOR CAR OWNERS',
-    readTime: '4 Min Read',
+    badge: 'COMPLETE BODY REPAIR GUIDE',
+    readTime: '5 Min Read',
     date: 'Sep 2026',
     author: 'Mateen Auto Master Team',
-    image: dryDentingImg,
-    summary:
-      'Paintless Dry Denting (PDR) is the gold standard for removing dings, hail damage, and body dents without repainting. Discover why preserving factory paint protects up to Rs. 200,000+ in vehicle resale value in Pakistan.',
-    content: [
-      {
-        heading: '1. What is Paintless Dry Denting (PDR)?',
-        text: 'Paintless Dry Denting is a specialized technique where master technicians manipulate damaged metal panels from behind using custom precision rods, LED shadow boards, and glue-pulling systems. Because no body filler (poteen) or repainting is used, your vehicle retains 100% original factory paint thickness (microns).'
-      },
-      {
-        heading: '2. Why Original Paint Matters in Pakistan’s Market',
-        text: 'In the Pakistani automotive market, repainted or touched-up panels (often called "gari shower hai ya touch-up") can drop your car resale value by 10% to 25%. PDR ensures your car passes all digital paint gauge meters as 100% genuine factory original.'
-      },
-      {
-        heading: '3. When Can PDR Be Used vs 2K Painting?',
-        text: 'Dry Denting is ideal when the original paint surface is unbroken, without deep metal tearing or sharp creased seams. If the paint has cracked down to bare metal, our 2K German Oven Baking paint system is recommended for an invisible, flawless factory finish.'
-      },
-      {
-        heading: '4. Mateen Auto Advantage',
-        text: 'With 37+ years of experience and Pakistan-pioneered precision tools, our master craftsmen restore complex aluminum and high-tensile steel panels with zero paint loss in just a few hours.'
-      }
-    ],
-    tags: ['Dry Denting', 'PDR', 'Resale Value', 'Car Bodywork']
-  },
-  {
-    id: '2k-oven-baking-vs-local-paint',
-    title: 'Why 2K Computerized Oven Baked Paint Outperforms Standard Local Spraying',
-    category: 'Paint & Restoration',
-    categorySlug: 'paint',
-    badge: 'FACTORY FINISH INSIGHT',
-    readTime: '5 Min Read',
-    date: 'Aug 2026',
-    author: 'Nadeem (Founder & Master Painter)',
     image: paintingImg,
     summary:
-      'Ever wondered why ordinary street repaint fades, turns yellow, or peels after 6 months? Learn how 2K polyurethane clear coats and pressurized dust-free baking booths create an indistinguishable mirror finish.',
+      'Your car’s exterior is constantly exposed to scratches, dents, road debris, weather conditions, and accidental damage. Discover how professional denting, panel alignment, 2K painting, and scratch filling restore your vehicle’s factory perfection.',
     content: [
       {
-        heading: '1. The Problem with Open-Air Local Paint Jobs',
-        text: 'Traditional roadside workshops spray paint in open or semi-enclosed sheds. Airborne dust particles settle on the wet clear coat, resulting in orange peel texture, dull spots, and premature clear-coat failure under Pakistan’s harsh sunlight.'
+        heading: 'What Is Car Denting?',
+        text: 'Car denting is the process of repairing dents and uneven areas on a vehicle’s body panels. Depending on the type and depth of damage, professional technicians use specialized tools and repair techniques to restore the original shape of the panel. Proper dent repair requires experience because excessive pressure or incorrect techniques can create additional unevenness on the panel.'
       },
       {
-        heading: '2. Computerized Spectrophotometer Color Matching',
-        text: 'Every car paint code has subtle batch variations caused by UV exposure. At Mateen Auto, we use computerized optical color scanners to blend pigments down to 0.01g precision, ensuring 100% panel-to-panel color harmony.'
+        heading: 'What Is Car Painting?',
+        text: 'After body damage has been repaired, the affected area may require refinishing. Professional car painting involves surface preparation, appropriate paint application, computerized color matching, and finishing. A quality paint job should blend naturally with the surrounding panels and provide a smooth, durable overall appearance.'
       },
       {
-        heading: '3. Controlled 65°C Italian Baking Booth',
-        text: 'Our pressurized downdraft baking booth cures the 2K poly-acrylic resins at optimal 60°C–65°C temperatures. This forms a hardened molecular bond that resists stone chips, bird droppings, acid rain, and car wash swirls.'
+        heading: 'Why Is Professional Car Body Repair Important?',
+        text: 'Professional repair helps restore: (1) The appearance of damaged panels, (2) Proper panel shape and alignment, (3) A smooth surface before painting, (4) Consistent paint finishing, and (5) The overall exterior condition and resale value of the vehicle. Using appropriate materials and repair methods achieves a durable and consistent result.'
       },
       {
-        heading: '4. Long-Term Durability & Guarantee',
-        text: 'A genuine 2K oven baked finish will last 5 to 10+ years without discoloration, giving your restored vehicle that showroom deep liquid gloss.'
+        heading: 'Car Scratch Repair & Scratch Filling',
+        text: 'Not every scratch requires a complete panel repaint. The appropriate repair method depends on the depth, location, and condition of the damage. Depending on the scratch, possible solutions may include: scratch filling, polishing, spot repair, surface refinishing, or complete panel repainting. At Mateen Auto, the damage is assessed before determining the suitable repair approach.'
+      },
+      {
+        heading: 'Major Accident Repair in Lahore',
+        text: 'Accident damage can involve more than visible scratches or dents. A vehicle may require panel repair, body alignment, paintwork, and exterior restoration. Mateen Auto handles minor as well as major accident repair work, with attention to the condition of the vehicle and the required restoration process.'
+      },
+      {
+        heading: 'Why Choose Mateen Auto?',
+        text: 'Mateen Auto focuses on A1-class workmanship, quality materials, professional repair techniques, and detailed finishing. Our Defence Branch and Chauburji Branch aim to maintain consistent standards across our services: Car Denting • Car Painting • Scratch Filling • Accident Repair • PPF • Polishing • Body Restoration.'
+      },
+      {
+        heading: 'Final Thoughts',
+        text: 'Whether your vehicle has a small dent, deep scratch, damaged panel, or major accident damage, choosing an experienced automotive repair workshop can make an important difference to the final finish. Mateen Auto provides professional car body repair solutions in Lahore with a focus on quality workmanship and attention to detail.'
       }
     ],
-    tags: ['Car Painting', '2K Clear Coat', 'Oven Baking', 'Color Match']
+    tags: ['Car Denting', 'Car Painting', 'Scratch Filling', 'Accident Repair', 'Lahore']
   },
   {
-    id: 'ppf-vs-ceramic-coating-guide',
-    title: 'PPF (Paint Protection Film) vs Ceramic Coating: Which One Does Your Car Need?',
-    category: 'Protection & PPF',
+    id: 'car-paint-protection-lahore-ppf-vs-coating-vs-polishing',
+    title: '🚗 Car Paint Protection in Lahore – PPF vs Polishing vs Ceramic Coating',
+    category: 'Protection & Detailing',
     categorySlug: 'protection',
-    badge: 'ULTIMATE BUYER GUIDE',
+    badge: 'PROTECTION & FINISH GUIDE',
     readTime: '6 Min Read',
-    date: 'Aug 2026',
+    date: 'Sep 2026',
     author: 'Mateen Auto Detailing Division',
-    image: ppfImg,
+    image: coatingImg,
     summary:
-      'Confused between self-healing TPU PPF wraps and 9H Ceramic Matrix Coatings? Here is an honest, expert comparison for driving on Lahore’s Ring Road, Motorways, and urban traffic.',
+      'Keeping your car’s original paint looking clean and glossy requires more than regular washing. Compare PPF, Ceramic Coating, and Polishing to choose the ideal protection strategy for your car and budget.',
     content: [
       {
-        heading: '1. TPU Self-Healing PPF: Physical Armor Shield',
-        text: 'Paint Protection Film is a 180–200 micron thick transparent thermoplastic urethane layer applied over high-impact panels (bumper, bonnet, fenders, doors). When stone chips strike at 120 km/h or accidental scratches occur, the TPU absorbs the shock and self-heals under engine heat or direct sunlight.'
+        heading: '🛡️ What Is Car Paint Protection?',
+        text: 'Car paint protection refers to different methods used to help maintain and protect a vehicle’s exterior paint from sun exposure, road dust, stone chips, minor scratches, bird droppings, and everyday driving. The most common options include: PPF (Paint Protection Film), Ceramic Coating, and Car Polishing. Although all three can improve or maintain the appearance of a vehicle, they are not the same type of service.'
       },
       {
-        heading: '2. 9H Ceramic Matrix Coating: Hydrophobic Mirror Gloss',
-        text: 'Ceramic coating is a liquid nano-polymer that chemically bonds with the clear coat. It provides intense hydrophobic water beading, UV sun protection, and chemical resistance, making vehicle washing effortless and keeping the paint deeply reflective.'
+        heading: '🔰 PPF – Paint Protection Film',
+        text: 'PPF is a transparent protective film applied over selected painted surfaces of a vehicle. Its primary purpose is to provide a physical protective layer over the original paint against stone chips, road debris, light scratches, minor surface marks, and everyday wear. PPF is commonly installed on areas such as the front bumper, bonnet, fenders, side mirrors, and other high-exposure areas.'
       },
       {
-        heading: '3. The Verdict: Which One Should You Choose?',
-        text: 'If your priority is preventing physical stone chips, scratch marks, and keys scratches on new luxury cars, TPU PPF is unmatched. If you want maximum gloss, easy cleaning, and chemical shield on daily drivers, 9H Ceramic or Graphene Coating is the smart investment. Many clients choose Front-End PPF + Full Body Ceramic for the ultimate hybrid protection.'
+        heading: '✨ Ceramic Coating',
+        text: 'Ceramic coating is a liquid-applied protective coating that bonds to the vehicle\'s surface after proper preparation and curing. It is primarily used to enhance gloss, surface appearance, water-repellent properties, ease of cleaning, and protection against environmental contaminants. Note: Ceramic coating does not provide the same physical impact protection as PPF.'
       },
       {
-        heading: '4. Professional Installation Matters',
-        text: 'Poorly installed PPF can bubble or yellow. Mateen Auto uses pre-cut computerized templates and certified installers to deliver seamless tucked-edge installations.'
+        heading: '💎 Car Polishing',
+        text: 'Polishing is performed to improve the appearance of the paint by addressing certain surface imperfections, oxidation, swirl marks, and light defects. A professional polishing process helps restore gloss, smoothness, paint clarity, and overall exterior appearance. However, polishing itself is not a physical protective film like PPF.'
+      },
+      {
+        heading: '🔍 PPF vs Ceramic Coating vs Car Polishing Breakdown',
+        text: '• PPF: Main purpose = Paint protection against physical stone chips & scratches | Physical Film = YES | Appearance Enhancement = YES.\n• Ceramic Coating: Main purpose = Surface protection, gloss & hydrophobic beading | Physical Film = NO | Appearance Enhancement = YES.\n• Car Polishing: Main purpose = Paint correction, defect removal & shine | Physical Film = NO | Appearance Enhancement = YES.'
+      },
+      {
+        heading: '🚘 Which Paint Protection Is Right for Your Car?',
+        text: 'Choose PPF if you want an additional physical layer to help protect paint from road debris, stone chips, and scratches. Consider Ceramic Coating if your priority is enhanced gloss, easier maintenance, and surface protection. Consider Car Polishing if your paint has light imperfections, dullness, swirl marks, or needs improved clarity. In some cases, these services can also be combined as part of a broader vehicle care process.'
+      },
+      {
+        heading: '📍 Looking for Car Paint Protection in Lahore?',
+        text: 'If you are searching for PPF Lahore, Paint Protection Film Lahore, ceramic coating Lahore, or professional car polishing, Mateen Auto provides automotive protection and finishing services with attention to detail across both Chauburji and DHA Phase 1 branches.'
       }
     ],
-    tags: ['PPF', 'Ceramic Coating', 'Scratch Defense', 'Paint Protection']
+    tags: ['PPF', 'Ceramic Coating', 'Car Polishing', 'Paint Protection', 'Lahore']
   },
   {
-    id: 'injection-filling-scratch-repair',
-    title: 'Pakistan-Pioneered Injection Filling: Fix Scratches Without Panel Repainting',
-    category: 'Denting & Bodywork',
-    categorySlug: 'denting',
+    id: 'what-makes-mateen-auto-scratch-repair-different',
+    title: '🚗 What Makes Mateen Auto’s Scratch Repair Different?',
+    category: 'Signature Scratch Filling',
+    categorySlug: 'scratch',
     badge: 'MATEEN AUTO EXCLUSIVE',
-    readTime: '3 Min Read',
-    date: 'Jul 2026',
-    author: 'Nadeem (Founder)',
+    readTime: '4 Min Read',
+    date: 'Sep 2026',
+    author: 'Muhammad Nadeem (Founder & Pioneer)',
     image: scratchImg,
     summary:
-      'Invented & perfected right here at Mateen Auto: learn how precision microscopic injection filling repairs deep key scratches without repainting the entire door or fender.',
+      'Explore our specialized injection-based scratch filling technique that works directly on the scratch groove to achieve a smooth, seamless, factory-like finish without repainting the entire panel.',
     content: [
       {
-        heading: '1. What is Injection Scratch Filling?',
-        text: 'Unlike local workshops that demand full door repainting for a single key scratch, injection filling applies pure matched pigment and resin directly inside the scratch groove using medical-grade micro-applicators.'
+        heading: '🔧 What Is Injection-Based Scratch Filling?',
+        text: 'Injection-based scratch filling is a specialized method in which suitable repair material is carefully introduced into the damaged scratch using professional injection equipment. Instead of treating the entire panel unnecessarily, the technician focuses on the affected area and carefully works to restore its surface.'
       },
       {
-        heading: '2. Preserving 99% Original Factory Paint',
-        text: 'Because only the narrow scratch cavity is filled and cured, 99% of your door remains factory original. Once wet-sanded and machine polished, the scratch becomes virtually invisible to the naked eye.'
+        heading: '⭐ The Step-by-Step Scratch Filling Process',
+        text: 'The process includes: (1) Detailed scratch inspection and depth assessment, (2) Professional surface preparation, (3) Precise injection filling into the scratch furrow, (4) Surface leveling and planar refinement, (5) Finishing and optical polishing, and (6) Final quality inspection. The exact process depends on the depth, width, location, and condition of the scratch.'
       },
       {
-        heading: '3. Fast Turnaround & High Savings',
-        text: 'Injection repair takes just 1 to 2 days compared to traditional multi-day repainting, saving you time and retaining genuine car status.'
+        heading: 'Why Is Mateen Auto’s Scratch Repair Different?',
+        text: 'Our focus is not simply to cover a scratch. We aim to restore the damaged area properly while maintaining a natural appearance. Our specialized injection-based technique provides: precise filling, controlled material application, smooth surface restoration, professional finishing, and seamless blending with the surrounding area.'
+      },
+      {
+        heading: '🛠️ Professional Scratch Repair in Lahore',
+        text: 'If you are searching for car scratch repair in Lahore, choosing the correct repair method is important. Some scratches may be improved through polishing, while deeper damage may require filling, spot repair, or refinishing. At Mateen Auto, our technicians inspect the scratch first and select the appropriate repair method according to the condition of the vehicle.'
+      },
+      {
+        heading: '💎 Quality Materials & Professional Workmanship',
+        text: 'At Mateen Auto, we focus on A1-class workmanship, quality materials, professional techniques, and attention to detail. Our goal is to achieve a clean and durable repair rather than simply providing a temporary cosmetic solution.'
+      },
+      {
+        heading: '🚘 Beyond Scratch Repair',
+        text: 'Mateen Auto also specializes in: Car Denting & Painting, Scratch Filling, Car Polishing & Detailing, Major Accident Repair, PPF (Paint Protection Film), and Body Restoration. Our Defence Branch and Chauburji Branch maintain the same focus on professional workmanship and quality finishing.'
       }
     ],
-    tags: ['Injection Filling', 'Scratch Repair', 'Original Paint', 'Lahore']
+    tags: ['Scratch Filling', 'Injection Filling', 'Factory Paint', 'Car Care', 'Mateen Auto']
+  },
+  {
+    id: 'major-accident-repair-in-lahore-complete-guide',
+    title: '🚗 Major Accident Repair in Lahore – From Damaged Body Panels to Complete Restoration',
+    category: 'Accident & Restoration',
+    categorySlug: 'accident',
+    badge: 'ACCIDENT RESTORATION GUIDE',
+    readTime: '6 Min Read',
+    date: 'Aug 2026',
+    author: 'Mateen Auto Structural Team',
+    image: accidentImg,
+    summary:
+      'A major car accident can leave a vehicle with extensive damage to body panels, bumpers, paintwork, and alignment. Discover how professional accident body repair and systematic restoration bring your car back to factory perfection.',
+    content: [
+      {
+        heading: '🔧 What Is Major Accident Repair?',
+        text: 'Major accident repair involves restoring a vehicle that has suffered significant collision or body damage. Depending on the condition of the vehicle, repair may include: damaged body panel repair, panel replacement where necessary, denting, scratch filling, bumper repair, paintwork and refinishing, body alignment, exterior restoration, and polishing.'
+      },
+      {
+        heading: '🔍 Step 1: Complete Vehicle Damage Inspection',
+        text: 'Before beginning repair, the damaged vehicle is carefully inspected. A professional assessment helps identify visible and affected areas such as: front or rear body damage, damaged doors and fenders, bonnet and trunk damage, bumper damage, scratches and paint damage, and panel alignment issues.'
+      },
+      {
+        heading: '🛠️ Step 2: Professional Accident Body Repair',
+        text: 'After inspection, damaged body panels are repaired using appropriate professional techniques: denting, panel repair, panel replacement, surface correction, and alignment. The objective is to restore the vehicle\'s exterior shape and achieve consistent panel alignment before refinishing.'
+      },
+      {
+        heading: '🎨 Step 3: Surface Preparation & Painting',
+        text: 'After bodywork is completed, damaged surfaces are properly prepared: Surface Preparation → Filling → Smoothing → Primer → Paint → Finishing. Proper preparation is essential for achieving a smooth and consistent final appearance.'
+      },
+      {
+        heading: '🚘 Step 4: Complete Car Restoration',
+        text: 'For vehicles with extensive accident damage, several areas are restored together: body panel restoration, paint restoration, bumper repair, panel alignment, scratch repair, polishing, and exterior detailing to bring the vehicle back to a clean, properly finished condition.'
+      },
+      {
+        heading: '❓ Repair or Replace a Damaged Body Panel?',
+        text: 'Not every damaged panel needs to be replaced. The appropriate solution depends on the severity, location, and condition of the damage. Where possible, a panel may be professionally repaired. If the damage is too severe, replacement is recommended after transparent consultation.'
+      },
+      {
+        heading: '📍 Looking for Major Accident Repair in Lahore?',
+        text: 'Mateen Auto provides professional major accident repair in Lahore, including accident body repair, denting and painting, scratch filling, and complete exterior restoration with consistent master standards across our Chauburji and Defence branches.'
+      }
+    ],
+    tags: ['Accident Repair', 'Car Restoration', 'Chassis Alignment', 'Body Shop', 'Lahore']
+  },
+  {
+    id: 'ppf-in-lahore-complete-paint-protection-film-guide',
+    title: '🚗 PPF in Lahore – Complete Guide to Paint Protection Film for Your Car',
+    category: 'Protection & PPF',
+    categorySlug: 'protection',
+    badge: 'ULTIMATE PPF GUIDE',
+    readTime: '5 Min Read',
+    date: 'Aug 2026',
+    author: 'Mateen Auto PPF Division',
+    image: ppfImg,
+    summary:
+      'Your car’s original paint is constantly exposed to road debris, stone chips, scratches, dust, weather conditions, and everyday wear. Learn how PPF acts as an invisible protective armour.',
+    content: [
+      {
+        heading: '🛡️ What Is PPF (Paint Protection Film)?',
+        text: 'PPF (Paint Protection Film) is a transparent protective film applied to selected painted surfaces of a vehicle. The purpose of PPF is to create an additional protective layer between the vehicle’s original paint and external road exposure, protecting against light scratches, stone chips, road debris, minor marks, and environmental contamination.'
+      },
+      {
+        heading: '⭐ Why Choose PPF for Your Car?',
+        text: 'Your vehicle\'s factory paint can be expensive and difficult to restore once heavily damaged. A properly installed car PPF preserves the appearance of original paint by providing an extra layer of defense. PPF is particularly useful for high-exposure areas: front bumper, bonnet, front fenders, side mirrors, door edges, and headlights.'
+      },
+      {
+        heading: '🔍 PPF vs Regular Paint Protection',
+        text: 'Wax and polish improve the appearance and shine of your vehicle, but do not provide a physical protective layer. PPF is specifically designed as a physical barrier shielding the underlying paint from everyday road wear. For long-term original paint preservation, PPF is the premier investment.'
+      },
+      {
+        heading: '💎 Professional PPF Installation in Lahore',
+        text: 'A quality PPF installation requires: thorough vehicle cleaning, proper surface preparation, accurate film positioning, careful bubble-free application, precise edge finishing, and final inspection. Professional installation prevents visible edges, lifting, or uneven appearance.'
+      },
+      {
+        heading: '🚘 PPF at Mateen Auto',
+        text: 'At Mateen Auto, we focus on professional workmanship, quality imported TPU materials, careful installation, and detailed finishing across our Defence and Chauburji branches in Lahore.'
+      },
+      {
+        heading: '🔧 How to Maintain PPF',
+        text: 'General aftercare practices include: using suitable pH-neutral car-washing products, avoiding aggressive scrubbing, following installer aftercare instructions, inspecting edges periodically, and addressing any lifting professionally.'
+      },
+      {
+        heading: '📍 Looking for Paint Protection Film in Lahore?',
+        text: 'Mateen Auto provides professional PPF installation in Lahore with a focus on quality materials and detailed workmanship. Protect your paint. Preserve your car.'
+      }
+    ],
+    tags: ['PPF Lahore', 'Paint Protection Film', 'Self-Healing TPU', 'Car Protection', 'Mateen Auto']
+  },
+  {
+    id: 'why-choose-mateen-auto-lahore-workshops',
+    title: 'Why Choose Mateen Auto? Quality, Workmanship & 37+ Years Heritage',
+    category: 'Heritage & Standards',
+    categorySlug: 'heritage',
+    badge: '37+ YEARS HERITAGE',
+    readTime: '4 Min Read',
+    date: 'Jul 2026',
+    author: 'Mateen Auto Management',
+    image: dryDentingImg,
+    summary:
+      'A1-class workmanship, imported materials, and consistent master standards across Chauburji and Defence branches. Learn why Mateen Auto is trusted by luxury car owners throughout Lahore.',
+    content: [
+      {
+        heading: '1. Decades of Dedicated Master Craftsmanship',
+        text: 'Since 1989, Mateen Auto has led the automotive bodywork and paint restoration craft in Pakistan. With over 37 years of dedication and 4,200+ vehicles restored, our work represents precision, integrity, and long-lasting durability.'
+      },
+      {
+        heading: '2. Consistent Quality Across Both Lahore Branches',
+        text: 'Whether you visit our Defence Branch or Chauburji Branch, we maintain the same professional standards, repair techniques, material quality, and finishing. Our goal is to provide a consistent Mateen Auto standard at both locations.'
+      },
+      {
+        heading: '3. Transparent Inspection & Fair Advice',
+        text: 'We never suggest full repainting when precision scratch filling, dry denting (PDR), or spot repair can preserve your original factory paint. Every vehicle receives thorough diagnostic evaluation.'
+      },
+      {
+        heading: '4. Service & Workmanship Guarantee',
+        text: 'Our work comes with a genuine service and workmanship guarantee, giving customers complete peace of mind and confidence in the final result.'
+      },
+      {
+        heading: '5. Complete Range of Automotive Services',
+        text: 'Our comprehensive services include: Car Denting • Car Painting • Scratch Filling • Accident Repair • PPF • Polishing • Detailing • Wheel Balancing & 3D Alignment • Complete Body Restoration.'
+      },
+      {
+        heading: '6. The Mateen Auto Promise',
+        text: 'Mateen Auto — Professional Scratch Filling. Seamless Finish. Quality You Can Trust.'
+      }
+    ],
+    tags: ['Mateen Auto', 'Workmanship', 'Quality Guarantee', 'Lahore Workshop', 'Chauburji', 'DHA']
   }
 ];
 
@@ -166,7 +300,7 @@ export default function BlogPage() {
         <div className="container blog-hero-container">
           <div className="blog-badge-top">
             <span className="blog-badge-dot"></span>
-            MATEEN AUTO KNOWLEDGE HUB &amp; AUTOMOTIVE INSIGHTS
+            MATEEN AUTO KNOWLEDGE HUB &amp; AUTOMOTIVE GUIDES
           </div>
           <h1 className="blog-hero-title">
             Automotive Care, <span>Denting &amp; Painting</span> Master Guides
@@ -184,7 +318,7 @@ export default function BlogPage() {
               </svg>
               <input
                 type="text"
-                placeholder="Search blogs (e.g. Dry Denting, PPF, 2K Paint, Scratches)..."
+                placeholder="Search blogs (e.g. Denting, PPF, Scratch Filling, Accident Repair)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="blog-search-input"
@@ -214,21 +348,35 @@ export default function BlogPage() {
                 className={`blog-cat-btn ${activeCategory === 'denting' ? 'active' : ''}`}
                 onClick={() => setActiveCategory('denting')}
               >
-                🔨 Denting &amp; Bodywork
-              </button>
-              <button
-                type="button"
-                className={`blog-cat-btn ${activeCategory === 'paint' ? 'active' : ''}`}
-                onClick={() => setActiveCategory('paint')}
-              >
-                🎨 Paint &amp; 2K Baking
+                🔨 Denting &amp; Painting
               </button>
               <button
                 type="button"
                 className={`blog-cat-btn ${activeCategory === 'protection' ? 'active' : ''}`}
                 onClick={() => setActiveCategory('protection')}
               >
-                🛡️ PPF &amp; Ceramic
+                🛡️ PPF &amp; Protection
+              </button>
+              <button
+                type="button"
+                className={`blog-cat-btn ${activeCategory === 'scratch' ? 'active' : ''}`}
+                onClick={() => setActiveCategory('scratch')}
+              >
+                ✨ Scratch Filling
+              </button>
+              <button
+                type="button"
+                className={`blog-cat-btn ${activeCategory === 'accident' ? 'active' : ''}`}
+                onClick={() => setActiveCategory('accident')}
+              >
+                🚗 Accident &amp; Restoration
+              </button>
+              <button
+                type="button"
+                className={`blog-cat-btn ${activeCategory === 'heritage' ? 'active' : ''}`}
+                onClick={() => setActiveCategory('heritage')}
+              >
+                🏆 Heritage &amp; Quality
               </button>
             </div>
           </div>
@@ -288,7 +436,7 @@ export default function BlogPage() {
             <div className="blog-empty-state">
               <div className="blog-empty-icon">🔍</div>
               <h3>No matching articles found</h3>
-              <p>Try searching for a different keyword like "PDR", "Paint", "PPF", or reset filters.</p>
+              <p>Try searching for a different keyword like "Denting", "Paint", "PPF", "Scratch", or reset filters.</p>
               <button
                 type="button"
                 className="blog-cat-btn active"
@@ -358,7 +506,7 @@ export default function BlogPage() {
               <div className="blog-protip-item">
                 <div className="blog-protip-num">01</div>
                 <h4>Never Dry Wipe Dust</h4>
-                <p>Never wipe a dusty car with dry cloth. Lahore’s airborne particulate acts like sandpaper. Always rinse first or use high-lubricity foam.</p>
+                <p>Never wipe a dusty car with a dry cloth. Lahore’s airborne particulate acts like sandpaper. Always rinse first or use high-lubricity foam.</p>
               </div>
               <div className="blog-protip-item">
                 <div className="blog-protip-num">02</div>
@@ -456,7 +604,7 @@ export default function BlogPage() {
                 {selectedPost.content.map((sec, idx) => (
                   <div key={idx} className="blog-modal-section-item">
                     <h3>{sec.heading}</h3>
-                    <p>{sec.text}</p>
+                    <p style={{ whiteSpace: 'pre-line' }}>{sec.text}</p>
                   </div>
                 ))}
               </div>
