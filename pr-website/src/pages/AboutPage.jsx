@@ -113,7 +113,7 @@ const branches = [
     address: 'Mateen Autos DHA Phase 1 Branch, Link 2 Super Town, Lahore, Pakistan',
     phone: '+92 310 4253333',
     hours: 'Mon – Sat: 10:00 AM – 8:00 PM',
-    services: 'Paint Protection Film (PPF), Ceramic Coating, Paint Correction, Interior Spa',
+    services: 'PPF (Paint Protection Film), Ceramic Coating, Scratch Repair & Interior Detailing',
     mapEmbed: 'https://maps.google.com/maps?q=Mateen%20Autos%20Dha%20branch%2C%20F9RG%2BQ73%2C%20Link%202%20Super%20Town%2C%20Super%20Town%2C%20Lahore&t=&z=16&ie=UTF8&iwloc=&output=embed',
     directLink: 'https://maps.google.com/?q=Mateen+Autos+Dha+branch,+F9RG%2BQ73,+Link+2+Super+Town,+Super+Town,+Lahore',
   },
@@ -245,10 +245,10 @@ export default function AboutPage() {
           {/* Centered Page Quote */}
           <div className="au-quote au-reveal">
             <p className="au-quote-text">
-              "It's not just about cars, it's about the people who love them."
+              "Every car that enters our workshop is treated like our own — with honest advice, genuine care, and uncompromising craftsmanship."
             </p>
             <div className="au-quote-author">— MUHAMMAD NADEEM</div>
-            <div className="au-quote-role">Founder & CEO, Mateen Auto</div>
+            <div className="au-quote-role">Founder &amp; CEO, Mateen Auto</div>
           </div>
         </div>
       </section>
@@ -262,11 +262,11 @@ export default function AboutPage() {
               <span>CORE VALUES &amp; COMMITMENT</span>
             </div>
             <h2 className="au-mission-main-title">
-              <span className="au-mission-pre-title">OUR MISSION</span>
-              <span className="au-mission-title-grad">EXCELLENCE IN EVERY DETAIL</span>
+              <span className="au-mission-pre-title">WHAT DRIVES US</span>
+              <span className="au-mission-title-grad">HONEST WORK &amp; MASTER CRAFTSMANSHIP</span>
             </h2>
             <p className="au-mission-main-subtitle">
-              A commitment built over 37 years of professional craftsmanship across Pakistan &amp; Dubai.
+              Over 37 years of hands-on body restoration and paint care experience across Dubai and Lahore.
             </p>
           </div>
 
@@ -318,14 +318,10 @@ export default function AboutPage() {
                     OUR <span className="au-mgrad-purple">LEGACY</span>
                   </h3>
                   <p className="au-mbox-text">
-                    With experience dating back to{' '}
-                    <span className="au-mhi-purple">1989</span>{' '}
-                    and a strong presence in Lahore since{' '}
-                    <span className="au-mhi-purple">2008</span>,
-                    we are committed to combining{' '}
-                    <span className="au-mhi-purple">traditional craftsmanship</span>{' '}
-                    with modern techniques and international experience from{' '}
-                    <span className="au-mhi-purple">Dubai</span>.
+                    Master <span className="au-mhi-purple">Muhammad Nadeem</span> began his journey in{' '}
+                    <span className="au-mhi-purple">1989</span>. After gaining elite experience in{' '}
+                    <span className="au-mhi-purple">Dubai</span> working on luxury vehicles, he established Mateen Auto in Lahore in{' '}
+                    <span className="au-mhi-purple">2008</span> — delivering international standards with trusted personal care.
                   </p>
                 </div>
                 <div className="au-mbox-footer-bar au-mbar--purple"></div>
@@ -375,12 +371,10 @@ export default function AboutPage() {
                     OUR <span className="au-mgrad-gold">PROMISE</span>
                   </h3>
                   <p className="au-mbox-text">
-                    We believe every vehicle deserves{' '}
-                    <span className="au-mhi-gold">expert care, attention to detail, and a quality finish</span>.
-                    That is why we continuously focus on{' '}
-                    <span className="au-mhi-gold">quality workmanship, honest service,
-                    professional standards,</span>{' '}
-                    and lasting <span className="au-mhi-gold">customer trust</span>.
+                    We protect your car’s{' '}
+                    <span className="au-mhi-gold">original factory paint</span> and only recommend the work it truly needs. You get{' '}
+                    <span className="au-mhi-gold">transparent pricing, skilled workmanship,</span> and results you can{' '}
+                    <span className="au-mhi-gold">trust completely</span>.
                   </p>
                 </div>
                 <div className="au-mbox-footer-bar au-mbar--gold"></div>
@@ -416,7 +410,7 @@ export default function AboutPage() {
               <div className="au-mission-quote">
                 &ldquo;To protect your car, restore its beauty, and deliver workmanship you can trust.&rdquo;
               </div>
-              <div className="au-mission-quote-sub">Mateen Auto — Experience Since 1989. Excellence in Every Detail.</div>
+              <div className="au-mission-quote-sub">Mateen Auto — Master Craftsmanship &amp; Trusted Car Care Since 1989.</div>
             </div>
           </div>
         </div>

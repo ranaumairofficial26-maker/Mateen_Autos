@@ -45,13 +45,13 @@ export default function InstagramWorkPage() {
 
           {/* Bold Header */}
           <h1 className="iw-cinematic-title">
-            OFFICIAL SOCIAL HUBS &amp;<br />
+            DAILY WORKSHOP ACTION &amp;<br />
             TRANSFORMATIONS
           </h1>
 
           {/* Subtitle / Description */}
           <p className="iw-cinematic-desc">
-            Explore daily transformation reels, 4K restoration documentaries, 60-second dry denting timelapses, and satisfied client handovers across <strong>Instagram (@mateen.auto1)</strong>, <strong>Facebook (33K+ Followers)</strong>, <strong>YouTube (@mateen.auto1)</strong>, &amp; <strong>TikTok (@mateenautoofficial)</strong>.
+            See our daily scratch filling, dry denting timelapses, ceramic water bead tests, and real customer car deliveries across our social channels.
           </p>
 
           {/* Action Buttons: 5 Premium Channels & Inspection */}

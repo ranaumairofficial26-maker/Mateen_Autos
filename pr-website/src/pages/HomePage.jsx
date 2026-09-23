@@ -11,6 +11,10 @@ import '../styles/HomePage.css';
 import '../styles/InstagramWorkPage.css';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/mateenautoofficial/';
+const FACEBOOK_URL = 'https://www.facebook.com/TheMateenAuto';
+const YOUTUBE_URL = 'https://www.youtube.com/@mateen.auto1';
+const TIKTOK_URL = 'https://www.tiktok.com/@mateenautoofficial';
+
 
 // ── Hero Authentic Slider Images
 import heroSlider1 from '../assets/hero_slider_1.jpg';
@@ -287,6 +291,11 @@ export default function HomePage() {
               <span className="hp-grad-animated">SHOWROOM PERFECTION.</span>
             </h1>
 
+            {/* Supporting SEO Context Line */}
+            <p className="hp-hero-supporting-desc" style={{ color: '#cbd5e1', fontSize: '1rem', margin: '12px 0 22px 0', lineHeight: 1.6, maxWidth: '560px' }}>
+              Lahore’s premier car detailing, self-healing PPF, scratch-injection repair &amp; 2K oven-baked painting studio — restoring your car’s genuine factory finish for over 37 years.
+            </p>
+
             {/* Action Buttons Row (WhatsApp, Build Package, Protection Quiz) */}
             <div className="hp-hero-actions-cinematic">
               <a
@@ -374,9 +383,9 @@ export default function HomePage() {
           <div className="hp-brands-box">
             <div className="hp-brands-box-header">
               <span className="hp-brands-box-dot"></span>
-              <h3 className="hp-brands-box-title">
-                Cars &amp; <span className="hp-grad-text">Brands We Service</span>
-              </h3>
+              <h2 className="hp-brands-box-title" style={{ fontSize: '0.95rem', margin: 0, fontWeight: 700 }}>
+                Trusted by Owners of <span className="hp-grad-text">Porsche, BMW, Mercedes &amp; Luxury SUVs</span>
+              </h2>
               <div className="hp-brands-box-line"></div>
             </div>
 
@@ -637,10 +646,10 @@ export default function HomePage() {
             <div className="hp-transform-left">
               <div className="hp-section-tag">— REAL VEHICLE TRANSFORMATIONS</div>
               <h2 className="hp-section-title">
-                BEFORE <span className="hp-grad-text">&amp; AFTER</span>
+                Car Detailing &amp; <span className="hp-grad-text">9H Ceramic Coating in Lahore</span>
               </h2>
               <p className="hp-transform-desc">
-                Witness the dramatic shift from heavy road grime, dried mud, and paint oxidation to flawless 9H nano ceramic mirror gloss.
+                Drag the slider across the BMW to see how we restore scratched, swirl-marked, and dull paint back to deep showroom gloss.
               </p>
 
               {/* Transformation Highlights ("Level Ka Content") */}
@@ -763,9 +772,9 @@ export default function HomePage() {
         <div className="hp-container">
           <div className="hp-section-head-row">
             <div>
-              <div className="hp-section-tag">— OUR SERVICES</div>
+              <div className="hp-section-tag">— SPECIALIZED CAR CARE &amp; AUTO REPAIR</div>
               <h2 className="hp-section-title">
-                Complete Care for <span className="hp-grad-text">Every Journey</span>
+                Car Detailing, PPF &amp; <span className="hp-grad-text">Auto Body Repair in Lahore</span>
               </h2>
             </div>
             <Link to="/services" className="hp-view-all-link">
@@ -872,7 +881,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 5. INSTAGRAM SHOWCASE & WORK HIGHLIGHTS (UNDER SERVICES) ── */}
+      {/* ── 5. OFFICIAL SOCIAL HUBS & TRANSFORMATIONS (UNDER SERVICES) ── */}
       <section className="hp-insta-showcase-section">
         <div
           className="hp-insta-backdrop"
@@ -883,8 +892,8 @@ export default function HomePage() {
           <div className="hp-container">
             <div className="iw-cinematic-container">
 
-              {/* Instagram Glyph Camera Icon */}
-              <div className="iw-insta-icon-wrap" aria-label="Instagram">
+              {/* Social Glyph Camera Icon */}
+              <div className="iw-insta-icon-wrap" aria-label="Social Channels">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -894,23 +903,24 @@ export default function HomePage() {
 
               {/* Bold Title */}
               <h2 className="iw-cinematic-title">
-                INSTAGRAM WORK &amp;<br />
-                TRANSFORMATIONS
+                DAILY WORKSHOP ACTION &amp;<br />
+                <span className="hp-grad-text">TRANSFORMATIONS</span>
               </h2>
 
               {/* Subtitle / Description */}
               <p className="iw-cinematic-desc">
-                Watch daily video walkarounds, swirl removal reels, ceramic and graphene hydrophobic
-                water bead clips, and client handovers on <strong>@mateen.auto1</strong>.
+                See our daily scratch filling, dry denting timelapses, ceramic water bead tests, and real customer car deliveries across our social channels.
               </p>
 
-              {/* Dual Action Buttons */}
+              {/* Action Buttons: 5 Premium Channels & Inspection */}
               <div className="iw-cinematic-actions">
+                {/* 1. Instagram Button */}
                 <a
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noreferrer"
                   className="iw-btn-hero-insta"
+                  title="Follow Mateen Auto on Instagram"
                 >
                   <span className="iw-btn-hero-icon-box iw-icon-insta-bg">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -920,11 +930,69 @@ export default function HomePage() {
                     </svg>
                   </span>
                   <div className="iw-btn-hero-text">
-                    <span className="iw-btn-hero-sub">OFFICIAL REELS &amp; STORIES</span>
+                    <span className="iw-btn-hero-sub">DAILY REELS &amp; STORIES</span>
                     <span className="iw-btn-hero-main">Follow @mateen.auto1 ↗</span>
                   </div>
                 </a>
 
+                {/* 2. Facebook Button */}
+                <a
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="iw-btn-hero-fb"
+                  title="Join 33K+ Community on Facebook"
+                >
+                  <span className="iw-btn-hero-icon-box iw-icon-fb-bg">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </span>
+                  <div className="iw-btn-hero-text">
+                    <span className="iw-btn-hero-sub">33K+ COMMUNITY</span>
+                    <span className="iw-btn-hero-main">Follow @TheMateenAuto ↗</span>
+                  </div>
+                </a>
+
+                {/* 3. YouTube Button */}
+                <a
+                  href={YOUTUBE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="iw-btn-hero-yt"
+                  title="Subscribe to Mateen Auto on YouTube"
+                >
+                  <span className="iw-btn-hero-icon-box iw-icon-yt-bg">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                  </span>
+                  <div className="iw-btn-hero-text">
+                    <span className="iw-btn-hero-sub">4K ULTRA HD RESTORATIONS</span>
+                    <span className="iw-btn-hero-main">Subscribe @mateen.auto1 ↗</span>
+                  </div>
+                </a>
+
+                {/* 4. TikTok Button */}
+                <a
+                  href={TIKTOK_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="iw-btn-hero-tt"
+                  title="Follow Mateen Auto on TikTok"
+                >
+                  <span className="iw-btn-hero-icon-box iw-icon-tt-bg">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.3 6.3 0 0 0 1.96-4.46V8.67a8.21 8.21 0 0 0 4.81 1.5v-3.48a4.85 4.85 0 0 1-1-.001z"/>
+                    </svg>
+                  </span>
+                  <div className="iw-btn-hero-text">
+                    <span className="iw-btn-hero-sub">VIRAL ASMR &amp; TIMELAPSES</span>
+                    <span className="iw-btn-hero-main">Follow @mateenautoofficial ↗</span>
+                  </div>
+                </a>
+
+                {/* 5. Book Inspection */}
                 <Link
                   to="/contact"
                   className="iw-btn-hero-book"
@@ -954,9 +1022,9 @@ export default function HomePage() {
         <div className="hp-container">
           <div className="hp-section-head-row">
             <div>
-              <div className="hp-section-tag">— TESTIMONIALS</div>
+              <div className="hp-section-tag">— REAL CAR OWNERS, REAL REVIEWS</div>
               <h2 className="hp-section-title">
-                What Our <span className="hp-grad-text">Clients Say</span>
+                What Our <span className="hp-grad-text">Lahore Clients Say</span>
               </h2>
             </div>
             <Link to="/about" className="hp-view-all-link">
@@ -970,7 +1038,7 @@ export default function HomePage() {
             <div className="hp-review-card">
               <div className="hp-review-quote-icon">“</div>
               <p className="hp-review-text">
-                Amazing service! Got ceramic coating and paint correction done. My car looks absolutely brand new with incredible deep gloss. Highly recommended!
+                Got 9H ceramic coating and 3M compound polish done on my car. The water beading and mirror finish look unbelievable — looks even better than showroom condition!
               </p>
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
@@ -978,7 +1046,7 @@ export default function HomePage() {
                   <img src={avatarRehan} alt="Rehan Tariq" className="hp-author-avatar-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="hp-author-info">
-                  <div className="hp-author-name">Rehan Tariq</div>
+                  <h3 className="hp-author-name">Rehan Tariq</h3>
                   <div className="hp-author-badge">Verified Client</div>
                 </div>
               </div>
@@ -988,7 +1056,7 @@ export default function HomePage() {
             <div className="hp-review-card">
               <div className="hp-review-quote-icon">“</div>
               <p className="hp-review-text">
-                Professional team, outstanding craftsmanship, and genuine attention to detail. Mr. Nadeem and his crew at Mateen Auto are true masters of car restoration.
+                Brought my car in for scratch repair and dry denting. Nadeem Bhai and his team fixed every single mark with precision, saving the original factory paint completely. Highly recommended in Lahore.
               </p>
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
@@ -996,7 +1064,7 @@ export default function HomePage() {
                   <img src={avatarYasir} alt="Yasir Shami" className="hp-author-avatar-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="hp-author-info">
-                  <div className="hp-author-name">Yasir Shami</div>
+                  <h3 className="hp-author-name">Yasir Shami</h3>
                   <div className="hp-author-badge">Verified Client</div>
                 </div>
               </div>
@@ -1006,7 +1074,7 @@ export default function HomePage() {
             <div className="hp-review-card">
               <div className="hp-review-quote-icon">“</div>
               <p className="hp-review-text">
-                Best car detailing and paint restoration service in town. Got full denting, scratch repair and 3M polish — 100% factory finish. Highly satisfied!
+                Got complete dry denting, scratch repair, and compound polish done. They delivered on time with zero color mismatch and zero repainting. Pure craftsmanship!
               </p>
               <div className="hp-review-stars">★★★★★</div>
               <div className="hp-review-author">
@@ -1014,7 +1082,7 @@ export default function HomePage() {
                   <img src={avatarBaba} alt="Baba OP (Asad)" className="hp-author-avatar-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="hp-author-info">
-                  <div className="hp-author-name">Baba OP (Asad)</div>
+                  <h3 className="hp-author-name">Baba OP (Asad)</h3>
                   <div className="hp-author-badge">Verified Client</div>
                 </div>
               </div>
@@ -1029,9 +1097,9 @@ export default function HomePage() {
         <div className="hp-container">
           <div className="hp-section-head-row">
             <div>
-              <div className="hp-section-tag">— CLIENT VIDEO PROOF</div>
+              <div className="hp-section-tag">— 4K VIDEO PROOF &amp; WALKAROUNDS</div>
               <h2 className="hp-section-title">
-                Client <span className="hp-grad-text">Reviews</span>
+                Customer Video Reviews &amp; <span className="hp-grad-text">Delivery Handovers</span>
               </h2>
             </div>
             <a
@@ -1071,16 +1139,16 @@ export default function HomePage() {
                     <img src={avatarRehan} alt="Rehan Tariq" loading="lazy" decoding="async" />
                   </div>
                   <div className="hp-creel-author">
-                    <h4 className="hp-creel-name">
+                    <h3 className="hp-creel-name">
                       Rehan Tariq
                       <span className="hp-creel-check" title="Verified Customer">✔</span>
-                    </h4>
-                    <span className="hp-creel-role">Ceramic Coating &amp; Paint Correction</span>
+                    </h3>
+                    <span className="hp-creel-role">9H Ceramic Coating &amp; Compound Polish</span>
                   </div>
                 </div>
 
                 <p className="hp-creel-quote">
-                  “Amazing service! Got ceramic coating and paint correction done. My car looks absolutely brand new with incredible deep gloss.”
+                  “The 9H ceramic coating and gloss polish work exceeded my expectations. The mirror shine is unreal and water just rolls right off.”
                 </p>
 
                 <div className="hp-creel-footer">
@@ -1128,16 +1196,16 @@ export default function HomePage() {
                     <img src={avatarYasir} alt="Yasir Shami" loading="lazy" decoding="async" />
                   </div>
                   <div className="hp-creel-author">
-                    <h4 className="hp-creel-name">
+                    <h3 className="hp-creel-name">
                       Yasir Shami
                       <span className="hp-creel-check" title="Verified Customer">✔</span>
-                    </h4>
+                    </h3>
                     <span className="hp-creel-role">Master Dry Denting &amp; Paint Repair</span>
                   </div>
                 </div>
 
                 <p className="hp-creel-quote">
-                  “Professional team, outstanding craftsmanship, and genuine attention to detail. True masters of car restoration in Lahore.”
+                  “Nadeem Bhai and his team handled the dry denting and scratch repairs with master precision. Factory paint remains totally original.”
                 </p>
 
                 <div className="hp-creel-footer">
@@ -1183,16 +1251,16 @@ export default function HomePage() {
                     <img src={avatarBaba} alt="Baba OP (Asad)" loading="lazy" decoding="async" />
                   </div>
                   <div className="hp-creel-author">
-                    <h4 className="hp-creel-name">
+                    <h3 className="hp-creel-name">
                       Baba OP (Asad)
                       <span className="hp-creel-check" title="Verified Customer">✔</span>
-                    </h4>
+                    </h3>
                     <span className="hp-creel-role">Full Detailing &amp; PPF Protection</span>
                   </div>
                 </div>
 
                 <p className="hp-creel-quote">
-                  “Best car detailing and paint restoration service in town. Got full denting, scratch repair and 3M polish — 100% factory finish.”
+                  “Top quality denting and scratch filling work. They kept the OEM factory finish untouched — genuine craftsmanship.”
                 </p>
 
                 <div className="hp-creel-footer">
@@ -1247,9 +1315,9 @@ export default function HomePage() {
                 <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e', display: 'inline-block' }}></span>
                 CLIENT ADVISORY &amp; ANSWERS
               </div>
-              <h3 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.7rem)', fontWeight: '800', color: '#ffffff', margin: '0 0 10px 0' }}>
-                Have Questions About Pricing, Branches, or Scratch Filling?
-              </h3>
+              <h2 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.7rem)', fontWeight: '800', color: '#ffffff', margin: '0 0 10px 0' }}>
+                Frequently Asked Questions — Pricing, Branches &amp; Auto Care in Lahore
+              </h2>
               <p style={{ color: '#cbd5e1', fontSize: '0.92rem', margin: 0, lineHeight: 1.6 }}>
                 Explore answers regarding Mateen Auto’s workmanship guarantee, scratch filling technique, branch consistency, and pricing transparency.
               </p>
@@ -1288,10 +1356,10 @@ export default function HomePage() {
               <div className="hp-cta-tag">LET'S BRING BACK THE SHINE</div>
               <h2 className="hp-cta-title">
                 READY TO GIVE YOUR CAR<br />
-                THE CARE IT DESERVES?
+                THE CARE IT DESERVES IN LAHORE?
               </h2>
               <p className="hp-cta-desc">
-                Book your service today and experience the Mateen Auto difference.
+                Book your service today and experience the Mateen Auto difference — Lahore’s trusted automotive workshop for 37+ years.
               </p>
             </div>
 
