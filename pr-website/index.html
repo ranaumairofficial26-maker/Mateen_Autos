@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="theme-color" content="#030107" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    
+    <!-- Favicon & Touch Icons for Google Search, Desktop & Mobile -->
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,11 +46,26 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "https://mateenauto.com/#website",
+          "url": "https://mateenauto.com/",
+          "name": "Mateen Auto",
+          "description": "Lahore's premier car detailing studio for 37+ years. Expert PPF, 9H ceramic coating, dry denting & 2K paint in DHA & Chauburji.",
+          "publisher": {
+            "@id": "https://mateenauto.com/#organization"
+          }
+        },
+        {
           "@type": "AutoRepair",
           "@id": "https://mateenauto.com/#organization",
           "name": "Mateen Auto",
-          "url": "https://mateenauto.com",
-          "logo": "https://mateenauto.com/logo.png",
+          "url": "https://mateenauto.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://mateenauto.com/logo.png",
+            "width": 1024,
+            "height": 1024
+          },
           "image": "https://mateenauto.com/logo.png",
           "description": "Lahore's premier car detailing, PPF, 9H ceramic coating, scratch filling, and 2K oven-baked paint restoration studio with 37+ years of experience.",
           "telephone": "+923234500012",
